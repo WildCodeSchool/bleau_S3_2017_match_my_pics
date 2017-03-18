@@ -5,8 +5,14 @@
 
 * {
 	
-	background:white;
-	font-family:/*wcs*/;
+	/*background-color: #fba858;*/
+	/*font-family:/*wcs*//*;*/
+}
+
+body {
+
+	margin:0;
+	padding:0;
 }
 
 input {

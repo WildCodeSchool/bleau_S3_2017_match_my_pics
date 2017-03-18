@@ -1,0 +1,130 @@
+/*css de base du container de la page 
+règles du jeu*/
+.contrules {
+
+	width:100%;
+	padding:0;
+}
+
+/*css en-tête logo+titre MatchMyPics*/
+
+.header_rules {
+
+	background-color: #f9a02e;
+	color: black;
+	height:100px;
+	width:100%;
+	position:relative;
+	margin:0;
+	padding:0;
+
+}
+
+.logowcs {
+
+	height:100px;
+	width: 90px;
+	margin:0;
+	padding:15px 0px 0px 5px;
+}
+
+#imgwcs {
+
+	height:70px;
+	width:80px;
+	border-radius:50%;
+}
+
+.titleapp {
+
+	height:100px;
+	width:230px;
+	padding:10px 0px 0px 0px;
+}
+
+.titleapph1{
+
+	font-style:italic;
+	font-weight: bold;
+	padding:0;
+}
+
+/*@media only screen and (max-width:287px) {
+
+	.logowcs {
+
+	height:100px;
+	width: 80px;
+	margin:0;
+	padding:15px 0px 0px 0px;
+	}
+
+	#imgwcs {
+
+	height:60px;
+	width:70px;
+	border-radius:50%;
+	}
+
+	.titleapp {
+
+		height:100px;
+		width:200px;
+		padding:10px 0px 0px 0px;
+	}
+
+	.titleapph1{
+
+		font-style:italic;
+		font-weight: bold;
+		padding:0;
+		font-size:90%;
+	}
+} */
+
+/*Règles du jeu, titre+règles*/
+
+
+/*titre h2*/
+.rowtitlerules {
+
+	margin:0;
+	padding:0;
+	height:50px;
+	width:100%;
+}
+
+.titlerules {
+
+	margin:0px 0px 10px 0px;
+	padding:0px 0px 0px 10px;
+	height:50px;
+	width:100%;
+}
+
+.titlerulesh2 {
+
+	margin:0;
+	padding:10px 0px 0px 0px;
+	height:50px;
+	width:220px;
+	text-decoration: underline;
+}
+
+/*règles du jeu*/
+
+.rowrules {
+
+	margin:0;
+	padding:0;
+	width:100%;
+}
+
+.rulesgame {
+
+	margin:0;
+	width:100%;
+	font-size:120%;
+	text-align: justify;
+}
+

@@ -10,6 +10,8 @@
 	<!-- Boostrap Js -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Call CSS -->
-	<link rel="stylesheet" media="smartphone" type="text/css" title="Global" href="assets/css/global.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/global.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/rules_of_game.css"/>
+	
 </head>
 <body>
