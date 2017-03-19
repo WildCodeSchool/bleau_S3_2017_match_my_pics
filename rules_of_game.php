@@ -43,9 +43,17 @@
 
 			<p><b><ins>9:</ins></b> L'équipe qui a le plus de point a la fin de la journée est déclaré vainqueur! Pour les perdants… Kahooooooooot!</p>
 
-			<p><b><h3>A vous de jouez!</h3></b></p>
+			<p><b><h3 id="playnow">A vous de jouez!</h3></b></p>
 
 		</div>
+		
+		<div class="col-xs-12 btn_jaicompris">
+    		<a href="acceuilprofilteam"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris!"/></a>
+    	</div>
+
 	</div>
+</div>
 
 <?php include 'includes/footer.php' ?>
+
+
