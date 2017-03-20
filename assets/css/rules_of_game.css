@@ -16,6 +16,7 @@ règles du jeu*/
 	width:100%;
 	position:relative;
 	margin:0;
+
 	padding:0;
 	border-bottom: 3px solid black;
 
@@ -88,30 +89,13 @@ règles du jeu*/
 
 
 /*titre h2*/
-.rowtitlerules {
+.rowtitlerules h2 {
 
-	margin:0;
-	padding:0;
-	height:50px;
-	width:100%;
-}
-
-.titlerules {
-
-	margin:0px 0px 10px 0px;
-	padding:0px 0px 0px 10px;
-	height:50px;
-	width:100%;
-}
-
-.titlerulesh2 {
-
-	margin:0;
-	padding:10px 0px 0px 0px;
-	height:50px;
-	width:220px;
+	text-align: center;
 	text-decoration: underline;
+	margin-bottom: 20px;
 }
+
 
 /*règles du jeu*/
 

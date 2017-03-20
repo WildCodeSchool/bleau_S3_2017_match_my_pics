@@ -4,10 +4,10 @@
 
 	<div class="row header_rules">
 
-		<div class="col-xs-1 logowcs">
-			<img src="assets/img/cerf1.png" alt="logo WCS" id="imgwcs"/>
+		<div class="col-xs-offset-1 col-xs-1 logowcs">
+			<img src="assets/img/logo_blanc_pastille.png" alt="logo WCS" id="imgwcs"/>
 		</div>
-		<div class="col-xs-offset-1 col-xs-10 titleapp">
+		<div class="col-xs-offset-1 col-xs-9 titleapp">
 			<h1 class="titleapph1">MatchMyPics</h1>
 		</div>
 
@@ -15,8 +15,8 @@
 
 	<div class="row rowtitlerules">
 
-		<div class="col-xs-12 titlerules">
-		<h2 class="titlerulesh2">Règles du jeu:</h2>
+		<div class="col-xs-12 ">
+			<h2>Règles du jeu :</h2>
 		</div>
 
 	</div>
@@ -43,12 +43,12 @@
 
 			<p><b><ins>9:</ins></b> L'équipe qui a le plus de point a la fin de la journée est déclaré vainqueur! Pour les perdants… Kahooooooooot!</p>
 
-			<p><b><h3 id="playnow">A vous de jouez!</h3></b></p>
+			<p><b><h3 id="playnow">A vous de jouez !</h3></b></p>
 
 		</div>
 		
 		<div class="col-xs-12 btn_jaicompris">
-    		<a href="acceuilprofilteam"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris!"/></a>
+    		<a href="acceuilprofilteam"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris !"/></a>
     	</div>
 
 	</div>
