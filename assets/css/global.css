@@ -30,6 +30,14 @@ input {
 	
 }
 
+img {
 
+	width: 100%;
+}
+.header {
 
+	border-bottom: 3px solid rgb(248, 172, 56);
+	color: rgb(248, 172, 56);
+	background: black;
+}
 

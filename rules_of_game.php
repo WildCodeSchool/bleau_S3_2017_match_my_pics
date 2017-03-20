@@ -1,4 +1,5 @@
-<?php include 'includes/header.php' ?>
+<?php 	include 'includes/header.php';
+		include 'includes/header_return.php'; ?>
 
 <div class="container contrules">
 
