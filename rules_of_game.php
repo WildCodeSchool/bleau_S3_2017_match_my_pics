@@ -7,7 +7,7 @@
 		<div class="col-xs-1 logowcs">
 			<img src="assets/img/cerf1.png" alt="logo WCS" id="imgwcs"/>
 		</div>
-		<div class="col-xs-11 titleapp">
+		<div class="col-xs-offset-1 col-xs-10 titleapp">
 			<h1 class="titleapph1">MatchMyPics</h1>
 		</div>
 

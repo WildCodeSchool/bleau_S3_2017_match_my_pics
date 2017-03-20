@@ -10,13 +10,14 @@ règles du jeu*/
 
 .header_rules {
 
-	background-color: #f9a02e;
-	color: black;
+	background-color: rgb(248, 172, 56);
+	color: white;
 	height:100px;
 	width:100%;
 	position:relative;
 	margin:0;
 	padding:0;
+	border-bottom: 3px solid black;
 
 }
 
