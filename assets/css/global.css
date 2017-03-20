@@ -1,12 +1,18 @@
 @font-face {
-    font-family: 'AlwynRegular';
-    src: url('../AlwynRegular.ttf') format('truetype'),        
+    font-family: "alwyn";
+    src: url("../fonts/alwyn.ttf") format("truetype");
 }
-
+@font-face {
+    font-family: "alwyn_bold";
+    src: url("../fonts/alwyn_bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "SourceSansPro-Regular";
+    src: url("../fonts/SourceSansPro-Regular.ttf") format("truetype");
+}
 * {
 	
-	/*background-color: #fba858;*/
-	/*font-family:/*wcs*//*;*/
+	font-family: "alwyn";
 }
 
 body {
