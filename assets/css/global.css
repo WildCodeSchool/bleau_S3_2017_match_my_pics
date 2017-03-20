@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "alwyn";
+    src: url("../fonts/alwyn.ttf") format("truetype");
+}
+@font-face {
+    font-family: "alwyn_bold";
+    src: url("../fonts/alwyn_bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "SourceSansPro-Regular";
+    src: url("../fonts/SourceSansPro-Regular.ttf") format("truetype");
+}
+* {
+	
+	font-family: "alwyn";
+}
+
+body {
+
+	margin:0;
+	padding:0;
+}
+
+input {
+
+	background: rgb(244, 164, 67);
+	padding: 10px;
+	border-radius: 10px;
+	color: black;
+	
+}
+
+
+
+
