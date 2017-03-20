@@ -25,14 +25,15 @@ règles du jeu*/
 	height:100px;
 	width: 90px;
 	margin:0;
-	padding:15px 0px 0px 5px;
+	padding:10px 0px 0px 5px;
 }
 
 #imgwcs {
 
-	height:70px;
+	height:80px;
 	width:80px;
 	border-radius:50%;
+
 }
 
 .titleapp {

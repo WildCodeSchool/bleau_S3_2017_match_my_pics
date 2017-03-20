@@ -5,7 +5,7 @@
 	<div class="row header_rules">
 
 		<div class="col-xs-1 logowcs">
-			<img src="assets/img/cerf.png" alt="logo WCS" id="imgwcs"/>
+			<img src="assets/img/cerf1.png" alt="logo WCS" id="imgwcs"/>
 		</div>
 		<div class="col-xs-11 titleapp">
 			<h1 class="titleapph1">MatchMyPics</h1>
