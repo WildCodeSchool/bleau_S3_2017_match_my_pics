@@ -1,4 +1,4 @@
-# MatchMyPic
+# MatchMyPics
 
 ## Application de Geo Caching déstinée aux journées d'intégration de la WCS
 

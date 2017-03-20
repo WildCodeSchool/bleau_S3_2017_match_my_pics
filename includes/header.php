@@ -12,6 +12,6 @@
 	<!-- Call CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/global.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/rules_of_game.css"/>
-	
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
 </head>
 <body>
