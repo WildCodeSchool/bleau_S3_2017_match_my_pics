@@ -13,7 +13,7 @@
 				<div class="col-xs-4">
 					<div class="row">
 						<div class="col-xs-12 pts_div">
-							<h3>1250</h3>
+							<h3>1250 pts</h3>
 						</div>
 						<div class="col-xs-12 diff_div">
 							<h3>Easy</h3>
