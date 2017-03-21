@@ -1,0 +1,31 @@
+.container_chall {
+	margin-top: 20px;
+	border-radius: 10px;
+	background : rgb(248, 172, 56);
+}
+.challengediv h2 {
+	text-align: center;
+	
+	padding : auto;
+	margin: auto;
+	width: 100%;
+
+
+}
+
+.container_chall {
+	border: 2px solid black;
+}
+.pts_div h3, .diff_div h3 {
+	text-align: center;
+	margin: 5px;
+
+}
+ .pts_div, .diff_div {
+ 	border: 1px solid black;
+ 	border-top: none;
+ 	border-right : none;
+ }
+ .diff_div {
+ 	border-bottom: none;
+ }
