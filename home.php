@@ -4,7 +4,7 @@ include 'includes/header.php';
 <!--Header page Home-->
 <div class="container home">
 
-    <div class="row header">
+    <div class="row header_home">
         <div class="col-xs-3 logoteam">
             <img src="assets/img/logo_blanc_pastille.png" alt="logo team"/>
         </div>
@@ -38,7 +38,7 @@ include 'includes/header.php';
 
 
 <!--Butn Challenges-->
-    <div class="row">
+    <div class="row bouton_team">
         <div class="col-xs-8 col-xs-offset-2">
     		  <a href="#"><input id="btn_challenges" type="submit" name="challenges" value="CHALLENGES"/></a>
         </div>
@@ -79,7 +79,7 @@ include 'includes/header.php';
             </tbody>
     </table>
 
-    <div class="row">
+    <div class="row bouton_team">
         <div class="col-xs-6 col-xs-offset-3">
     		  <a href="rules_of_game.php"><input id="btn_rules" type="submit" name="btn_rules" value="Règles du Jeu"/></a>
         </div>

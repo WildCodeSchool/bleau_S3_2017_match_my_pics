@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css"/>
 
 <div class="container header_return">
-	<div class="row header">
+	<div class="row">
 		<div class="col-xs-2 header_pad">
 			<a href="javascript:history.back()"><img src="assets/img/flèche_retour.png" class="return" alt="fleche_retour"></a>
 		</div>
