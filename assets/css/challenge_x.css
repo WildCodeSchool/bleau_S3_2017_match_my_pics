@@ -1,0 +1,28 @@
+
+.title_challenge_x, h2{
+    
+    padding-left:0;
+    margin-top: 15px;
+}
+.pics{
+    background-color: rgba(0, 0, 0, 0.55);
+    box-shadow: 6px 6px;
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    height: 250px;
+    width:auto;
+    border-radius: 40px;    
+}
+.teaser_indices{
+    margin-top: 20px;
+}
+.btn{
+    margin-top: 20px;
+    padding-left:0;
+    
+}
+#indices{
+    width: 100px;
+}
