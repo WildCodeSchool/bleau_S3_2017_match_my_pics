@@ -3,17 +3,6 @@
 
 <div class="container contrules">
 
-	<div class="row header_rules">
-
-		<div class="col-xs-offset-1 col-xs-1 logowcs">
-			<img src="assets/img/logo_blanc_pastille.png" alt="logo WCS" id="imgwcs"/>
-		</div>
-		<div class="col-xs-offset-1 col-xs-9 titleapp">
-			<h1 class="titleapph1">MatchMyPics</h1>
-		</div>
-
-	</div>
-
 	<div class="row rowtitlerules">
 
 		<div class="col-xs-12 ">

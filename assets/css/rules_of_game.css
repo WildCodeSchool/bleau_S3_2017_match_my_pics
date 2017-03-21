@@ -94,6 +94,12 @@ règles du jeu*/
 	text-align: center;
 	text-decoration: underline;
 	margin-bottom: 20px;
+
+}
+.rowtitlerules {
+	margin:0;
+	padding:0;
+	width:100%;
 }
 
 
@@ -112,6 +118,7 @@ règles du jeu*/
 	width:100%;
 	font-size:120%;
 	text-align: justify;
+
 }
 
 #playnow {
