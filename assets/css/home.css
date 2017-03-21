@@ -9,7 +9,7 @@
     padding:0;
     margin:0;
     width:100%;
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
 }
 .logoteam, .titleteam{
     padding-right:0;
@@ -47,6 +47,7 @@ tr:hover{
 }
 #btn_challenges{
     width: 100%;
+    
 }
 #btn_rules{
     width: 100%;
@@ -59,4 +60,8 @@ tr:hover{
 .btn_team, .btn_challenges {
     width: 100%;
     margin:0;
+}
+.logoteam {
+
+    margin-bottom: 10px;
 }

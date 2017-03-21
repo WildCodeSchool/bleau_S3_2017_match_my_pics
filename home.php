@@ -20,17 +20,17 @@ include 'includes/header.php';
             <div class="col-xs-6 box">
                 <h3>Guillaume</h3>
             </div>
-                <div class="col-xs-6 box">
-                    <h3>Jeremy</h3>
-                </div>
+            <div class="col-xs-6 box">
+                <h3>Jeremy</h3>
+            </div>
         </div>
         <div class="row">
             <div class="col-xs-6 box">
                 <h3>Charly</h3>
             </div>
-                <div class="col-xs-6 box">
+            <div class="col-xs-6 box">
                     <h3>Null</h3>
-                </div>
+            </div>
         </div>
     </div>
 <br/>
@@ -39,7 +39,7 @@ include 'includes/header.php';
 <!--Btn Challenges-->
     <div class="row btn_challenges">
         <div class="col-xs-8 col-xs-offset-2">
-    		  <a href="#"><input id="btn_challenges" type="submit" name="challenges" value="CHALLENGES"/></a>
+    		  <a href="challenges.php"><input id="btn_challenges" type="submit" name="challenges" value="CHALLENGES"/></a>
         </div>
     </div>
 

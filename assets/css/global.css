@@ -39,6 +39,9 @@ input {
 	padding: 10px;
 	border-radius: 10px;
 	color: black;
+	width: 100%;
+    box-shadow: 8px 8px 8px black ;
+    border: 3px solid black;
 	
 }
 
