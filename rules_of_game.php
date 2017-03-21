@@ -49,12 +49,10 @@
 		</div>
 		
 		<div class="col-xs-12 btn_jaicompris">
-    		<a href="acceuilprofilteam"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris !"/></a>
+    		<a href="home.php"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris !"/></a>
     	</div>
 
 	</div>
 </div>
 
 <?php include 'includes/footer.php' ?>
-
-

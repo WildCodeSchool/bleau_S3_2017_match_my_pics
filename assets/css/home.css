@@ -1,0 +1,60 @@
+/*Container Home.php*/
+.home{
+  width: 100%;
+  padding: 0;
+}
+/*Header(logo Team + title Team)*/
+.header{
+    background-color: rgb(248,172,56);
+    padding:0;
+    margin:0;
+    width:100%;
+    border-bottom: 3px solid black;
+}
+.logoteam, .titleteam{
+    padding-right:0;
+    padding-top:15px;
+    padding-left:10px;
+    height:100%;
+    margin:0;
+}
+h2{
+    font-size:2.2em;
+    color: black;
+    padding:0;
+}
+/*Container Tab Team*/
+.box{
+    margin: auto;
+    height: 40px;
+    margin: 0;
+    padding:0;    
+}
+h3{
+    font-size: 1.1em;
+    text-align: center;
+    margin-top:10px;
+    height: auto;
+    width: 100%;   
+}
+/*Container tab Scores Team.php*/
+#title_tab{
+    text-align: center;
+}
+img{
+    width: 100%;
+}
+tr:hover{
+    background:  rgb(248,172,56);
+}
+#btn_challenges{
+    width: 100%;
+}
+#btn_rules{
+    width: 100%;
+}
+.box{
+    border: 1px solid black;
+    text-align: center;
+}
+
