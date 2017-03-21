@@ -82,6 +82,12 @@ include 'includes/header.php';
     		  <a href="rules_of_game.php"><input id="btn_rules" type="submit" name="btn_rules" value="Règles du Jeu"/></a>
         </div>
     </div>
+<!-- Btn deconnexion -->
+    <div class="row btn_deco">
+        <div class="col-xs-offset-9 col-xs-2">
+            <a href="index.php"><img src="assets/img/deconnexion.png" alt="deconnexion_bouton"></a>
+        </div> 
+    </div>
 </div>
 
 <?php include 'includes/footer.php' ?>
