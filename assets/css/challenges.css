@@ -1,20 +1,31 @@
 .container_chall {
-	margin-top: 20px;
+	margin-top: 30px;
 	border-radius: 10px;
 	background : rgb(248, 172, 56);
+	box-shadow: 8px 8px 8px black ; 
 }
 .challengediv h2 {
 	text-align: center;
-	padding : auto;
-	margin: auto;
 	width: 100%;
 
-
 }
 
-.container_chall {
-	border: 2px solid black;
+.container_chall .easy {
+	border: 4px  green;
+	border-style: outset;
+	border-radius: 10px;
 }
+.container_chall .medium {
+	border: 4px  rgb(255, 140, 0);
+	border-style: outset;
+	border-radius: 10px;
+}
+.container_chall .hard {
+	border: 4px  red;
+	border-style: outset;
+	border-radius: 10px;
+}
+
 .pts_div h3, .diff_div h3 {
 	text-align: center;
 	margin: 5px;
@@ -27,4 +38,7 @@
  }
  .diff_div {
  	border-bottom: none;
+ }
+ .liste_challenges a {
+	color: black;
  }
