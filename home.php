@@ -11,7 +11,6 @@ include 'includes/header.php';
             <div class="col-xs-9 titleteam">
                 <h2>TEAM CHAUSSETTES</h2>
             </div>
-
     </div>
     
 
@@ -37,16 +36,15 @@ include 'includes/header.php';
 <br/>
 
 
-<!--Butn Challenges-->
-    <div class="row bouton_team">
+<!--Btn Challenges-->
+    <div class="row btn_challenges">
         <div class="col-xs-8 col-xs-offset-2">
     		  <a href="#"><input id="btn_challenges" type="submit" name="challenges" value="CHALLENGES"/></a>
         </div>
     </div>
 
 <!--Results. Tab-->
-
-    <table class="table table-scores">
+     <table class="table table-scores">
         <h2 id="title_tab"> Classement par Equipes</h2>
             <thead>
                 <tr>
@@ -78,8 +76,8 @@ include 'includes/header.php';
                 </tr>
             </tbody>
     </table>
-
-    <div class="row bouton_team">
+<!--Btn Rules-->
+    <div class="row btn_team">
         <div class="col-xs-6 col-xs-offset-3">
     		  <a href="rules_of_game.php"><input id="btn_rules" type="submit" name="btn_rules" value="Règles du Jeu"/></a>
         </div>

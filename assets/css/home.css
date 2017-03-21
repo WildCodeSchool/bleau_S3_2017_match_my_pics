@@ -1,9 +1,9 @@
-/*Container Home.php*/
+            /*Container Home.php*/
 .home{
   width: 100%;
   padding: 0;
 }
-/*Header(logo Team + title Team)*/
+            /*Header(logo Team + title Team)*/
 .header_home{
     background-color: rgb(248,172,56);
     padding:0;
@@ -24,7 +24,7 @@
     color: black;
     padding:0;
 }
-/*Container Tab Team*/
+            /*Container Tab Team*/
 .box{
     margin: auto;
     height: 40px;
@@ -38,7 +38,7 @@
     height: auto;
     width: 100%;   
 }
-/*Container tab Scores Team.php*/
+            /*Container tab Scores Team.php*/
 #title_tab{
     text-align: center;
 }
@@ -55,6 +55,8 @@ tr:hover{
     border: 1px solid black;
     text-align: center;
 }
-.bouton_team {
+            /*Container btn */
+.btn_team, .btn_challenges {
     width: 100%;
+    margin:0;
 }
