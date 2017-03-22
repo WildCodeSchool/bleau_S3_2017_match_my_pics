@@ -1,0 +1,31 @@
+.box_indice  {
+	border : 3px solid black;
+	background: rgb(248, 172, 56);
+	border-radius: 3px;
+	text-align: justify;
+	color: black;
+	margin-top: 15px;
+	margin-bottom: 25px;
+	box-shadow: 8px 8px 8px black ; 
+}
+.box_indice p {
+	padding : 8px;
+}
+.photo_indice {
+	padding-bottom: 20px;
+}
+.malus_box {
+	text-align: center;
+	font-size: 2em;
+	padding-top: 30px;
+
+}
+.malus_box i {
+	padding-top: 10px;
+	color: red;
+}
+.malus_box p {
+	font-family: "Meatloaf";
+	font-size: 3em;
+	color: red;
+}
