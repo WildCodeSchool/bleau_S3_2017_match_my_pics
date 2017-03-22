@@ -7,7 +7,7 @@ include 'includes/header_return.php';
 
         <!--Container Title Challenge_x-->
         <div class="row title_challenge_x">
-            <div class="col-xs-offset-3">
+            <div class="col-xs-offset-3 col-xs-6">
                 <p>Challenge_x</p>    
             </div>
         </div>
@@ -21,7 +21,7 @@ include 'includes/header_return.php';
 
         <!--Container teaser_indices-->    
         <div class="row teaser_indices">
-            <div class="col-xs-offset-2 col-xs-10">
+            <div class="col-xs-offset-2 col-xs-10 row_indice">
                 <p>------->petit indice--------------> </p>  
             </div>
         </div>

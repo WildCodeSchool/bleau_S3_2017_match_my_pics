@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/challenges.css"/>
 <div class="container liste_challenges">
 	<div class="row">
-		<a href="#"><div class="col-xs-offset-1 col-xs-10 container_chall">
+		<a href="challenge_x.php"><div class="col-xs-offset-1 col-xs-10 container_chall">
 			<div class="row easy">
 				<div class="col-xs-8 challengediv">
 						<h2>Challenge 1</h2>
