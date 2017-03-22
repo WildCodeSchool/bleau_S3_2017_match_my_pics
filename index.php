@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-xs-offset-2 col-xs-8">
 			<div>
-				<img class="logo_index" src="assets/img/logo_small_orange.png" alt="logowcs">
+				<img class="logo_index" src="assets/img/logo_small_blue.png" alt="logowcs">
 			</div>
 		</div>
 	</div>
