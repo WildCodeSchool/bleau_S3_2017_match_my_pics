@@ -37,7 +37,7 @@ include 'includes/header_return.php';
                       </a>
             </div>
             <div class="col-xs-offset-4 col-xs-4">
-                      <a href="#"><input id="abandonment" type="submit" name="abandonment" value="Abandon"/>
+                      <a href="challenges.php"><input id="abandonment" type="submit" name="abandonment" value="Abandon"/>
                       </a>
             </div>
         </div>

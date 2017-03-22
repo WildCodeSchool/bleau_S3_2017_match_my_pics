@@ -15,13 +15,15 @@
     text-shadow: 3px 3px white;
     font-style: bold;
 }
-.logoteam, .titleteam{
+.logoteam{
     padding-right:0;
     padding-top:15px;
     padding-left:10px;
     height:100%;
-    margin:0;
-    
+    margin:0;    
+}
+.titleteam{
+    padding-bottom: 5px;
 }
 .home h2{
     font-size:2.2em;

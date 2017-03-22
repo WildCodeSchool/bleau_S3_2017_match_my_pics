@@ -6,10 +6,10 @@ include 'includes/header.php';
 
     <div class="row header_home">
         <div class="col-xs-3 logoteam">
-            <img src="assets/img/logo_blanc_pastille.png" alt="logo team"/>
+            <img src="assets/img/cerfdrole.jpg" alt="logo team"/>
         </div>
             <div class="col-xs-9 titleteam">
-                <h2>TEAM CHAUSSETTES</h2>
+                <h2>TEAM DEER</h2>
             </div>
     </div>
     
