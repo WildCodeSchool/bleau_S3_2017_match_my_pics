@@ -42,3 +42,10 @@
  .liste_challenges a {
 	color: black;
  }
+ @media screen and (max-width: 333px) {
+
+	.challengediv h2, .pts_div h3, .diff_div h3 {
+		font-size: 1.5em;
+	}
+
+ }

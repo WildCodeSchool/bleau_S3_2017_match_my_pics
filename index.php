@@ -26,11 +26,13 @@
 		<div class="col-xs-offset-2 col-xs-8">
 			<input type="password" name="mdp">			
 		</div>
-	</div>
-		<div class="row">
-		<div class="col-xs-offset-4 col-xs-4 bouton_connect">
-			<a href="rules_of_game.php"><img src="assets/img/connexion.ico" alt="btn_connexion"></a>
-		</div>
+	</div>	
+	<div class="connexion">	
+		<a href="rules_of_game.php">
+			<i class="fa fa-power-off bouton_connect fa-5x" aria-hidden="true">
+			</i>
+			<span class="sr-only">Loading...</span>
+		</a>
 	</div>
 </div>
 <?php include 'includes/footer.php' ?>

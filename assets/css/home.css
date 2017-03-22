@@ -57,7 +57,7 @@ tr:hover{
     text-align: center;
 }
             /*Container btn */
-.btn_team, .btn_challenges {
+.btn_team, .btn_challenges, .btn_footer {
     width: 100%;
     margin:0;
 }
@@ -65,6 +65,13 @@ tr:hover{
 
     margin-bottom: 10px;
 }
-.btn_deco {
-    margin-top: 40px;
+
+.btn_footer {
+    margin-top: 20px;
+}
+.btn_footer a {
+    color: black;
+}
+.btn_footer .logout a {
+    color: rgb(224, 20, 20);
 }

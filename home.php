@@ -83,10 +83,16 @@ include 'includes/header.php';
         </div>
     </div>
 <!-- Btn deconnexion -->
-    <div class="row btn_deco">
-        <div class="col-xs-offset-9 col-xs-2">
-            <a href="index.php"><img src="assets/img/deconnexion.png" alt="deconnexion_bouton"></a>
+    <div class="row btn_footer">
+        <div class="col-xs-1">
+            <a href="https://www.facebook.com/Wild-Code-School-1571738596452522/?fref=ts" target="blank"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+            </a>
         </div> 
+        <div class="col-xs-offset-9 col-xs-1 logout">
+            <a href="index.php"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+            </i></a>
+        </div> 
+        
     </div>
 </div>
 
