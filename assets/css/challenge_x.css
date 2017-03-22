@@ -1,0 +1,59 @@
+/* Container page challenge_x */
+.challenge_x{
+    margin:0;
+    padding:0;
+}
+/* Container Title Page Challenges */
+.title_challenge_x, p{
+    font-family: "Pokemon";
+    font-size: 1.5em;
+    padding:0;
+    margin:0;
+    width: 100%; 
+    margin-top: 15px;
+}
+/* Container Pics Challenges */
+.pics{
+    z-index: 1;
+    box-shadow: 8px 8px 8px black;
+    border: 2px solid black;
+    border-radius: 40px;  
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    height: auto;  /*Responsive Img height*/
+    width:auto;     
+}
+.divpics, img {
+    border-radius: 40px;
+    margin-left:1px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding:0;
+    width:99%;
+    z-index: 2;
+    border-radius: 40px;
+}
+/* Container mini-indice Challenge */
+.teaser_indices, p{
+margin-top: 20px;
+    font-size:1em;
+font-style: italic;
+}
+/* Container Btn Indices/add_soluce/abandon */
+.btn{
+    margin-top: 20px;
+    padding-left:0;   
+}
+/* Btn Indices */
+#indices{
+    width: 100px;
+}
+/* Btn abandon */
+#abandonment{
+    margin-top: 50px;    
+}
+/* Shadow Btn */
+.btn input{
+    box-shadow: 8px 8px 8px black;
+}
