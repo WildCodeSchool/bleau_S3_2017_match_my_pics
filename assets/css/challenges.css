@@ -1,7 +1,7 @@
 .container_chall {
 	margin-top: 30px;
 	border-radius: 10px;
-	background : rgb(31, 165, 151);
+	background : rgb(88, 196, 184);
 	box-shadow: 8px 8px 8px black ; 
 }
 .challengediv h2 {
@@ -11,7 +11,7 @@
 }
 
 .container_chall .easy {
-	border: 4px  green;
+	border: 4px  rgb(31, 165, 151);
 	border-style: outset;
 	border-radius: 10px;
 }
@@ -21,7 +21,7 @@
 	border-radius: 10px;
 }
 .container_chall .hard {
-	border: 4px  red;
+	border: 4px  rgb(31, 165, 151);
 	border-style: outset;
 	border-radius: 10px;
 }

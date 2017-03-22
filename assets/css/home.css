@@ -11,6 +11,10 @@
     width:100%;
     border-bottom: 2px solid black;
 }
+.header_home h2{
+    text-shadow: 3px 3px white;
+    font-style: bold;
+}
 .logoteam, .titleteam{
     padding-right:0;
     padding-top:15px;
@@ -43,7 +47,7 @@
     text-align: center;
 }
 tr:hover{
-    background:  rgb(248,172,56);
+    background:  rgb(88, 196, 184);
 }
 #btn_challenges{
     width: 100%;

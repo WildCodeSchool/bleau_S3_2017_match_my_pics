@@ -4,7 +4,7 @@
 ?>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-offset-4 col-xs-4">
+		<div class="col-xs-offset-4 col-xs-4 indice_title">
 			<h2 class="title_indice">Indice :</h2>
 		</div>
 		<div class="col-xs-offset-1 col-xs-10 box_indice">
