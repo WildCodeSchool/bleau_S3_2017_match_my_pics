@@ -1,22 +1,40 @@
-
-.title_challenge_x, h2{
-    
+.row{
+    margin: 0;
+    padding:0;
+}
+.title_challenge_x, p{
+    font-size: 1.5em;
     padding-left:0;
     margin-top: 15px;
 }
 .pics{
-    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
     box-shadow: 6px 6px;
     border: 2px solid black;
+    border-radius: 40px;  
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
-    height: 250px;
-    width:auto;
-    border-radius: 40px;    
+    height: auto;/*Responsive Img height*/
+    width:auto;     
 }
+.divpics, img {
+    border-radius: 40px;
+    margin-left:1px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding:0;
+    width:99%;
+    z-index: 2;
+    border-radius: 40px;
+}
+
 .teaser_indices{
-    margin-top: 20px;
+margin-top: 20px;    
+}
+.teaser_indices p{
+font-size:1em;
+font-style: italic;
 }
 .btn{
     margin-top: 20px;
