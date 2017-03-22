@@ -7,7 +7,7 @@ include 'includes/header_return.php';
 
     <!--Container Title Challenge_x-->
     <div class="row title_challenge_x">
-        <div class="col-xs-offset-3 col-xs-9">
+        <div class="col-xs-offset-3">
             <p>Challenge_x</p>    
         </div>
     </div>
@@ -15,7 +15,7 @@ include 'includes/header_return.php';
     <!--Container Pics-->
     <div class="row pics">
         <div class="col-xs-offset-3 col-xs-9 divpics">
-            <img src="assets/img/licorne.jpg" id="img" alt="cerf">
+            <img src="assets/img/cerf1.png" id="img" alt="cerf">
         </div>
     </div>
 
