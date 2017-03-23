@@ -12,17 +12,18 @@ include 'includes/header_return.php';
             </div>
         </div>
 
-        <!--Container Pics-->
+        <!--Container Polaroid Pics-->  
         <div class="row pics">
-            <div class="col-xs-offset-3 col-xs-9 divpics">
-                <img src="assets/img/licorne.jpg" id="img" alt="cerf">
+            <div class="col-xs-offset-2 col-xs-8 polaroid-images">
+                <a href="" title=""><img src="assets/img/fbleau.jpg" alt="img_polaroid"/>
+                </a>
             </div>
         </div>
 
         <!--Container teaser_indices-->    
         <div class="row teaser_indices">
             <div class="col-xs-offset-2 col-xs-10 row_indice">
-                <p>------->petit indice--------------> </p>  
+                <p>------->petit indice--------------></p>  
             </div>
         </div>
 
@@ -40,7 +41,7 @@ include 'includes/header_return.php';
                       <a href="challenges.php"><input id="abandonment" type="submit" name="abandonment" value="Abandon"/>
                       </a>
             </div>
-        </div>
+        </div>         
     </div>
 
 <?php include 'includes/footer.php' ?>

@@ -19,34 +19,57 @@
     width: 100%; 
     margin-top: 15px;
 }
-/* Container Pics Challenges */
+/*Container Polaroid Pics */
 .pics{
-    z-index: 1;
-    box-shadow: 8px 8px 8px black;
-    border: 2px solid black;
-    border-radius: 40px;  
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.polaroid-images{
+    padding:0;
+    margin-left: 40px;
+    margin-right: 40px;
     margin-top: 20px;
     height: auto;  /*Responsive Img height*/
     width:auto;     
 }
-.divpics, img {
-    border-radius: 40px;
-    margin-left:1px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding:0;
-    width:99%;
-    z-index: 2;
-    border-radius: 40px;
+.polaroid-images a
+{
+    background: white;
+    display: inline;
+    float: left;
+    margin:0;
+    padding: 15px 15px 45px; /* Contours Polaroid*/
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.7);
+    box-shadow: 0 4px 6px rgba(0,0,0,.7);
+        /*-webkit-transition: all .15s linear;
+        -moz-transition: all .15s linear;
+        transition: all .15s linear;
+        z-index:0; 
+        */
 }
+.polaroid-images a:after {
+    color: #333;
+    font-size: 20px;
+    content: attr(title);
+    position: relative;
+    top:15px;
+}
+.polaroid-images img {
+    display: block;
+    width: 99%;
+    border: 1px solid rgba(98, 97, 97, 0.4);
+}
+
 /* Container mini-indice Challenge */
 .teaser_indices, p{
-margin-top: 20px;
+    margin-top: 20px;
     font-size:1em;
-font-style: italic;
+    font-style: italic;
 }
+
 /* Container Btn Indices/add_soluce/abandon */
 .btn{
     margin-top: 20px;
@@ -54,10 +77,12 @@ font-style: italic;
     margin-right: 0;
     width: 100%;    
 }
+
 /* Btn abandon */
 #abandonment{
     margin-top: 50px;    
 }
+
 /* Btn */
 .btn input{
     box-shadow: 8px 8px 8px black;
@@ -65,3 +90,4 @@ font-style: italic;
     padding-left: 10px;
     padding-right: 10px;
 }
+
