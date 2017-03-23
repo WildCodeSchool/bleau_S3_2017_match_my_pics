@@ -52,18 +52,16 @@ font-style: italic;
     margin-top: 20px;
     margin-left: 0;
     margin-right: 0;
-    width: 100%;
-    
-}
-/* Btn Indices */
-#indices{
-    width: 100px;
+    width: 100%;    
 }
 /* Btn abandon */
 #abandonment{
     margin-top: 50px;    
 }
-/* Shadow Btn */
+/* Btn */
 .btn input{
     box-shadow: 8px 8px 8px black;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }

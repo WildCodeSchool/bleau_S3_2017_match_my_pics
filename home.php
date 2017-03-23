@@ -89,8 +89,10 @@ include 'includes/header.php';
             </a>
         </div> 
         <div class="col-xs-offset-9 col-xs-1 logout">
-            <a href="index.php"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
-            </i></a>
+            <a href="index.php">
+                <i class="fa fa-power-off fa-2x" aria-hidden="true">
+                </i>
+            </a>
         </div> 
         
     </div>
