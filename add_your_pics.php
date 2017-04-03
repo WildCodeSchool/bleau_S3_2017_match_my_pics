@@ -39,14 +39,8 @@
 				</div>
 			</form>
 		</div>
-
-		<!--zone de texte pour préciser des infos sur le lieux ou la photo que l'on soumet-->
-
 		<div class="row">
-
 			<form class="" action="xxx.php?section=add" method="POST">
-				<label for="description">Précisez! (max. 255 caractères) :</label><br/>
-     			<textarea name="description" id="description"></textarea><br/>
      			<input type="submit" name="submit" value="Envoyer" />
 			</form>
 		</div>
