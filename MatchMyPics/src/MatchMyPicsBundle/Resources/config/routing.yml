@@ -1,0 +1,3 @@
+match_my_pics_homepage:
+    path:     /
+    defaults: { _controller: MatchMyPicsBundle:Default:index }

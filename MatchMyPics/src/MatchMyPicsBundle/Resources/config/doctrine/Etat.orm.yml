@@ -1,0 +1,15 @@
+MatchMyPicsBundle\Entity\Etat:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\EtatRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        statut:
+            type: string
+            length: '30'
+    lifecycleCallbacks: {  }
