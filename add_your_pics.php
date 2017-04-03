@@ -8,21 +8,36 @@
 
 			<form class="" action="xxx.php?section=add" method="POST">
 				<div class="input-field">
-					<label for="addpics">Ajoutez votre photo!</label>
+					 
+					<script type='text/javascript'>//<![CDATA[
+						$(window).load(function(){
+							function readURL(input) {
+								if (input.files && input.files[0]) {
+									var reader = new FileReader();reader.onload = function (e) {
+										$('#blah').attr('src', e.target.result);
+									}
+            reader.readAsDataURL(input.files[0]);
+}
+}
+			$("#imgInp").change(function(){
+				readURL(this);
+        });
+	});//]]> 
+ 
+					</script>
 
-					<input type="hidden" name="MAX_FILE_SIZE" value="size à determiner" />
-
-					<input id="addpics" type="file" name="addpics" required="">
+					<script type="text/javascript">
+						function getfile(){
+    						document.getElementById('hiddenfile').click();
+    						document.getElementById('selectedfile').value=document.getElementById('hiddenfile').value
+							}
+					</script>
+					
+					 <form id="form1" runat="server">
+       					 <input type='file' id="imgInp" />
+       					 <img id="blah" src="#" alt="your image" />    
 				</div>
 			</form>
-		</div>
-		
-		<!--encart pour visualiser la photo que l'on veut soumettre-->
-		<div class="row">
-
-			<div id="visupics">
-				<p style="text-align:center; margin-top:90px">visuel de la photo chargée</p>
-			</div>
 		</div>
 
 		<!--zone de texte pour préciser des infos sur le lieux ou la photo que l'on soumet-->
