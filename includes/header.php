@@ -22,6 +22,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/challenge_x.css"/>
 	<!-- Call Font Awesome -->
 	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	<!-- Jquery -->
+	 <script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
 
 
 
