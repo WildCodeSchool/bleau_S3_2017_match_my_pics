@@ -1,3 +1,11 @@
-match_my_pics_homepage:
+match_my_pics_index:
     path:     /
     defaults: { _controller: MatchMyPicsBundle:Default:index }
+
+match_my_pics_rules:
+    path:     /rules
+    defaults: { _controller: MatchMyPicsBundle:Default:rules }
+
+match_my_pics_home:
+    path:     /home
+    defaults: { _controller: MatchMyPicsBundle:Default:home }
