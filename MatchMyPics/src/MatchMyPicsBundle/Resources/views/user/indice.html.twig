@@ -1,7 +1,7 @@
-<?php 
-	include 'includes/header.php';
-	include 'includes/header_return.php';
-?>
+{% extends '@MatchMyPics/user/header_return.html.twig' %}
+
+{% block body %}
+
 <div class="container">
 	<div class="row">
 		<div class="col-xs-offset-4 col-xs-4 indice_title">
@@ -15,15 +15,8 @@
 		</div>
 		<div class="col-xs-offset-2 col-xs-8 malus_box">
 			<i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true" ></i><p>
-			-250 pts</p>
+				-250 pts</p>
 		</div>
-
-
-
-
-
 	</div>
 </div>
-
-<? include 'includes/footer.php'; ?>
-			
+{% endblock %}

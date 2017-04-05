@@ -20,4 +20,20 @@ class DefaultController extends Controller
     {
         return $this->render('@MatchMyPics/user/home.html.twig');
     }
+    public function challengesAction()
+    {
+        return $this->render('@MatchMyPics/user/challenges.html.twig');
+    }
+    public function challenge_xAction()
+    {
+        return $this->render('@MatchMyPics/user/challenge_x.html.twig');
+    }
+    public function indiceAction()
+    {
+        return $this->render('@MatchMyPics/user/indice.html.twig');
+    }
+    public function solutionAction()
+    {
+        return $this->render('@MatchMyPics/user/solution.html.twig');
+    }
 }

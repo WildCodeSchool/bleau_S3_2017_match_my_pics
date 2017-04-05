@@ -9,3 +9,19 @@ match_my_pics_rules:
 match_my_pics_home:
     path:     /home
     defaults: { _controller: MatchMyPicsBundle:Default:home }
+
+match_my_pics_challenges:
+    path:     /challenges
+    defaults: { _controller: MatchMyPicsBundle:Default:challenges }
+
+match_my_pics_challenge_x:
+    path:     /challenge_x
+    defaults: { _controller: MatchMyPicsBundle:Default:challenge_x }
+
+match_my_pics_indice:
+    path:     /indice
+    defaults: { _controller: MatchMyPicsBundle:Default:indice }
+
+match_my_pics_solution:
+    path:     /solution
+    defaults: { _controller: MatchMyPicsBundle:Default:solution }
