@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Lucie Colon, Auzanet Charly, Lemarinier Jérémy, Hery, Guillaume">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}MatchMyPics - WCS{% endblock %}</title>
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Google Font -->
+        <link rel="stylesheet" href="{{ asset('bundles/MatchMyPicsBundle/font-awesome/css/font-awesome.min.css') }}"/>
+
+        <!-- Call CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/add_your_pics.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/challenge_x.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/challenges.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/global.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/index.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/indice.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/rules_of_game.css') }}"/>
+
+        <!-- Call Font Awesome -->
+        {% block stylesheets %}
+
+        {% endblock %}
+
+    </head>
+    <body>
+
+        {% block nav %}
+
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+
+        <!-- Jquery -->
+        <script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Boostrap Js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Main Javascript -->
+        <script src="{{ asset('bundles/MatchMyPicsBundle/js/main.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+
+    </body>
+</html>

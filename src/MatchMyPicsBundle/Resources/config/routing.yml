@@ -1,0 +1,31 @@
+match_my_pics_index:
+    path:     /
+    defaults: { _controller: MatchMyPicsBundle:Default:index }
+
+match_my_pics_rules:
+    path:     /rules
+    defaults: { _controller: MatchMyPicsBundle:Default:rules }
+
+match_my_pics_home:
+    path:     /home
+    defaults: { _controller: MatchMyPicsBundle:Default:home }
+
+match_my_pics_challenges:
+    path:     /challenges
+    defaults: { _controller: MatchMyPicsBundle:Default:challenges }
+
+match_my_pics_show_challenge:
+    path:     /challenge_x
+    defaults: { _controller: MatchMyPicsBundle:Default:showChallenge }
+
+match_my_pics_indice:
+    path:     /indice
+    defaults: { _controller: MatchMyPicsBundle:Default:indice }
+
+match_my_pics_solution:
+    path:     /solution
+    defaults: { _controller: MatchMyPicsBundle:Default:solution }
+
+match_my_pics_sommaire_Admin:
+    path:     /sommaire_Admin
+    defaults: { _controller: MatchMyPicsBundle:Default:sommaireAdmin }

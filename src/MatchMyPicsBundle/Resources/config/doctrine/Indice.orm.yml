@@ -1,0 +1,14 @@
+MatchMyPicsBundle\Entity\Indice:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\IndiceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        contenu:
+            type: text
+    lifecycleCallbacks: {  }

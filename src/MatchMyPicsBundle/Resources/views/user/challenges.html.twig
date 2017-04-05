@@ -1,0 +1,71 @@
+{% extends 'MatchMyPicsBundle:user:layout_user.html.twig' %}
+
+{% block body %}
+<div class="container liste_challenges">
+	<div class="row">
+		<a href="{{ path('match_my_pics_show_challenge') }}">
+			<div class="col-xs-offset-1 col-xs-10 container_chall">
+				<div class="row easy">
+					<div class="col-xs-8 challengediv">
+						<h2>Challenge 1</h2>
+					</div>
+					<div class="col-xs-4">
+						<div class="row">
+							<div class="col-xs-12 pts_div">
+								<h3>1250</h3>
+							</div>
+							<div class="col-xs-12 diff_div">
+								<h3>Easy</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+	
+	<div class="row">
+		<a href="#">
+			<div class="col-xs-offset-1 col-xs-10 container_chall">
+				<div class="row medium">
+					<div class="col-xs-8 challengediv">
+						<h2>Challenge 2</h2>
+					</div>
+					<div class="col-xs-4">
+						<div class="row">
+							<div class="col-xs-12 pts_div">
+								<h3>3333</h3>
+							</div>
+							<div class="col-xs-12 diff_div">
+								<h3>Medi</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+	
+	<div class="row ">
+		<a href="#">
+			<div class="col-xs-offset-1 col-xs-10 container_chall">
+				<div class="row hard">
+					<div class="col-xs-8 challengediv">
+						<h2>Challenge 3</h2>
+					</div>
+					<div class="col-xs-4">
+						<div class="row">
+							<div class="col-xs-12 pts_div">
+								<h3>7950</h3>
+							</div>
+							<div class="col-xs-12 diff_div">
+								<h3>Hard</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+{%  endblock %}
