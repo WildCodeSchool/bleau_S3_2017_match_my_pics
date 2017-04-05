@@ -23,12 +23,27 @@ class DefaultController extends Controller
 
     public function challengesAction()
     {
-        return $this->render('@MatchMyPics/user/challenges.html.twig');
+        // Connexion base de données
+        // $bdd = new PDO('host:localhost; dbname: wcs-3_matchmypics; user:root; mdp:root');
+        $em = $this->getDoctrine()->getManager();
+
+        // Requete BDD
+        // $challenges = $bdd->query('SELECT * FROM challenge');
+        $challenges = $em->getRepository('MatchMyPicsBundle:Challenge')->findAll();
+
+        return $this->render('@MatchMyPics/user/challenges.html.twig', array(
+            'challenges' => $challenges,
+            ));
     }
 
-    public function showChallengeAction()
+    public function showChallengeAction($id)
     {
-        return $this->render('@MatchMyPics/user/show_challenge.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
+
+        return $this->render('@MatchMyPics/user/show_challenge.html.twig', array(
+            'challenge' => $challenge
+        ));
     }
 
     public function indiceAction()
@@ -43,7 +58,7 @@ class DefaultController extends Controller
 
     public function sommaireAdminAction()
     {
-        return $this->render('@MatchMyPics/admin/sommaire_Admin.html.twig');
+        return $this->render('@MatchMyPics/admin/new_session.html.twig');
     }
 }
 
