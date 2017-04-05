@@ -1,0 +1,51 @@
+.container_chall {
+	margin-top: 30px;
+	border-radius: 10px;
+	background : rgb(88, 196, 184);
+	box-shadow: 8px 8px 8px black ; 
+}
+.challengediv h2 {
+	text-align: center;
+	width: 100%;
+
+}
+
+.container_chall .easy {
+	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	border-radius: 10px;
+}
+.container_chall .medium {
+	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	border-radius: 10px;
+}
+.container_chall .hard {
+	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	border-radius: 10px;
+}
+
+.pts_div h3, .diff_div h3 {
+	text-align: center;
+	margin: 5px;
+
+}
+ .pts_div, .diff_div {
+ 	border: 1px solid black;
+ 	border-top: none;
+ 	border-right : none;
+ }
+ .diff_div {
+ 	border-bottom: none;
+ }
+ .liste_challenges a {
+	color: white;
+ }
+ @media screen and (max-width: 333px) {
+
+	.challengediv h2, .pts_div h3, .diff_div h3 {
+		font-size: 1.5em;
+	}
+
+ }

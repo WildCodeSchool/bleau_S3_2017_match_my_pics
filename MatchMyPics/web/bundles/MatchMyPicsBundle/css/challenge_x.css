@@ -1,0 +1,93 @@
+.teaser_indices, .title_challenge_x {
+    margin-right: 0;
+    margin-left: 0;
+}
+/* Container page challenge_x */
+.challenge_x{
+    margin:0;
+    padding:0;
+}
+/* Container Title Page Challenges */
+.title_challenge_x p{
+    font-family: "Pokemon";
+    font-size: 1.5em;
+    text-align: center;
+}
+.title_challenge {
+    padding:0;
+    margin:0;
+    width: 100%; 
+    margin-top: 15px;
+}
+/*Container Polaroid Pics */
+.pics{
+    margin-left: 0;
+    margin-right: 0;
+}
+.polaroid-images{
+    padding:0;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    height: auto;  /*Responsive Img height*/
+    width:auto;     
+}
+.polaroid-images a
+{
+    background: white;
+    display: inline;
+    float: left;
+    margin:0;
+    padding: 15px 15px 45px; /* Contours Polaroid*/
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.7);
+    box-shadow: 0 4px 6px rgba(0,0,0,.7);
+        /*-webkit-transition: all .15s linear;
+        -moz-transition: all .15s linear;
+        transition: all .15s linear;
+        z-index:0; 
+        */
+}
+.polaroid-images a:after {
+    color: #333;
+    font-size: 20px;
+    content: attr(title);
+    position: relative;
+    top:15px;
+}
+.polaroid-images img {
+    display: block;
+    width: 99%;
+    border: 1px solid rgba(98, 97, 97, 0.4);
+}
+
+/* Container mini-indice Challenge */
+.teaser_indices, p{
+    margin-top: 20px;
+    font-size:1em;
+    font-style: italic;
+}
+
+/* Container Btn Indices/add_soluce/abandon */
+.btn{
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;    
+}
+
+/* Btn abandon */
+#abandonment{
+    margin-top: 50px;    
+}
+
+/* Btn */
+.btn input{
+    box-shadow: 8px 8px 8px black;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
