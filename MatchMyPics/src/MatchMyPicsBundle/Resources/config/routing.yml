@@ -25,3 +25,7 @@ match_my_pics_indice:
 match_my_pics_solution:
     path:     /solution
     defaults: { _controller: MatchMyPicsBundle:Default:solution }
+
+match_my_pics_sommaire_Admin:
+    path:     /sommaire_Admin
+    defaults: { _controller: MatchMyPicsBundle:Default:sommaire_Admin }
