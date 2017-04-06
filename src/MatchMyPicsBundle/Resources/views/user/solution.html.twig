@@ -1,0 +1,35 @@
+{% extends 'MatchMyPicsBundle:user:layout_user.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+	<div class="col-xs-12">
+		<!--ligne pour ajouter notre photo-->
+		<div class="row">
+			
+			<form class="" action="xxx.php?section=add" method="POST">
+				<div class="input-field">
+					 
+					<form id="form1" runat="server">
+						<input type='file' id="imgInp" />
+						<img id="blah" src="#" alt="your image" /> 
+					</form>   
+				</div>
+			</form>
+		</div>
+		<div class="row">
+			<form class="" action="xxx.php?section=add" method="POST">
+				<input type="submit" name="submit" value="Envoyer" />
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock  %}
+
+{% block javascripts %}
+	<script type='text/javascript'>
+        previousPicture();
+        getfile();
+	</script>
+{% endblock %}

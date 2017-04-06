@@ -1,0 +1,14 @@
+MatchMyPicsBundle\Entity\Solution:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\SolutionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        photo:
+            type: text
+    lifecycleCallbacks: {  }

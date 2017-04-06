@@ -1,0 +1,19 @@
+MatchMyPicsBundle\Entity\Challenge:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\ChallengeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: '100'
+            unique: true
+        position:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
