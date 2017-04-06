@@ -3,27 +3,25 @@
 namespace MatchMyPicsBundle\Entity;
 
 /**
- * Photo
+ * Solutions
  */
-class Photo
+class Solution
 {
-
-
     /**
-     * @var integer
+     * @var int
      */
     private $id;
 
     /**
      * @var string
      */
-    private $sources;
+    private $photo;
 
 
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -31,26 +29,26 @@ class Photo
     }
 
     /**
-     * Set sources
+     * Set photo
      *
-     * @param string $sources
+     * @param string $photo
      *
-     * @return Photo
+     * @return Solution
      */
-    public function setSources($sources)
+    public function setPhoto($photo)
     {
-        $this->sources = $sources;
+        $this->photo = $photo;
 
         return $this;
     }
 
     /**
-     * Get sources
+     * Get photo
      *
      * @return string
      */
-    public function getSources()
+    public function getPhoto()
     {
-        return $this->sources;
+        return $this->photo;
     }
 }

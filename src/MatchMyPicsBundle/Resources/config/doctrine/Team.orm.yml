@@ -1,7 +1,7 @@
-MatchMyPicsBundle\Entity\Parametre:
+MatchMyPicsBundle\Entity\Team:
     type: entity
     table: null
-    repositoryClass: MatchMyPicsBundle\Repository\ParametreRepository
+    repositoryClass: MatchMyPicsBundle\Repository\TeamRepository
     id:
         id:
             type: integer
@@ -9,11 +9,13 @@ MatchMyPicsBundle\Entity\Parametre:
             generator:
                 strategy: AUTO
     fields:
-        niveau:
+        name:
             type: string
-            length: '15'
-        points:
+            length: 255
+        score:
             type: integer
     lifecycleCallbacks: {  }
 
-
+    manyToOne:
+        etat:
+            targetEntity: MatchMyPicsBundle\Entity\Etat

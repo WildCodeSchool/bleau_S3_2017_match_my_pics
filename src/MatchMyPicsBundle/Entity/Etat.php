@@ -7,8 +7,9 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Etat
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,23 @@ class Etat
      */
     private $statut;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $challenge;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->challenge = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -50,5 +63,39 @@ class Etat
     public function getStatut()
     {
         return $this->statut;
+    }
+
+    /**
+     * Add challenge
+     *
+     * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     *
+     * @return Etat
+     */
+    public function addChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    {
+        $this->challenge[] = $challenge;
+
+        return $this;
+    }
+
+    /**
+     * Remove challenge
+     *
+     * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     */
+    public function removeChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    {
+        $this->challenge->removeElement($challenge);
+    }
+
+    /**
+     * Get challenge
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getChallenge()
+    {
+        return $this->challenge;
     }
 }

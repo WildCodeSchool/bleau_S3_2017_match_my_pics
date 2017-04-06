@@ -13,3 +13,4 @@ MatchMyPicsBundle\Entity\Etat:
             type: string
             length: '30'
     lifecycleCallbacks: {  }
+

@@ -17,3 +17,19 @@ MatchMyPicsBundle\Entity\Challenge:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        photo:
+            targetEntity: MatchMyPicsBundle\Entity\Photo
+
+        parametre:
+            targetEntity: MatchMyPicsBundle\Entity\Parametre
+
+        etat:
+            targetEntity: MatchMyPicsBundle\Entity\Etat
+
+    oneToOne:
+        indice:
+            targetEntity: MatchMyPicsBundle\Entity\Indice
+
+
