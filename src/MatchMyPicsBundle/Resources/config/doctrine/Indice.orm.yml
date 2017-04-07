@@ -14,13 +14,12 @@ MatchMyPicsBundle\Entity\Indice:
     lifecycleCallbacks: {  }
 
     manyToOne:
-        photo:
-            targetEntity: MatchMyPicsBundle\Entity\Photo
-
         parametre:
             targetEntity: MatchMyPicsBundle\Entity\Parametre
 
-
+    oneToOne:
+        photo:
+            targetEntity: MatchMyPicsBundle\Entity\Photo
 
 
 

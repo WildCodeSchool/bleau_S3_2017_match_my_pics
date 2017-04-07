@@ -14,6 +14,4 @@ MatchMyPicsBundle\Entity\Parametre:
             length: '15'
         points:
             type: integer
-    lifecycleCallbacks: {  }
-
 

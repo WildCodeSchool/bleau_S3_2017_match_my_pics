@@ -11,4 +11,7 @@ MatchMyPicsBundle\Entity\Photo:
     fields:
         sources:
             type: text
+        alt:
+            type: string
+            lenght: 255
     lifecycleCallbacks: {  }

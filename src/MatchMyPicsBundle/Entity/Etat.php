@@ -19,17 +19,15 @@ class Etat
     private $statut;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \MatchMyPicsBundle\Entity\Team
      */
-    private $challenge;
+    private $teams;
 
     /**
-     * Constructor
+     * @var \MatchMyPicsBundle\Entity\Challenge
      */
-    public function __construct()
-    {
-        $this->challenge = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    private $challenges;
+
 
     /**
      * Get id
@@ -66,33 +64,105 @@ class Etat
     }
 
     /**
-     * Add challenge
+     * Set teams
      *
-     * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     * @param \MatchMyPicsBundle\Entity\Team $teams
      *
      * @return Etat
      */
-    public function addChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    public function setTeams(\MatchMyPicsBundle\Entity\Team $teams = null)
     {
-        $this->challenge[] = $challenge;
+        $this->teams = $teams;
 
         return $this;
     }
 
     /**
-     * Remove challenge
+     * Get teams
+     *
+     * @return \MatchMyPicsBundle\Entity\Team
+     */
+    public function getTeams()
+    {
+        return $this->teams;
+    }
+
+    /**
+     * Set challenges
+     *
+     * @param \MatchMyPicsBundle\Entity\Challenge $challenges
+     *
+     * @return Etat
+     */
+    public function setChallenges(\MatchMyPicsBundle\Entity\Challenge $challenges = null)
+    {
+        $this->challenges = $challenges;
+
+        return $this;
+    }
+
+    /**
+     * Get challenges
+     *
+     * @return \MatchMyPicsBundle\Entity\Challenge
+     */
+    public function getChallenges()
+    {
+        return $this->challenges;
+    }
+    /**
+     * @var \MatchMyPicsBundle\Entity\Team
+     */
+    private $team;
+
+    /**
+     * @var \MatchMyPicsBundle\Entity\Challenge
+     */
+    private $challenge;
+
+
+    /**
+     * Set team
+     *
+     * @param \MatchMyPicsBundle\Entity\Team $team
+     *
+     * @return Etat
+     */
+    public function setTeam(\MatchMyPicsBundle\Entity\Team $team = null)
+    {
+        $this->team = $team;
+
+        return $this;
+    }
+
+    /**
+     * Get team
+     *
+     * @return \MatchMyPicsBundle\Entity\Team
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }
+
+    /**
+     * Set challenge
      *
      * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     *
+     * @return Etat
      */
-    public function removeChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    public function setChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge = null)
     {
-        $this->challenge->removeElement($challenge);
+        $this->challenge = $challenge;
+
+        return $this;
     }
 
     /**
      * Get challenge
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \MatchMyPicsBundle\Entity\Challenge
      */
     public function getChallenge()
     {

@@ -9,6 +9,15 @@ MatchMyPicsBundle\Entity\Solution:
             generator:
                 strategy: AUTO
     fields:
+        etat:
+            type: boolean
+
+    oneToOne:
         photo:
-            type: text
-    lifecycleCallbacks: {  }
+            targetEntity: MatchMyPicsBundle\Entity\Photo
+
+    manyToOne:
+        challenge:
+            targetEntity: MatchMyPicsBundle\Entity\Challenge
+        team:
+            targetEntity: MatchMyPicsBundle\Entity\Team

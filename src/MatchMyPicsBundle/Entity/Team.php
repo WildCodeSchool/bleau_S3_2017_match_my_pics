@@ -7,8 +7,9 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Team
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -18,7 +19,7 @@ class Team
     private $name;
 
     /**
-     * @var int
+     * @var integer
      */
     private $score;
 
@@ -26,7 +27,7 @@ class Team
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -74,39 +75,10 @@ class Team
     /**
      * Get score
      *
-     * @return int
+     * @return integer
      */
     public function getScore()
     {
         return $this->score;
-    }
-    /**
-     * @var \MatchMyPicsBundle\Entity\Etat
-     */
-    private $etat;
-
-
-    /**
-     * Set etat
-     *
-     * @param \MatchMyPicsBundle\Entity\Etat $etat
-     *
-     * @return Team
-     */
-    public function setEtat(\MatchMyPicsBundle\Entity\Etat $etat = null)
-    {
-        $this->etat = $etat;
-
-        return $this;
-    }
-
-    /**
-     * Get etat
-     *
-     * @return \MatchMyPicsBundle\Entity\Etat
-     */
-    public function getEtat()
-    {
-        return $this->etat;
     }
 }

@@ -12,5 +12,10 @@ MatchMyPicsBundle\Entity\Etat:
         statut:
             type: string
             length: '30'
-    lifecycleCallbacks: {  }
 
+
+    manyToOne:
+        team:
+            targetEntity: MatchMyPicsBundle\Entity\Team
+        challenge:
+            targetEntity: MatchMyPicsBundle\Entity\Challenge

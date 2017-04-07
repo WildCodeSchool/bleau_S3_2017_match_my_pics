@@ -2,6 +2,8 @@
 
 namespace MatchMyPicsBundle\Controller;
 
+use MatchMyPicsBundle\Entity\Challenge;
+use MatchMyPicsBundle\Entity\Parametre;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -60,5 +62,6 @@ class DefaultController extends Controller
     {
         return $this->render('@MatchMyPics/admin/new_session.html.twig');
     }
+
 }
 

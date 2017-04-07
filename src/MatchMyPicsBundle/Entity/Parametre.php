@@ -81,4 +81,50 @@ class Parametre
     {
         return $this->points;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $challenges;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->challenges = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add challenge
+     *
+     * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     *
+     * @return Parametre
+     */
+    public function addChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    {
+        $this->challenges[] = $challenge;
+
+        return $this;
+    }
+
+    /**
+     * Remove challenge
+     *
+     * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     */
+    public function removeChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    {
+        $this->challenges->removeElement($challenge);
+    }
+
+    /**
+     * Get challenges
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getChallenges()
+    {
+        return $this->challenges;
+    }
 }

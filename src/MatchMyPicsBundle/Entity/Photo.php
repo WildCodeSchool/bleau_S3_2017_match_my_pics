@@ -8,7 +8,6 @@ namespace MatchMyPicsBundle\Entity;
 class Photo
 {
 
-
     /**
      * @var integer
      */
@@ -18,6 +17,11 @@ class Photo
      * @var string
      */
     private $sources;
+
+    /**
+     * @var string
+     */
+    private $alt;
 
 
     /**
@@ -52,5 +56,29 @@ class Photo
     public function getSources()
     {
         return $this->sources;
+    }
+
+    /**
+     * Set alt
+     *
+     * @param string $alt
+     *
+     * @return Photo
+     */
+    public function setAlt($alt)
+    {
+        $this->alt = $alt;
+
+        return $this;
+    }
+
+    /**
+     * Get alt
+     *
+     * @return string
+     */
+    public function getAlt()
+    {
+        return $this->alt;
     }
 }

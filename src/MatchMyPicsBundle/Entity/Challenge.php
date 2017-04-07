@@ -36,7 +36,7 @@ class Challenge
     /**
      * @var \MatchMyPicsBundle\Entity\Parametre
      */
-    private $parametre;
+    private $parametres;
 
 
     /**
@@ -146,6 +146,35 @@ class Challenge
     }
 
     /**
+     * Set parametres
+     *
+     * @param \MatchMyPicsBundle\Entity\Parametre $parametres
+     *
+     * @return Challenge
+     */
+    public function setParametres(\MatchMyPicsBundle\Entity\Parametre $parametres = null)
+    {
+        $this->parametres = $parametres;
+
+        return $this;
+    }
+
+    /**
+     * Get parametres
+     *
+     * @return \MatchMyPicsBundle\Entity\Parametre
+     */
+    public function getParametres()
+    {
+        return $this->parametres;
+    }
+    /**
+     * @var \MatchMyPicsBundle\Entity\Parametre
+     */
+    private $parametre;
+
+
+    /**
      * Set parametre
      *
      * @param \MatchMyPicsBundle\Entity\Parametre $parametre
@@ -167,34 +196,5 @@ class Challenge
     public function getParametre()
     {
         return $this->parametre;
-    }
-    /**
-     * @var \MatchMyPicsBundle\Entity\Etat
-     */
-    private $etat;
-
-
-    /**
-     * Set etat
-     *
-     * @param \MatchMyPicsBundle\Entity\Etat $etat
-     *
-     * @return Challenge
-     */
-    public function setEtat(\MatchMyPicsBundle\Entity\Etat $etat = null)
-    {
-        $this->etat = $etat;
-
-        return $this;
-    }
-
-    /**
-     * Get etat
-     *
-     * @return \MatchMyPicsBundle\Entity\Etat
-     */
-    public function getEtat()
-    {
-        return $this->etat;
     }
 }

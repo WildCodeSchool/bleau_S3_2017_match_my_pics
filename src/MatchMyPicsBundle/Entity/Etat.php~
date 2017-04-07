@@ -19,17 +19,15 @@ class Etat
     private $statut;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \MatchMyPicsBundle\Entity\Team
      */
-    private $challenge;
+    private $teams;
 
     /**
-     * Constructor
+     * @var \MatchMyPicsBundle\Entity\Challenge
      */
-    public function __construct()
-    {
-        $this->challenge = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    private $challenges;
+
 
     /**
      * Get id
@@ -66,36 +64,50 @@ class Etat
     }
 
     /**
-     * Add challenge
+     * Set teams
      *
-     * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     * @param \MatchMyPicsBundle\Entity\Team $teams
      *
      * @return Etat
      */
-    public function addChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    public function setTeams(\MatchMyPicsBundle\Entity\Team $teams = null)
     {
-        $this->challenge[] = $challenge;
+        $this->teams = $teams;
 
         return $this;
     }
 
     /**
-     * Remove challenge
+     * Get teams
      *
-     * @param \MatchMyPicsBundle\Entity\Challenge $challenge
+     * @return \MatchMyPicsBundle\Entity\Team
      */
-    public function removeChallenge(\MatchMyPicsBundle\Entity\Challenge $challenge)
+    public function getTeams()
     {
-        $this->challenge->removeElement($challenge);
+        return $this->teams;
     }
 
     /**
-     * Get challenge
+     * Set challenges
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @param \MatchMyPicsBundle\Entity\Challenge $challenges
+     *
+     * @return Etat
      */
-    public function getChallenge()
+    public function setChallenges(\MatchMyPicsBundle\Entity\Challenge $challenges = null)
     {
-        return $this->challenge;
+        $this->challenges = $challenges;
+
+        return $this;
+    }
+
+    /**
+     * Get challenges
+     *
+     * @return \MatchMyPicsBundle\Entity\Challenge
+     */
+    public function getChallenges()
+    {
+        return $this->challenges;
     }
 }

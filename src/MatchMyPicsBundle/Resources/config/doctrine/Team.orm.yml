@@ -15,7 +15,3 @@ MatchMyPicsBundle\Entity\Team:
         score:
             type: integer
     lifecycleCallbacks: {  }
-
-    manyToOne:
-        etat:
-            targetEntity: MatchMyPicsBundle\Entity\Etat
