@@ -1,10 +1,3 @@
-.bouton_connect {
-
-	padding: 20px;
-	padding-top: 50px;
-	color : rgb(88, 196, 184);
-}
-
 .logo_index {
 	
 
@@ -15,4 +8,14 @@
 .index {
 
 	text-align: center;
+}
+
+.connexion {
+	color: black;
+	margin-top: 25px;
+
+}
+.btn-co {
+	color: black;
+	opacity: 0.8;
 }

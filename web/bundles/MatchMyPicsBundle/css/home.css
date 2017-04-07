@@ -81,3 +81,7 @@ tr:hover{
 .btn_footer .logout a {
     color: rgb(224, 20, 20);
 }
+
+.btn_challenges {
+    margin-top: 10px;
+}
