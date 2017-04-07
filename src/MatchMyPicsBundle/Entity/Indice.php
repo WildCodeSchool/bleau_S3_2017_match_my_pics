@@ -8,6 +8,7 @@ namespace MatchMyPicsBundle\Entity;
 class Indice
 {
 
+
     /**
      * @var integer
      */
@@ -109,34 +110,5 @@ class Indice
     public function getParametre()
     {
         return $this->parametre;
-    }
-    /**
-     * @var \MatchMyPicsBundle\Entity\Parametre
-     */
-    private $parametres;
-
-
-    /**
-     * Set parametres
-     *
-     * @param \MatchMyPicsBundle\Entity\Parametre $parametres
-     *
-     * @return Indice
-     */
-    public function setParametres(\MatchMyPicsBundle\Entity\Parametre $parametres = null)
-    {
-        $this->parametres = $parametres;
-
-        return $this;
-    }
-
-    /**
-     * Get parametres
-     *
-     * @return \MatchMyPicsBundle\Entity\Parametre
-     */
-    public function getParametres()
-    {
-        return $this->parametres;
     }
 }

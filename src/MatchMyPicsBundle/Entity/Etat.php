@@ -8,6 +8,7 @@ namespace MatchMyPicsBundle\Entity;
 class Etat
 {
 
+
     /**
      * @var integer
      */
@@ -21,12 +22,12 @@ class Etat
     /**
      * @var \MatchMyPicsBundle\Entity\Team
      */
-    private $teams;
+    private $team;
 
     /**
      * @var \MatchMyPicsBundle\Entity\Challenge
      */
-    private $challenges;
+    private $challenge;
 
 
     /**
@@ -62,64 +63,6 @@ class Etat
     {
         return $this->statut;
     }
-
-    /**
-     * Set teams
-     *
-     * @param \MatchMyPicsBundle\Entity\Team $teams
-     *
-     * @return Etat
-     */
-    public function setTeams(\MatchMyPicsBundle\Entity\Team $teams = null)
-    {
-        $this->teams = $teams;
-
-        return $this;
-    }
-
-    /**
-     * Get teams
-     *
-     * @return \MatchMyPicsBundle\Entity\Team
-     */
-    public function getTeams()
-    {
-        return $this->teams;
-    }
-
-    /**
-     * Set challenges
-     *
-     * @param \MatchMyPicsBundle\Entity\Challenge $challenges
-     *
-     * @return Etat
-     */
-    public function setChallenges(\MatchMyPicsBundle\Entity\Challenge $challenges = null)
-    {
-        $this->challenges = $challenges;
-
-        return $this;
-    }
-
-    /**
-     * Get challenges
-     *
-     * @return \MatchMyPicsBundle\Entity\Challenge
-     */
-    public function getChallenges()
-    {
-        return $this->challenges;
-    }
-    /**
-     * @var \MatchMyPicsBundle\Entity\Team
-     */
-    private $team;
-
-    /**
-     * @var \MatchMyPicsBundle\Entity\Challenge
-     */
-    private $challenge;
-
 
     /**
      * Set team

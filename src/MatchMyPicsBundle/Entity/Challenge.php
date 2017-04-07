@@ -36,7 +36,7 @@ class Challenge
     /**
      * @var \MatchMyPicsBundle\Entity\Parametre
      */
-    private $parametres;
+    private $parametre;
 
 
     /**
@@ -144,35 +144,6 @@ class Challenge
     {
         return $this->photo;
     }
-
-    /**
-     * Set parametres
-     *
-     * @param \MatchMyPicsBundle\Entity\Parametre $parametres
-     *
-     * @return Challenge
-     */
-    public function setParametres(\MatchMyPicsBundle\Entity\Parametre $parametres = null)
-    {
-        $this->parametres = $parametres;
-
-        return $this;
-    }
-
-    /**
-     * Get parametres
-     *
-     * @return \MatchMyPicsBundle\Entity\Parametre
-     */
-    public function getParametres()
-    {
-        return $this->parametres;
-    }
-    /**
-     * @var \MatchMyPicsBundle\Entity\Parametre
-     */
-    private $parametre;
-
 
     /**
      * Set parametre

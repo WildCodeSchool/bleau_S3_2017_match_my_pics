@@ -8,6 +8,7 @@ namespace MatchMyPicsBundle\Entity;
 class Photo
 {
 
+
     /**
      * @var integer
      */
