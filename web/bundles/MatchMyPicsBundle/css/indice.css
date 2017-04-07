@@ -16,19 +16,12 @@
 }
 .malus_box {
 	text-align: center;
-	font-size: 2em;
-	padding-top: 30px;
-
-}
-.malus_box i {
-	padding-top: 10px;
 	color: red;
 }
 .malus_box p {
-	font-family: "Meatloaf";
-	font-size: 3em;
-	color: red;
+	font-size: 1em;
 }
+
 .indice_title {
 	text-align: center;
 }

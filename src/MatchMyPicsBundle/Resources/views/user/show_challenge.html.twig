@@ -13,29 +13,31 @@
 	<!--Container Polaroid Pics-->
 	<div class="row pics">
 		<div class="col-xs-offset-2 col-xs-8 polaroid-images">
-			<a href="#" title=""><img src="{{ asset('bundles/MatchMyPicsBundle/img/fbleau.jpg') }}" alt="img_polaroid"/>
+			<a href="#" title=""><img src="{{ challenge.photo.sources }}" alt="{{ challenge.photo.alt }}"/>
 			</a>
 		</div>
 	</div>
 	
 	<!--Container teaser_indices-->
 	<div class="row teaser_indices">
-		<div class="col-xs-offset-2 col-xs-10 row_indice">
-			<p>------->petit indice--------------></p>
+		<div class="col-xs-12 row_indice">
+			<p>{{ challenge.position }}</p>
 		</div>
 	</div>
 	
 	<!--Btn indices + add_soluce-->
+	<div class="row btn_soluce">
+		<div class="col-xs-offset-1 col-xs-10 ">
+			<a href="{{ path('match_my_pics_solution') }}"><input id="add_soluce" type="submit" name="add_soluce" value="Proposer votre solution"/>
+			</a>
+		</div>
+	</div>
 	<div class="row btn">
 		<div class="col-xs-offset-1 col-xs-4 ">
-			<a href="{{ path('match_my_pics_indice') }}"><input id="indices" type="submit" name="Indices" value="indices"/>
+			<a href="{{ path('match_my_pics_indice', { 'id': challenge.id }) }}"><input id="indices" type="submit" name="Indices" value="L'indice"/>
 			</a>
 		</div>
-		<div class="col-xs-offset-2 col-xs-4 ">
-			<a href="{{ path('match_my_pics_solution') }}"><input id="add_soluce" type="submit" name="add_soluce" value="Solution"/>
-			</a>
-		</div>
-		<div class="col-xs-offset-4 col-xs-4">
+		<div class="col-xs-offset-2 col-xs-4">
 			<a href="#"><input id="abandonment" type="submit" name="abandonment" value="Abandon"/>
 			</a>
 		</div>

@@ -48,9 +48,15 @@ class DefaultController extends Controller
         ));
     }
 
-    public function indiceAction()
+    public function indiceAction($id)
     {
-        return $this->render('@MatchMyPics/user/indice.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
+
+        return $this->render('@MatchMyPics/user/indice.html.twig', array(
+            'challenge' => $challenge
+        ));
+
     }
 
     public function solutionAction()

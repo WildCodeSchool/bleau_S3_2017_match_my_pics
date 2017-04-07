@@ -2,6 +2,14 @@
     margin-right: 0;
     margin-left: 0;
 }
+.row_indice {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;
+}
+.row_indice p {
+    margin-top: 0;
+}
 /* Container page challenge_x */
 .challenge_x{
     margin:0;
@@ -75,12 +83,15 @@
     margin-top: 20px;
     margin-left: 0;
     margin-right: 0;
-    width: 100%;    
+    width: 100%;
+    font-size: 1.2em;
 }
-
-/* Btn abandon */
-#abandonment{
-    margin-top: 50px;    
+.btn_soluce {
+    margin-top: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    font-size: 1.2em;
 }
 
 /* Btn */
