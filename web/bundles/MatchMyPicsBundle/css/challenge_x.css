@@ -28,6 +28,7 @@
     margin-top: 15px;
 }
 /*Container Polaroid Pics */
+
 .pics{
     margin-left: 0;
     margin-right: 0;
@@ -52,11 +53,7 @@
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .7);
     -moz-box-shadow: 0 4px 6px rgba(0,0,0,.7);
     box-shadow: 0 4px 6px rgba(0,0,0,.7);
-        /*-webkit-transition: all .15s linear;
-        -moz-transition: all .15s linear;
-        transition: all .15s linear;
-        z-index:0; 
-        */
+
 }
 .polaroid-images a:after {
     color: #333;

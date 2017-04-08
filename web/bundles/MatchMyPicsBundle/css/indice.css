@@ -1,4 +1,10 @@
-.box_indice  {
+	/*********************************Container Indice *********************************/
+
+.indice_title, h2 {
+	text-align: center;
+}
+
+.box_indice {
 	border : 3px solid rgb(31, 165, 151);
 	background: rgb(88, 196, 184);
 	border-radius: 3px;
@@ -8,25 +14,79 @@
 	margin-bottom: 25px;
 	box-shadow: 8px 8px 8px black ; 
 }
+
 .box_indice p {
 	padding : 8px;
 }
-.photo_indice {
-	padding-bottom: 20px;
+
+	/*********************************Container Pics *********************************/
+.pics{
+	margin-left: 0;
+	margin-right: 0;
 }
+.polaroid-indice{
+	padding:0;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	height: auto;  /*Responsive Img height*/
+	width:auto;
+}
+.polaroid-indice a {
+	background: white;
+	display: inline;
+	float: left;
+	margin:0;
+	padding: 15px 15px 45px; /* Contours Polaroid*/
+	text-align: center;
+	text-decoration: none;
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .7);
+	-moz-box-shadow: 0 4px 6px rgba(0,0,0,.7);
+	box-shadow: 0 4px 6px rgba(0,0,0,.7);
+
+}
+.polaroid-indice a:after {
+	color: #333;
+	font-size: 20px;
+	content: attr(title);
+	position: relative;
+	top:15px;
+}
+.polaroid-indices img {
+	display: block;
+	width: 99%;
+	border: 1px solid rgba(98, 97, 97, 0.4);
+}
+	/*********************************Container Malus_box *********************************/
+
 .malus_box {
+	margin-top: 35px;
 	text-align: center;
 	color: red;
 }
-.malus_box p {
-	font-size: 1em;
+
+.malus_box_points p {
+	font-size: 2em;
+	margin-top: 10px;
+}
+.btn_return{
+	margin-top: 20px;
 }
 
-.indice_title {
-	text-align: center;
+
+	/*********************************Container Btn_return *********************************/
+.icon-chevron-sign-left{
+	font-size:80px;
+	color: black;
+	opacity: 0.9;
 }
+
+
+
+	/*********************************Responsive Design *********************************/
+
 @media screen and (max-width: 385px) {
-	.malus_box p {
+	.malus_box_points p {
 		font-size: 2.3em;
 	}
 	.title_indice{
@@ -35,7 +95,7 @@
 	}
 }
 @media screen and (max-width: 323px) {
-	.malus_box p {
+	.malus_box_points p {
 		font-size: 2.3em;
 	}
 	.title_indice{

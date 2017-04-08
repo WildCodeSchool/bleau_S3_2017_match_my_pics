@@ -8,6 +8,7 @@ namespace MatchMyPicsBundle\Entity;
 class Challenge
 {
 
+
     /**
      * @var integer
      */

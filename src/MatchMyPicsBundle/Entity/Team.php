@@ -8,6 +8,7 @@ namespace MatchMyPicsBundle\Entity;
 class Team
 {
 
+
     /**
      * @var integer
      */
