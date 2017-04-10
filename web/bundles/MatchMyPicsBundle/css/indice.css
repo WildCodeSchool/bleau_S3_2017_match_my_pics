@@ -1,4 +1,3 @@
-
 /*********************************Container Indice *********************************/
 
 .indice_title, h2 {
@@ -80,8 +79,11 @@
 	font-size:80px;
 	color: black;
 	opacity: 0.9;
-}
 
+}
+.icon {
+	text-align: center;
+}
 
 
 	/*********************************Responsive Design *********************************/
