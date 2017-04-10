@@ -52,38 +52,6 @@ règles du jeu*/
 	padding:0;
 }
 
-/*@media only screen and (max-width:287px) {
-
-	.logowcs {
-
-	height:100px;
-	width: 80px;
-	margin:0;
-	padding:15px 0px 0px 0px;
-	}
-
-	#imgwcs {
-
-	height:60px;
-	width:70px;
-	border-radius:50%;
-	}
-
-	.titleapp {
-
-		height:100px;
-		width:200px;
-		padding:10px 0px 0px 0px;
-	}
-
-	.titleapph1{
-
-		font-style:italic;
-		font-weight: bold;
-		padding:0;
-		font-size:90%;
-	}
-} */
 
 /*Règles du jeu, titre+règles*/
 
@@ -118,6 +86,27 @@ règles du jeu*/
 	width:100%;
 	font-size:120%;
 	text-align: justify;
+}
+
+.ruleslist {
+
+	margin:0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.ruleslist li {
+
+	counter-increment: step-counter;
+}
+
+.ruleslist li::before {
+
+	content: counter(step-counter);
+	text-decoration: underline;
+	font-style: italic;
+	font-weight: bold;
+	margin-right: 10px;
 
 }
 
