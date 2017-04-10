@@ -30,7 +30,9 @@
 	text-align: center;
 	margin: 5px;
 
+
 }
+
  .pts_div, .diff_div {
  	border: 1px solid black;
  	border-top: none;
@@ -38,6 +40,7 @@
  }
  .diff_div {
  	border-bottom: none;
+	 font-family: star;
  }
  .liste_challenges a {
 	color: white;
@@ -47,5 +50,12 @@
 	.challengediv h2, .pts_div h3, .diff_div h3 {
 		font-size: 1.5em;
 	}
+ }
+ @media screen and (max-width: 525px) {
 
+	 .container_chall h2 {
+	 	font-size: 1.5em;
+		 margin-top:10px;
+		 margin-bottom: 5px;
+	 }
  }

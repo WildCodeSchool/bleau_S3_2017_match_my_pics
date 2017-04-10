@@ -22,6 +22,10 @@
     font-family: "JellyCrazies";
     src: url("../fonts/JellyCrazies.ttf") format("truetype");
 }
+@font-face {
+	font-family: "star";
+	src: url("../fonts/Star.ttf") format("truetype");
+}
 * {
 	
 	font-family: "alwyn";
