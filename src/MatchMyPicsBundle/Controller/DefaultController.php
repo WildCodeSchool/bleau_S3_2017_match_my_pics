@@ -21,7 +21,12 @@ class DefaultController extends Controller
 
     public function homeAction()
     {
-        return $this->render('@MatchMyPics/user/home.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $teams = $em->getRepository("MatchMyPicsBundle:Team")->findAll();
+
+        return $this->render('@MatchMyPics/user/home.html.twig', array(
+            'teams' => $teams
+        ));
     }
 
     public function challengesAction($id)
@@ -58,13 +63,17 @@ class DefaultController extends Controller
         return $this->render('@MatchMyPics/user/indice.html.twig', array(
             'challenge' => $challenge
         ));
-
     }
 
 
     public function solutionAction()
     {
         return $this->render('@MatchMyPics/user/solution.html.twig');
+    }
+
+    public function sommaireAdminAction()
+    {
+        return $this->render('@MatchMyPics/admin/new_session.html.twig');
     }
 
 }
