@@ -57,26 +57,15 @@
         </tr>
         </thead>
         <tbody>
+		    {% for team in teams %}
         <tr>
             <th scope="row">1</th>
-            <td>Team Chaussettes</td>
-            <td>11000</td>
+            <td>{{ team.name }}</td>
+            <td>{{ team.score }}</td>
         </tr>
         <tr>
-            <th scope="row">2</th>
-            <td>Team Cerf</td>
-            <td>9500</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Team Licorne</td>
-            <td>9000</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>Team Licorne</td>
-            <td>9000</td>
-        </tr>
+            {% endfor %}
+        
         </tbody>
     </table>
     <!--Btn Rules-->
