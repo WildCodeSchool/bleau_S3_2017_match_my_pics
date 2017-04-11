@@ -1,11 +1,29 @@
 
-
-
-#visupics {
-
-	background-color: grey;
-	height:200px;
-	margin-top:30px;
-	border:2px solid black;
-	text-align:center;
+.image-upload > input
+{
+	display: none;
 }
+
+.image-upload img
+{
+	width: 80px;
+	cursor: pointer;
+}
+
+#camera
+{
+	margin-left: 10px;
+}
+
+img#blah
+{
+	width: 270px;
+	height: 250px;
+}
+
+.row_send
+{
+	margin-top: 40px;
+}
+
+
