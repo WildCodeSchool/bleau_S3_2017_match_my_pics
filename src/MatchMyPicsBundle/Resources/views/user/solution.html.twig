@@ -5,26 +5,31 @@
 {% endblock %}
 
 {% block body %}
-
+	
 <div class="container">
 	<div class="col-xs-12">
 		<!--ligne pour ajouter notre photo-->
 		<div class="row">
-			
 			<form class="" action="xxx.php?section=add" method="POST">
-				<div class="input-field">
-					 
-					<form id="form1" runat="server">
-						<input type='file' id="imgInp" />
-						<img id="blah" src="#" alt="your image" /> 
-					</form>   
+				<div class="image-upload"> 
+					<label for="file-input" runat="server" id="camera">
+						<img src="{{ asset('bundles/MatchMyPicsBundle/img/retro_camera.png') }}"/>
+					</label>
+					<div class="row_render">
+						<div class="col-xs-12">
+							<img id="blah" src="#" alt="your image" />
+						</div>
+					</div>
+					<input id="file-input" type="file"/>
 				</div>
-			</form>
+			</form>   
 		</div>
-		<div class="row">
-			<form class="" action="xxx.php?section=add" method="POST">
-				<input type="submit" name="submit" value="Envoyer" />
-			</form>
+		<div class="row_send">
+			<div class="col-xs-12">
+				<form id="send" action="xxx.php?section=add" method="POST">
+					<input type="submit" name="submit" value="Envoyer" />
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
@@ -37,3 +42,6 @@
         getfile();
 	</script>
 {% endblock %}
+
+
+
