@@ -1,14 +1,14 @@
 function previousPicture(){
     $(window).load(function(){
-        function readURL(input) {
-            if (input.files && input.files[0]) {
+        function readURL(label) {
+            if (label.files && label.files[0]) {
                 var reader = new FileReader();reader.onload = function (e) {
                     $('#blah').attr('src', e.target.result);
                 }
-                reader.readAsDataURL(input.files[0]);
+                reader.readAsDataURL(label.files[0]);
             }
         }
-        $("#imgInp").change(function(){
+        $("#file-input").change(function(){
             readURL(this);
         });
     });//]]> 
