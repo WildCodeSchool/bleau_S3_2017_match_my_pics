@@ -27,7 +27,6 @@ class DefaultController extends Controller
         return $this->render('@MatchMyPics/user/home.html.twig', array(
             'teams' => $teams
         ));
-
     }
 
     public function challengesAction()
@@ -63,7 +62,6 @@ class DefaultController extends Controller
         return $this->render('@MatchMyPics/user/indice.html.twig', array(
             'challenge' => $challenge
         ));
-
     }
 
     public function solutionAction()
