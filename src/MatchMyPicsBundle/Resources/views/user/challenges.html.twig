@@ -3,8 +3,26 @@
 {% block body %}
 
 <div class="container liste_challenges">
+
+	<div class="divtabl">
+		<table class="smtab">
+			<tr>
+				<th class="case">Position</th>
+				<th class="case">Team</th>
+				<th class="case">Score</th>
+			</tr>
+			<tr>
+				<td class="case">Position</td>
+				<td class="case"> {{ team.name }}</td>
+				<td class="case">{{ team.score }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="row">
+
 	{% for challenge in challenges %}
-		<div class="row">
+
 
 			<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->
 			<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">

@@ -1,3 +1,24 @@
+.divtabl {
+
+	margin:0;
+	padding-left:50px;
+	height: 40px;
+	width:100%;
+	font-size:1.4em;
+
+}
+
+.smtab {
+	border: 2px solid rgb(88, 196, 184);
+	text-align:center;
+}
+
+.case {
+	margin-left:20px;
+	border: 2px solid rgb(88, 196, 184);
+}
+
+
 .container_chall {
 	margin-top: 30px;
 	border-radius: 10px;
@@ -7,7 +28,6 @@
 .challengediv h2 {
 	text-align: center;
 	width: 100%;
-
 }
 
 .container_chall .easy {
@@ -29,8 +49,6 @@
 .pts_div h3, .diff_div h3 {
 	text-align: center;
 	margin: 5px;
-
-
 }
 
  .pts_div, .diff_div {

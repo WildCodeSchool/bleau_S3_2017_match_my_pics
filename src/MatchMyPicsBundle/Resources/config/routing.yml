@@ -14,12 +14,15 @@ match_my_pics_challenges:
     path:     /challenges
     defaults: { _controller: MatchMyPicsBundle:Default:challenges }
 
+match_my_pics_idchallenges:
+    path:     /{id}/challenges
+    defaults: { _controller: MatchMyPicsBundle:Default:challenges }
+
 match_my_pics_show_challenge:
     path:     /{id}/challenge_x
     defaults: { _controller: MatchMyPicsBundle:Default:showChallenge }
     requirements:
         id: '\d+'
-
 
 match_my_pics_indice:
     path:     /{id}/indice
