@@ -7,7 +7,13 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Parametre
 {
+    public function __toString()
+    {
+        return $this->niveau;
+    }
 
+
+    // Code généré :
 
     /**
      * @var integer

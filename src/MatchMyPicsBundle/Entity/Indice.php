@@ -7,8 +7,13 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Indice
 {
+    public function __toString()
+    {
+      return $this->contenu;
+    }
 
 
+    // Code généré :
 
     /**
      * @var integer

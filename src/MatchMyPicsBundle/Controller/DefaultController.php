@@ -64,10 +64,5 @@ class DefaultController extends Controller
         return $this->render('@MatchMyPics/user/solution.html.twig');
     }
 
-    public function sommaireAdminAction()
-    {
-        return $this->render('@MatchMyPics/admin/new_session.html.twig');
-    }
-
 }
 

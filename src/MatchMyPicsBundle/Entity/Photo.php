@@ -7,7 +7,13 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Photo
 {
+    public function __toString()
+    {
+        return $this->sources;
+    }
 
+
+    // Code généré :
 
     /**
      * @var integer

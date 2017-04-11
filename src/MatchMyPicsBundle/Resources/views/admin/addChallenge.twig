@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/addchallenge.css') }}"/>
+{% endblock %}
+{% block cssglobal %}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Création d'un challenge</h1>
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8 listAddChall">
+            <ul>{{ form_start(form) }}
+                <li><h2>Titre du challenge :</h2> {{ form_widget(form.titre) }}</li>
+                <li><h2>Position du challenge :</h2>{{ form_widget(form.position) }}</li>
+                <li><h2>Photo à matcher :</h2>{{ form_widget(form.photo) }}</li>
+                <li><h2>Paramètres : </h2>{{ form_widget(form.parametre) }}</li>
+                <li><h2>Indice du challenge :</h2> {{ form_widget(form.indice) }}</li>
+            </ul>
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" />
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

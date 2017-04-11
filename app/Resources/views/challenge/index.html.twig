@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Challenges list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for challenge in challenges %}
+            <tr>
+                <td><a href="{{ path('challenge_show', { 'id': challenge.id }) }}">{{ challenge.id }}</a></td>
+                <td>{{ challenge.titre }}</td>
+                <td>{{ challenge.position }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('challenge_show', { 'id': challenge.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('challenge_edit', { 'id': challenge.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('challenge_new') }}">Create a new challenge</a>
+        </li>
+    </ul>
+{% endblock %}
