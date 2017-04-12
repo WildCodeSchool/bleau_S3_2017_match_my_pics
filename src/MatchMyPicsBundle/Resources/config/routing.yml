@@ -47,6 +47,3 @@ match_my_pics_sommaire_Admin:
     path:     /sommaire_Admin
     defaults: { _controller: MatchMyPicsBundle:Challenge:new }
 
-match_my_pics_newChallenge:
-    path:     /addChallenge
-    defaults: { _controller: MatchMyPicsBundle:Challenge:new }

@@ -23,7 +23,8 @@
 		</div>
 
 		{% for challenge in challenges %}
-		<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->
+		<div class="row">
+			<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->
 			<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
 
 				<div class="col-xs-offset-1 col-xs-10 container_chall">
@@ -44,7 +45,8 @@
 					</div>
 				</div>
 			</a>
-		{% endfor %}
+		</div>
+    	{% endfor %}
 	</div>
 </div>
 {%  endblock %}

@@ -22,3 +22,5 @@ challenge_delete:
     path:     /{id}/delete
     defaults: { _controller: "MatchMyPicsBundle:Challenge:delete" }
     methods:  DELETE
+
+

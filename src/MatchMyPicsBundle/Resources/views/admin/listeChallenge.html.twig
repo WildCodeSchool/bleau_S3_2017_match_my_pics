@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/listechallenge.css') }}"/>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste de vos challenges</h1>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 btnCreate">
+                <button type="button" class="btn btn-primary">
+                    <h2>
+                        <a href="{{ path('challenge_new') }}">Creer un challenge
+                        </a>
+                    </h2>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Challenge</th>
+                        <th>Zone</th>
+                        <th>Difficulté</th>
+                        <th class="btnShow">Afficher</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for challenge in challenges %}
+                    <tr>
+                        <th>{{ challenge.id }}</th>
+                        <td>{{ challenge.titre }}</td>
+                        <td>{{ challenge.position }}</td>
+                        <td class="etoile">{{ challenge.parametre.niveau }}</td>
+                        <td class="btnShow">
+                            <button type="button" class="btn btn-primary">
+                                <a href="{{ path('challenge_show', { 'id': challenge.id }) }}">Voir</a>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
