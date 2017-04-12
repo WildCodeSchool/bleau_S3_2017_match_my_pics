@@ -3,12 +3,11 @@
 namespace MatchMyPicsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ChallengeType extends AbstractType
+class IndiceType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -16,14 +15,11 @@ class ChallengeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', TextType::class)
-            ->add('position', TextType::class)
-            ->add('indice', IndiceType::class)
+            ->add('contenu')
             ->add('photo', PhotoType::class, array(
-                "label" => "Photo à matcher"
+                "label" => "Photo de l'indice"
             ))
-            ->add('parametre')
-            ;
+            ->add('parametre');
     }
     
     /**
@@ -32,7 +28,7 @@ class ChallengeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MatchMyPicsBundle\Entity\Challenge'
+            'data_class' => 'MatchMyPicsBundle\Entity\Indice'
         ));
     }
 
@@ -41,7 +37,7 @@ class ChallengeType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'matchmypicsbundle_challenge';
+        return 'matchmypicsbundle_indice';
     }
 
 

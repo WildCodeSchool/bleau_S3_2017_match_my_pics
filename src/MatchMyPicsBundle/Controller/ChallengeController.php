@@ -41,8 +41,40 @@ class ChallengeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            // $file stores the uploaded Photo
+            $file = $challenge->getPhoto()->getSources();
+            $file_indice = $challenge->getIndice()->getPhoto()->getSources();
+            // Generate a unique name for the file before saving it
+            $fileName = uniqid() . '.' . $file->guessExtension();
+            $fileNameIndice = uniqid() . '.' . $file_indice->guessExtension();
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('image_directory'),
+                $fileName
+            );
+            $file_indice->move(
+                $this->getParameter('image_directory'),
+                $fileNameIndice
+            );
+            // Update the 'brochure' property to store the PDF file name
+            // instead of its contents
+            $challenge->getPhoto()->setSources($fileName);
+            $challenge->getIndice()->getPhoto()->setSources($fileNameIndice);
+
+
+            // On persist l'objet Challenge
             $em->persist($challenge);
-            $em->flush($challenge);
+
+            // Persist l'objet indice du challenge
+            //$em->persist($challenge->getIndice());
+            // Persist l'objet photo de l'indice du challenge
+            //$em->persist($challenge->getIndice()->getPhoto());
+
+            // Persist objet photo du challenge
+            //$em->persist($challenge->getPhoto());
+
+            $em->flush();
 
             return $this->redirectToRoute('challenge_show', array('id' => $challenge->getId()));
         }

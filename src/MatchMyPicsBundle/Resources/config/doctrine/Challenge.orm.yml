@@ -25,7 +25,10 @@ MatchMyPicsBundle\Entity\Challenge:
     oneToOne:
         indice:
             targetEntity: MatchMyPicsBundle\Entity\Indice
+            cascade: ["all"]
         photo:
             targetEntity: MatchMyPicsBundle\Entity\Photo
+            cascade: ["all"]
+
 
 

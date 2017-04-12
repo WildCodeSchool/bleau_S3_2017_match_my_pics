@@ -20,6 +20,8 @@ MatchMyPicsBundle\Entity\Indice:
     oneToOne:
         photo:
             targetEntity: MatchMyPicsBundle\Entity\Photo
+            cascade: ["all"]
+
 
 
 

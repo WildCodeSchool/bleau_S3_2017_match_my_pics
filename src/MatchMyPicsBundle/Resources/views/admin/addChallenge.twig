@@ -17,10 +17,10 @@
                         <li><h2>Titre du challenge :</h2> {{ form_widget(form.titre) }}</li>
                     </div>
                     <div class="col-xs-offset-3 col-xs-6">
-                        <li><h2>Position du challenge :</h2>{{ form_widget(form.position) }}</li>
+                        <li><h2>{{ form_label(form.position) }}</h2>{{ form_widget(form.position) }}</li>
                     </div>
                     <div class="col-xs-offset-3 col-xs-6">
-                        <li><h2>Photo à matcher :</h2>{{ form_widget(form.photo) }}</li>
+                        <li><h2>{{ form_label(form.photo) }}</h2>{{ form_widget(form.photo) }}</li>
                     </div>
                     <div class="col-xs-offset-3 col-xs-6">
                         <li><h2>Paramètres : </h2>{{ form_widget(form.parametre) }}</li>

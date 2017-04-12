@@ -16,7 +16,7 @@
 		
 		<div class="row pics">
 			<div class="col-xs-offset-1 col-xs-10 polaroid-indice">
-				<a href="#" title=""><img src="{{ challenge.indice.photo.sources }}" alt="{{ challenge.indice.photo.alt }}">
+				<a href="#" title=""><img src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}" alt="{{ challenge.indice.photo.alt }}">
 				</a>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 				<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true" ></i>
 			</div>
 			<div class="col-xs-offset-1 col-xs-8 malus_box_points">
-				<p class="pts">-250 points</p>
+				<p class="pts">-{{ challenge.indice.parametre.points }}pts</p>
 			</div>
 		</div>
 		

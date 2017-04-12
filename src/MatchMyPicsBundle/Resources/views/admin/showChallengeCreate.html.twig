@@ -12,9 +12,9 @@
         <div class="row">
             <div class="col-xs-offset-3 col-xs-6 listAddChall">
                 <h2>"{{ challenge.titre }}"</h2>
-                <img src="{{ challenge.photo }}">
+                <img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}">
                 <h3>{{ challenge.position }}</h3>
-                <h3>{{ challenge.indice }}</h3>
+                <img src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}"></h3>
                 <h3>Difficulté : <strong class="etoile">{{ challenge.parametre}}</strong></h3>
                 <div class="row boutonAction">
                     <div class="col-xs-offset-3 col-xs-6">
