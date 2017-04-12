@@ -25,11 +25,11 @@
 		</table>
 	</div>
 
-	<div class="row">
+
 
 	{% for challenge in challenges %}
 
-
+		<div class="row">
 			<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->
 			<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
 

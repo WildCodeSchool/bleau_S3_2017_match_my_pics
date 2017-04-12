@@ -17,21 +17,26 @@
                 <h3>{{ challenge.indice }}</h3>
                 <h3>Difficulté : <strong class="etoile">{{ challenge.parametre}}</strong></h3>
                 <div class="row boutonAction">
-                    <div class="col-xs-offset-1 col-xs-10">
-                        <a href="{{ path('challenge_index') }}">Retour à la liste des challenges</a>
+                    <div class="col-xs-offset-3 col-xs-6">
+                      <button class="boutonback">
+                          <a href="{{ path('challenge_index') }}">Retour à la liste des challenges</a>
+                      </button>
                     </div>
                 </div>
                 <div class="row boutonAction">
-                    <div class="col-xs-offset-1 col-xs-10">
-                        <a href="{{ path('challenge_edit', { 'id': challenge.id }) }}" >Editer ce challenge</a>
+                    <div class="col-xs-offset-3 col-xs-6">
+                        <button class="boutonback">
+                            <a href="{{ path('challenge_edit', { 'id': challenge.id }) }}" >Editer ce challenge</a>
+                        </button>
                     </div>
                 </div>
-                <br>
-                {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-                {{ form_end(delete_form) }}
-            </div>
-
+                <div class="row boutonAction">
+                    <div class="col-xs-offset-3 col-xs-6">
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                        {{ form_end(delete_form) }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@ class ChallengeController extends Controller
 
         $challenges = $em->getRepository('MatchMyPicsBundle:Challenge')->findAll();
 
-        return $this->render('challenge/index.html.twig', array(
+        return $this->render('@MatchMyPics/admin/listeChallenge.html.twig', array(
             'challenges' => $challenges,
         ));
     }
@@ -80,10 +80,10 @@ class ChallengeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('challenge_edit', array('id' => $challenge->getId()));
+            return $this->redirectToRoute('challenge_show', array('id' => $challenge->getId()));
         }
 
-        return $this->render('challenge/edit.html.twig', array(
+        return $this->render('@MatchMyPics/admin/editChallenge.html.twig', array(
             'challenge' => $challenge,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
