@@ -17,8 +17,10 @@ class Team extends BaseUser
     {
         parent::__construct();
         // your own logic
+        $this->score =0;
     }
 
+    // GENERATED CODE
 
     /**
      * @var string
@@ -30,16 +32,6 @@ class Team extends BaseUser
      */
     private $score;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set name

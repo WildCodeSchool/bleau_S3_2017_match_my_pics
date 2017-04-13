@@ -7,7 +7,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
     image_directory: '%kernel.root_dir%/../web/image_upload'
 
 framework:
@@ -72,6 +72,9 @@ swiftmailer:
     spool:     { type: memory }
 
 fos_user:
+    registration:
+        form:
+            type: MatchMyPicsBundle\Form\RegistrationType
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: MatchMyPicsBundle\Entity\Team

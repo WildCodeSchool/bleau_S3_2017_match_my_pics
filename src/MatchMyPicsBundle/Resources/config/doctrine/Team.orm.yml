@@ -1,6 +1,6 @@
 MatchMyPicsBundle\Entity\Team:
     type: entity
-    table: fos_user
+    table: null
     repositoryClass: MatchMyPicsBundle\Repository\TeamRepository
     id:
         id:
@@ -11,7 +11,6 @@ MatchMyPicsBundle\Entity\Team:
         name:
             type: string
             length: 255
-            column: UserAdmin
         score:
             type: integer
     lifecycleCallbacks: {  }

@@ -1,7 +1,5 @@
 # User
-fos_user_security:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-    prefix: /
+
 
 match_my_pics_challenge:
     resource: "@MatchMyPicsBundle/Resources/config/routing/challenge.yml"
