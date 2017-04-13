@@ -8,34 +8,62 @@
 
 {% block body %}
     <div class="container">
-        <h1>Edition du challenge "{{ challenge.titre }}"</h1>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 listAddChall">
-                <div class="row">
-                <ul>{{ form_start(edit_form) }}
-                    <div class="col-xs-offset-3 col-xs-6">
-                        <li><h2>Titre du challenge :</h2> {{ form_widget(edit_form.titre) }}</li>
-                    </div>
-                    <div class="col-xs-offset-3 col-xs-6">
-                        <li><h2>Position du challenge :</h2>{{ form_widget(edit_form.position) }}</li>
-                    </div>
-                    <div class="col-xs-offset-3 col-xs-6">
-                        <li><h2>Photo à matcher :</h2>{{ form_widget(edit_form.photo) }}</li>
-                    </div>
-                    <div class="col-xs-offset-3 col-xs-6">
-                        <li><h2>Paramètres : </h2>{{ form_widget(edit_form.parametre) }}</li>
-                    </div>
-                    <div class="col-xs-offset-3 col-xs-6">
-                        <li><h2>Indice du challenge :</h2> {{ form_widget(edit_form.indice) }}</li>
-                    </div>
-                </ul>
-                    <div class="col-xs-offset-3 col-xs-6">
-                        {{ form_widget(edit_form) }}
-                        <input type="submit" value="Valider" />
-                        {{ form_end(edit_form) }}
+    <h1>Edition du challenge "{{ challenge.titre }}"</h1>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 listAddChall">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h1 class="titrebox">Challenge :</h1>
+                    <div class="row">
+                        {{ form_start(edit_form) }}
+                        <div class="col-xs-offset-3 col-xs-6 photoshow">
+                            <img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}" alt="{{ challenge.photo.alt }}">
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.titre) }}</h2> {{ form_widget(edit_form.titre) }}
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.position) }}</h2>{{ form_widget(edit_form.position) }}
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.photo.file) }}</h2>{{ form_widget(edit_form.photo.file) }}
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.photo.alt) }} {{ form_widget(edit_form.photo.alt) }}</h2>
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.parametre) }}</h2>{{ form_widget(edit_form.parametre) }}
+                        </div>
                     </div>
                 </div>
+                <div class="col-xs-6">
+                    <h1 class="titrebox">Indice :</h1>
+                    <div class="row indiceshowbox">
+                        <div class="col-xs-offset-3 col-xs-6 photoshow">
+                            <img src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}" alt="{{ challenge.indice.photo.alt }}">
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.indice.photo.file) }}</h2>{{ form_widget(edit_form.indice.photo.file) }}
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.indice.photo.alt) }}</h2>{{ form_widget(edit_form.indice.photo.alt) }}
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.indice.contenu) }}</h2>{{ form_widget(edit_form.indice.contenu) }}
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <h2>{{ form_label(edit_form.indice.parametre) }}</h2>{{ form_widget(edit_form.indice.parametre) }}
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+        <div class="col-xs-offset-3 col-xs-6 valider_edit">
+            {{ form_widget(edit_form) }}
+            <input type="submit" value="Valider" />
+            {{ form_end(edit_form) }}
+        </div>
         </div>
     </div>
 {% endblock %}
