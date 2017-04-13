@@ -36,7 +36,7 @@
                         <td>{{ challenge.titre }}</td>
                         <td>{{ challenge.position }}</td>
                         <td><img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}" alt="{{ challenge.titre }}"></td>
-                        <td class="etoile">{{ challenge.parametre.niveau }}</td>
+                        <td class="etoile">{{ challenge.parametre }}</td>
                         <td class="btnShow">
                             <button type="button" class="btn btn-primary">
                                 <a href="{{ path('challenge_show', { 'id': challenge.id }) }}">Voir</a>
