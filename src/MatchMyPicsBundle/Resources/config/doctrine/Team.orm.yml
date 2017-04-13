@@ -1,17 +1,18 @@
 MatchMyPicsBundle\Entity\Team:
     type: entity
-    table: null
+    table: fos_user
     repositoryClass: MatchMyPicsBundle\Repository\TeamRepository
     id:
         id:
             type: integer
-            id: true
             generator:
                 strategy: AUTO
     fields:
         name:
             type: string
             length: 255
+            column: UserAdmin
         score:
             type: integer
     lifecycleCallbacks: {  }
+
