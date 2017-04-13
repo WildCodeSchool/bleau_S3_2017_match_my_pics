@@ -104,7 +104,11 @@
  .diff_div {
  	border-bottom: none;
 	 font-family: star;
+	 color: gold;
  }
+.diff_div h3 {
+	color: gold;
+}
  .liste_challenges a {
 	color: white;
  }
