@@ -110,6 +110,7 @@ img {
 	color: white;
 	text-align: center;
 	font-size: 1.9em;
+	margin-bottom: 0;
 
 }
 .navbartop {
@@ -124,4 +125,12 @@ img {
 #menu_link a{
 	color: white;
 	font-size: 1.3em;
+}
+#titre_admin {
+	text-align: center;
+	margin-bottom: 50px;
+	color: rgb(31, 165, 151);
+	font-family: 'Pokemon';
+	font-size: 5em;
+	margin-top: 50px;
 }

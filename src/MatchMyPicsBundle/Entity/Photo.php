@@ -1,17 +1,17 @@
 <?php
 
 namespace MatchMyPicsBundle\Entity;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Photo
  */
 class Photo
 {
-    public function __toString()
-    {
-        return $this->sources;
-    }
-
+    /**
+     * @var File
+     */
+    public $file;
 
     // Code généré :
 

@@ -12,8 +12,13 @@ body {
     font-family: 'alwyn';
     margin:0;
     padding:0;
-}
 
+}
+.container {
+    margin:0;
+    padding:0;
+    width: 100%;
+}
 .listAddChall li {
     list-style-type: none;
     padding-left: 0px;
@@ -25,7 +30,7 @@ body {
     text-align: center;
     border: 3px solid black;
     padding: 10px;
-
+    margin-bottom: 50px;
 }
 
 input {
@@ -70,3 +75,27 @@ h2 {
     color: black;
 }
 
+
+.chalbox    {
+    border-right: 3px solid black;
+}
+
+.creerbtn {
+    margin-bottom: 35px;
+}
+
+.photoshow img {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+.indiceshowbox {
+    border-left: 3px solid black;
+}
+.titrebox {
+    font-size: 3.5em;
+    margin-bottom: 0px;
+}
+.valider_edit {
+    margin-bottom: 50px;
+}

@@ -23,6 +23,7 @@ class ChallengeType extends AbstractType
                 "label" => "Photo à matcher"
             ))
             ->add('parametre')
+
             ;
     }
     

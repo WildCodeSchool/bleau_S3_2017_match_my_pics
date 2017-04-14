@@ -3,6 +3,7 @@
 namespace MatchMyPicsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +16,8 @@ class IndiceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('contenu')
+            ->add('contenu', TextareaType::class, array('attr' => array(
+                'rows' => 10, 'cols' => 60)))
             ->add('photo', PhotoType::class, array(
                 "label" => "Photo de l'indice"
             ))

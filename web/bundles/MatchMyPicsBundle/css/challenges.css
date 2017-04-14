@@ -5,12 +5,14 @@
 	margin-right:10px;
 	margin-top:-10px;
 	padding: 0;
-	height:50px;
+	height:60px;
 	text-align: center;
 	border-radius: 10px;
 	background : rgb(88, 196, 184);
 	color:white;
 	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	box-shadow: 8px 8px 8px black ;
 }
 .rowclass{
 
@@ -58,6 +60,10 @@
 /**********************************************************************
 **CSS liste CHALLENGES*********************************************************************
  */
+.rowcustom {
+	margin:0;
+}
+
 .container_chall {
 	margin-top: 30px;
 	border-radius: 10px;
@@ -98,7 +104,11 @@
  .diff_div {
  	border-bottom: none;
 	 font-family: star;
+	 color: gold;
  }
+.diff_div h3 {
+	color: gold;
+}
  .liste_challenges a {
 	color: white;
  }

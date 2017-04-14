@@ -1,6 +1,4 @@
-{% extends 'base.html.twig' %}
-{% block cssglobal %}
-{% endblock %}
+{% extends 'MatchMyPicsBundle:admin:layout_admin.html.twig' %}
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/addchallenge.css') }}"/>
 {% endblock %}
@@ -10,33 +8,57 @@
     <div class="container">
         <h1>Votre challenge "{{ challenge.titre }}"</h1>
         <div class="row">
-            <div class="col-xs-offset-3 col-xs-6 listAddChall">
-                <h2>"{{ challenge.titre }}"</h2>
-                <img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}">
-                <h3>{{ challenge.position }}</h3>
-                <img src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}"></h3>
-                <h3>Difficulté : <strong class="etoile">{{ challenge.parametre}}</strong></h3>
-                <div class="row boutonAction">
-                    <div class="col-xs-offset-3 col-xs-6">
-                      <button class="boutonback">
-                          <a href="{{ path('challenge_index') }}">Retour à la liste des challenges</a>
-                      </button>
+            <div class="col-xs-offset-1 col-xs-10 listAddChall">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>Challenge "{{ challenge.titre }}"</h2>
+                        <div class="row">
+                            <div class="col-xs-offset-2 col-xs-8 photoshow">
+                                <img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}">
+                            </div>
+                        </div>
+                        <h3>Position : {{ challenge.position }}</h3>
+                        <h3>Difficulté : <strong class="etoile">{{ challenge.parametre.niveau}}</strong></h3>
+                        <div class="row indiceshow">
+                        </div>
                     </div>
-                </div>
-                <div class="row boutonAction">
-                    <div class="col-xs-offset-3 col-xs-6">
-                        <button class="boutonback">
-                            <a href="{{ path('challenge_edit', { 'id': challenge.id }) }}" >Editer ce challenge</a>
-                        </button>
+                    <div class="col-xs-6 indiceshowbox">
+                        <h2>Indice du challenge :</h2>
+                        <div class="col-xs-offset-2 col-xs-8 photoshow">
+                            <img src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}">
+                        </div>
+                        <div class="col-xs-offset-2 col-xs-8">
+                            <h3>Contenu de l'indice :</h3>
+                            <p>{{ challenge.indice.contenu }}</p>
+                        </div>
+                        <div class="col-xs-offset-2 col-xs-8">
+                            <h3>Malus du challenge :</h3>
+                            <h4>-{{ challenge.indice.parametre.points }} points</h4>
+                        </div>
                     </div>
+
                 </div>
-                <div class="row boutonAction">
-                    <div class="col-xs-offset-3 col-xs-6">
-                        {{ form_start(delete_form) }}
-                        <input type="submit" value="Delete">
-                        {{ form_end(delete_form) }}
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="row boutonAction">
+            <div class="col-xs-offset-3 col-xs-6">
+                <button class="boutonback">
+                    <a href="{{ path('challenge_index') }}">Retour à la liste des challenges</a>
+                </button>
+            </div>
+        </div>
+        <div class="row boutonAction">
+            <div class="col-xs-offset-3 col-xs-6">
+                <button class="boutonback">
+                    <a href="{{ path('challenge_edit', { 'id': challenge.id }) }}" >Editer ce challenge</a>
+                </button>
+            </div>
+        </div>
+        <div class="row boutonAction">
+            <div class="col-xs-offset-3 col-xs-6">
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
             </div>
         </div>
     </div>

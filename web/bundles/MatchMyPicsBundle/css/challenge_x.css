@@ -39,7 +39,8 @@
     margin-right: 40px;
     margin-top: 20px;
     height: auto;  /*Responsive Img height*/
-    width:auto;     
+    width:auto;
+
 }
 .polaroid-images a
 {
@@ -61,11 +62,15 @@
     content: attr(title);
     position: relative;
     top:15px;
+
+
 }
 .polaroid-images img {
     display: block;
     width: 99%;
     border: 1px solid rgba(98, 97, 97, 0.4);
+
+
 }
 
 /* Container mini-indice Challenge */

@@ -3,10 +3,15 @@
 namespace MatchMyPicsBundle\Controller;
 
 use MatchMyPicsBundle\Entity\Challenge;
+use MatchMyPicsBundle\Entity\Photo;
+use MatchMyPicsBundle\Form\PhotoType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Challenge controller.
@@ -43,8 +48,8 @@ class ChallengeController extends Controller
             $em = $this->getDoctrine()->getManager();
 
             // $file stores the uploaded Photo
-            $file = $challenge->getPhoto()->getSources();
-            $file_indice = $challenge->getIndice()->getPhoto()->getSources();
+            $file = $challenge->getPhoto()->file;
+            $file_indice = $challenge->getIndice()->getPhoto()->file;
             // Generate a unique name for the file before saving it
             $fileName = uniqid() . '.' . $file->guessExtension();
             $fileNameIndice = uniqid() . '.' . $file_indice->guessExtension();
@@ -107,13 +112,56 @@ class ChallengeController extends Controller
     {
         $deleteForm = $this->createDeleteForm($challenge);
         $editForm = $this->createForm('MatchMyPicsBundle\Form\ChallengeType', $challenge);
+
+        // Modification du formuaire phto afin de rendre le champ non obligatoire lors d'un edit
+        $editForm->get('photo')
+            ->add('file', FileType::class, array(
+                'required' => false
+            ));
+        $editForm->get('indice')->get('photo')
+            ->add('file', FileType::class, array(
+                'required' => false
+            ));
+
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            if ($challenge->getPhoto()->file != null){
+                unlink($this->getParameter('image_directory') . $challenge->getPhoto()->getSources());
+                // $file stores the uploaded Photo
+                $file = $challenge->getPhoto()->file;
+                // Generate a unique name for the file before saving it
+                $fileName = uniqid() . '.' . $file->guessExtension();
+                // Move the file to the directory where brochures are stored
+                $file->move(
+                    $this->getParameter('image_directory'),
+                    $fileName
+                );
+                // Update the 'brochure' property to store the PDF file name
+                // instead of its contents
+                $challenge->getPhoto()->setSources($fileName);
+            }
+            if ($challenge->getIndice()->getPhoto()->file != null){
+                unlink($this->getParameter('image_directory') . $challenge->getIndice()->getPhoto()->getSources());
+                // $file stores the uploaded Photo
+                $file_indice = $challenge->getIndice()->getPhoto()->file;
+                // Generate a unique name for the file before saving it
+                $fileNameIndice = uniqid() . '.' . $file_indice->guessExtension();
+                // Move the file to the directory where brochures are stored
+                $file_indice->move(
+                    $this->getParameter('image_directory'),
+                    $fileNameIndice
+                );
+                // Update the 'brochure' property to store the PDF file name
+                // instead of its contents
+                $challenge->getIndice()->getPhoto()->setSources($fileNameIndice);
+            }
 
+            $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('challenge_show', array('id' => $challenge->getId()));
         }
+
 
         return $this->render('@MatchMyPics/admin/editChallenge.html.twig', array(
             'challenge' => $challenge,
@@ -130,7 +178,8 @@ class ChallengeController extends Controller
     {
         $form = $this->createDeleteForm($challenge);
         $form->handleRequest($request);
-
+        unlink($this->getParameter('image_directory') . $challenge->getPhoto()->getSources());
+        unlink($this->getParameter('image_directory') . $challenge->getIndice()->getPhoto()->getSources());
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($challenge);
@@ -149,6 +198,7 @@ class ChallengeController extends Controller
      */
     private function createDeleteForm(Challenge $challenge)
     {
+
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('challenge_delete', array('id' => $challenge->getId())))
             ->setMethod('DELETE')

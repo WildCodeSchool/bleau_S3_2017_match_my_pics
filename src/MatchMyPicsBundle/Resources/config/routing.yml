@@ -42,5 +42,5 @@ match_my_pics_solution:
 
 match_my_pics_sommaire_Admin:
     path:     /sommaire_Admin
-    defaults: { _controller: MatchMyPicsBundle:Challenge:new }
+    defaults: { _controller: MatchMyPicsBundle:Default:sommaireAdmin }
 

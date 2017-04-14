@@ -1,11 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'MatchMyPicsBundle:admin:layout_admin.html.twig' %}
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/listechallenge.css') }}"/>
 {% endblock %}
 
 {% block body %}
     <div class="container">
-        {{ dump(challenges) }}
         <h1>Liste de vos challenges</h1>
         <div class="row">
             <div class="col-xs-offset-1 col-xs-10 btnCreate">
@@ -22,18 +21,16 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Challenge</th>
                         <th>Zone</th>
+                        <th>Photo</th>
                         <th>Difficulté</th>
-                        <th>Photos</th>
                         <th class="btnShow">Afficher</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for challenge in challenges %}
                     <tr>
-                        <th>{{ challenge.id }}</th>
                         <td>{{ challenge.titre }}</td>
                         <td>{{ challenge.position }}</td>
                         <td><img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}" alt="{{ challenge.titre }}"></td>
