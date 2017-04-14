@@ -1,0 +1,48 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<div class="container index">
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+		{% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+		{% endif %}
+        
+        <div class="row">
+            <div class="col-xs-offset-2 col-xs-8">
+                <div>
+                    <img class="logo_index" src="{{  asset('bundles/MatchMyPicsBundle/img/logo_small_blue.png') }}" alt="logowcs">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-2 col-xs-8">
+                <h2>Identifiant :</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-2 col-xs-8">
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-2 col-xs-8">
+                <h2>Mot de passe :</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-2 col-xs-8">
+                <input type="password" id="password" name="_password" required="required" />
+            </div>
+        </div>
+        <div class="connexion">
+            <label for="file-input"  id="btn_acc" value="{{ 'security.login.submit'|trans }}" >
+                <a href="{{ path('match_my_pics_rules') }}">
+                    <i class="fa fa-users fa-5x btn-co" aria-hidden="true"></i>
+                </a>
+            </label>
+        </div>
+    </form>
+</div>

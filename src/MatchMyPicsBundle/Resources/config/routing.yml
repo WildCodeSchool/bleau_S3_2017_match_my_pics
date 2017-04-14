@@ -1,5 +1,6 @@
 # User
 
+
 match_my_pics_challenge:
     resource: "@MatchMyPicsBundle/Resources/config/routing/challenge.yml"
     prefix:   /challenge

@@ -2,17 +2,25 @@
 
 namespace MatchMyPicsBundle\Entity;
 
+
+use FOS\UserBundle\Model\User as BaseUser;
+
+
 /**
  * Team
  */
-class Team
+class Team extends BaseUser
 {
+    protected $id;
 
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+        $this->score =0;
+    }
 
-    /**
-     * @var integer
-     */
-    private $id;
+    // GENERATED CODE
 
     /**
      * @var string
@@ -24,16 +32,6 @@ class Team
      */
     private $score;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set name

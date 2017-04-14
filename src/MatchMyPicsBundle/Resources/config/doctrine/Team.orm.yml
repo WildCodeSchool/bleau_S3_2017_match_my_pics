@@ -5,7 +5,6 @@ MatchMyPicsBundle\Entity\Team:
     id:
         id:
             type: integer
-            id: true
             generator:
                 strategy: AUTO
     fields:
@@ -15,3 +14,4 @@ MatchMyPicsBundle\Entity\Team:
         score:
             type: integer
     lifecycleCallbacks: {  }
+
