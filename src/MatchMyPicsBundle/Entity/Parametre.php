@@ -15,8 +15,6 @@ class Parametre
 
     // Code généré :
 
-git
-
     /**
      * @var integer
      */
