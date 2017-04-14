@@ -1,0 +1,24 @@
+solution_index:
+    path:     /
+    defaults: { _controller: "MatchMyPicsBundle:Solution:index" }
+    methods:  GET
+
+solution_show:
+    path:     /{id}/show
+    defaults: { _controller: "MatchMyPicsBundle:Solution:show" }
+    methods:  GET
+
+solution_new:
+    path:     /{id}/new
+    defaults: { _controller: "MatchMyPicsBundle:Solution:new" }
+    methods:  [GET, POST]
+
+solution_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MatchMyPicsBundle:Solution:edit" }
+    methods:  [GET, POST]
+
+solution_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MatchMyPicsBundle:Solution:delete" }
+    methods:  DELETE

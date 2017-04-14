@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse links" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="menu_link">
                     <li><a href="{{ path('match_my_pics_home') }}">Accueil</a></li>
-                    <li><a href="{{ path('match_my_pics_challenges') }}">Les Challenges</a></li>
+                    <li><a href="{{ path('match_my_pics_challenges', { 'id': app.user.id}) }}">Les Challenges</a></li>
                     <li><a href="{{ path('match_my_pics_rules') }}">Règles du jeu</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->

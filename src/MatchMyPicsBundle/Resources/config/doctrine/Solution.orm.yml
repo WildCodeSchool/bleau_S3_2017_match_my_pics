@@ -15,9 +15,11 @@ MatchMyPicsBundle\Entity\Solution:
     oneToOne:
         photo:
             targetEntity: MatchMyPicsBundle\Entity\Photo
+            cascade: ["all"]
 
     manyToOne:
         challenge:
             targetEntity: MatchMyPicsBundle\Entity\Challenge
         team:
             targetEntity: MatchMyPicsBundle\Entity\Team
+            cascade: ["all"]

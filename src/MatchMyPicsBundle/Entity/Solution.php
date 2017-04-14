@@ -7,6 +7,13 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Solution
 {
+    public function __construct()
+    {
+        $this->etat = 0;
+    }
+
+
+    /*code genéré */
 
 
     /**

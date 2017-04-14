@@ -29,7 +29,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function challengesAction()
+    public function challengesAction($id)
     {
         // Connexion base de données
         // $bdd = new PDO('host:localhost; dbname: wcs-3_matchmypics; user:root; mdp:root');
@@ -39,7 +39,7 @@ class DefaultController extends Controller
         // $challenges = $bdd->query('SELECT * FROM challenge');
         $challenges = $em->getRepository('MatchMyPicsBundle:Challenge')->findAll();
         // TODO:getTeamId
-        $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById(1);
+        $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
         return $this->render('@MatchMyPics/user/challenges.html.twig', array('challenges' => $challenges ,'team' => $team));
 
