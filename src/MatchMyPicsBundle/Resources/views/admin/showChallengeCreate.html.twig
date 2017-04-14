@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'MatchMyPicsBundle:admin:layout_admin.html.twig' %}
 {% block cssglobal %}
 {% endblock %}
 {% block stylesheets %}
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <h3>Position : {{ challenge.position }}</h3>
-                        <h3>Difficulté : <strong class="etoile">{{ challenge.parametre}}</strong></h3>
+                        <h3>Difficulté : <strong class="etoile">{{ challenge.parametre.niveau}}</strong></h3>
                         <div class="row indiceshow">
                         </div>
                     </div>

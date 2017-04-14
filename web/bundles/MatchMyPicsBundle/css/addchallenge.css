@@ -84,19 +84,10 @@ h2 {
     margin-bottom: 35px;
 }
 
-.photoshow{
-    padding:0;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 20px;
-    height: auto;  /*Responsive Img height*/
-    width:auto;
-}
-
 .photoshow img {
     display: block;
-    width: 99%;
-    border: 1px solid rgba(98, 97, 97, 0.4);
+    width: 100%;
+    margin-top: 20px;
 }
 .indiceshowbox {
     border-left: 3px solid black;
