@@ -20,7 +20,7 @@ match_my_pics_home:
     defaults: { _controller: MatchMyPicsBundle:Default:home }
 
 match_my_pics_challenges:
-    path:     /challenges
+    path:     /{id}/challenges
     defaults: { _controller: MatchMyPicsBundle:Default:challenges }
 
 match_my_pics_show_challenge:
@@ -38,6 +38,6 @@ match_my_pics_indice:
 # Admin
 
 match_my_pics_sommaire_Admin:
-    path:     /sommaire_Admin
+    path:     /admin
     defaults: { _controller: MatchMyPicsBundle:Default:sommaireAdmin }
 

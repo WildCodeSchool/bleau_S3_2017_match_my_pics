@@ -14,10 +14,7 @@ class SolutionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('etat')
-            ->add('photo', PhotoType::class)
-            ->add('challenge')
-            ->add('team');
+            ->add('photo', PhotoType::class);
     }
     
     /**

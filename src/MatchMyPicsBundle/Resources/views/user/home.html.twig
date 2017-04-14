@@ -42,7 +42,7 @@
     <!--Btn Challenges-->
     <div class="row btn_challenges">
         <div class="col-xs-8 col-xs-offset-2">
-            <a href="{{ path('match_my_pics_challenges', {'id': 1 }) }}"><input id="btn_challenges" type="submit" name="challenges" value="CHALLENGES"/></a>
+            <a href="{{ path('match_my_pics_challenges', {'id': app.user.id }) }}"><input id="btn_challenges" type="submit" name="challenges" value="CHALLENGES"/></a>
         </div>
     </div>
 

@@ -31,11 +31,16 @@ class SolutionController extends Controller
      * Creates a new solution entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction($id, Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $solution = new Solution();
         $form = $this->createForm('MatchMyPicsBundle\Form\SolutionType', $solution);
         $form->handleRequest($request);
+        $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -51,6 +56,8 @@ class SolutionController extends Controller
             // Update the 'brochure' property to store the PDF file name
             // instead of its contents
             $solution->getPhoto()->setSources($fileName);
+            $solution->setChallenge($challenge);
+            $solution->setTeam($user);
             $em->persist($solution);
             $em->flush();
 
