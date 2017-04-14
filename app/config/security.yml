@@ -14,15 +14,17 @@ security:
             security: false
 
         main:
+
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                default_target_path: /rules
             anonymous: ~
             logout: true
             # activate different ways to authenticate
 
             # http_basic: ~
             # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            form_login:
-                provider: fos_userbundle
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
 
     encoders:
