@@ -1,5 +1,7 @@
 # User
-
+match_my_pics_solutions:
+        resource: "@MatchMyPicsBundle/Resources/config/routing/solution.yml"
+        prefix:   /solution
 
 match_my_pics_challenge:
     resource: "@MatchMyPicsBundle/Resources/config/routing/challenge.yml"
@@ -32,11 +34,6 @@ match_my_pics_indice:
     defaults: { _controller: MatchMyPicsBundle:Default:indice }
     requirements:
         id: '\d+'
-
-match_my_pics_solution:
-    path:     /solution
-    defaults: { _controller: MatchMyPicsBundle:Default:solution }
-
 
 # Admin
 

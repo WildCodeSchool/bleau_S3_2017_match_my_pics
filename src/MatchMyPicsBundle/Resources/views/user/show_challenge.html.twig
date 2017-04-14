@@ -32,7 +32,7 @@
 	<!--Btn indices + add_soluce-->
 	<div class="row btn_soluce">
 		<div class="col-xs-offset-2 col-xs-8 ">
-			<a href="{{ path('match_my_pics_solution') }}"><input id="add_soluce" type="submit" name="add_soluce" value="Proposer votre solution"/>
+			<a href="{{ path('solution_new', {'id': challenge.id}) }}"><input id="add_soluce" type="submit" name="add_soluce" value="Proposer votre solution"/>
 			</a>
 		</div>
 	</div>

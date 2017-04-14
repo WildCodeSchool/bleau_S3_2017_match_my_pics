@@ -10,25 +10,28 @@
 	<div class="col-xs-12">
 		<!--ligne pour ajouter notre photo-->
 		<div class="row">
-			<form class="" action="xxx.php?section=add" method="POST">
-				<div class="image-upload"> 
-					<label for="file-input" runat="server" id="camera">
-						<img src="{{ asset('bundles/MatchMyPicsBundle/img/retro_camera.png') }}"/>
-					</label>
-					<div class="row_render">
-						<div class="col-xs-12">
-							<img id="blah" src="#" alt="your image" />
-						</div>
+            {{ form_start(form) }}
+			<div class="image-upload">
+				<label >
+                    {{ form_widget(form.photo.file)}}
+				</label>
+				<div class="row_render">
+					<div class="col-xs-12">
+						<img id="blah" src="#" alt="your image" />
 					</div>
-					<input id="file-input" type="file"/>
 				</div>
-			</form>   
+				<input id="file-input" type="file"/>
+			</div> 
 		</div>
 		<div class="row_send">
 			<div class="col-xs-12">
-				<form id="send" action="xxx.php?section=add" method="POST">
-					<input type="submit" name="submit" value="Envoyer" />
-				</form>
+               <h2> {{ form_label(form.challenge) }}{{ form_widget(form.challenge)}}</h2>
+				<h2> {{ form_label(form.etat) }}{{ form_widget(form.etat)}}</h2>
+				<h2> {{ form_label(form.team) }}{{ form_widget(form.team)}}</h2>
+
+                {{ form_widget(form) }}
+				<input type="submit" value="Create" />
+                {{ form_end(form) }}
 			</div>
 		</div>
 	</div>

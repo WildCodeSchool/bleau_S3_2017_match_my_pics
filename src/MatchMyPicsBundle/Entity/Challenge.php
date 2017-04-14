@@ -7,7 +7,10 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Challenge
 {
-
+    public function __toString()
+    {
+      return $this->titre;
+    }
 
     /**
      * @var integer
