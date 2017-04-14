@@ -21,3 +21,16 @@
 a:hover {
 	text-decoration: none;
 }
+
+/****************** Bouton de Connexion **********************/
+
+.connexion > input
+{
+	display: none;
+}
+
+.connexion i
+{
+	width: 80px;
+	cursor: pointer;
+}

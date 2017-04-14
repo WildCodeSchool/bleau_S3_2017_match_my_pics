@@ -1,29 +1,15 @@
-
-
-
-{% block nav %}
-{% endblock %}
-
-
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/index.css') }}">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-{% endblock %}
-
-
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-
-
 <div class="container index">
     <form action="{{ path("fos_user_security_check") }}" method="post">
 		{% if csrf_token %}
             <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 		{% endif %}
+        
         <div class="row">
             <div class="col-xs-offset-2 col-xs-8">
                 <div>
@@ -52,13 +38,11 @@
             </div>
         </div>
         <div class="connexion">
-    
-            <a href="{{ path('match_my_pics_rules') }}">
-                <input type="submit" id="_submit_index" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-                <i class="fa fa-users fa-5x btn-co" aria-hidden="true"></i>
-                <span class="sr-only">Loading...</span>
-            </a>
+            <label for="file-input"  id="btn_acc" value="{{ 'security.login.submit'|trans }}" >
+                <a href="{{ path('match_my_pics_rules') }}">
+                    <i class="fa fa-users fa-5x btn-co" aria-hidden="true"></i>
+                </a>
+            </label>
         </div>
     </form>
-
 </div>
