@@ -1,5 +1,8 @@
 {% extends "@FOSUser/layout.html.twig" %}
-
+{% block cssglobal %}{% endblock %}
 {% block fos_user_content %}
 {% include "@FOSUser/Registration/register_content.html.twig" %}
+
+        <a href="{{ path('match_my_pics_sommaire_team') }}"<button type="button" class="btn btn-primary">Retour sommaire team</button></a>
+
 {% endblock fos_user_content %}

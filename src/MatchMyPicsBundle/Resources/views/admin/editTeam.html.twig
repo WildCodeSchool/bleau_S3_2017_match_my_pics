@@ -1,0 +1,41 @@
+{% extends 'MatchMyPicsBundle:admin:layout_admin.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/addchallenge.css') }}"/>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Votre team "{{ team.username }}"</h1>
+        <div class="row">
+            <div class="col-xs-offset-3 col-xs-6 listAddChall">
+                <div class="row">
+                    <div class="col-xs-offset-2 col-xs-8">
+                        <h2>Team "{{ team.username }}"</h2>
+                        <div class="row">
+                            <div class="col-xs-offset-2 col-xs-8 photoshow">
+                               PHOTO{# <img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}">#}
+                            </div>
+                            <div class="col-xs-offset-2 col-xs-8 photoshow">
+                               Score : {{ team.score }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row boutonAction">
+            <div class="col-xs-offset-3 col-xs-6">
+                <button class="boutonback">
+                    <a href="{{ path('match_my_pics_sommaire_team') }}">Retour à la liste des teams</a>
+                </button>
+            </div>
+        </div>
+        <div class="row boutonAction">
+            <div class="col-xs-offset-3 col-xs-6">
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -76,6 +76,18 @@ class DefaultController extends Controller
     {
         return $this->render('@MatchMyPics/admin/sommaire_admin.html.twig');
     }
+    public function sommaireTeamAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $teams = $em->getRepository('MatchMyPicsBundle:Team')->findAll();
+
+        return $this->render('@MatchMyPics/admin/sommaire_team.html.twig', array(
+            'teams' => $teams,
+        ));
+
+    }
 
 }
 

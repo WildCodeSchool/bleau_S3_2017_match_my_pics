@@ -1,0 +1,48 @@
+{% extends 'MatchMyPicsBundle:admin:layout_admin.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/listechallenge.css') }}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+    <h1>Liste de vos équipes</h1>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 btnCreate">
+            <button type="button" class="btn btn-primary">
+                <h2>
+                    <a href="{{ path('fos_user_registration_register') }}">Créer une équipe
+                    </a>
+                </h2>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Photo</th>
+                    <th>Score</th>
+                    <th class="btnShow">Afficher</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for team in teams %}
+                <tr>
+                    <td>{{ team.username }}</td>
+                    <td>photo</td>
+                    {#<!-- <td><img src="{{ asset('image_upload/' ~ team.photo.sources) }}" alt="{{ team.titre }}"></td> -->#}
+                    <td>{{ team.score }}</td>
+                    <td class="btnShow">
+                        <button type="button" class="btn btn-primary">
+                            <a href="{{ path('team_edit', { 'id': team.id }) }}">Voir</a>
+                        </button>
+                    </td>
+
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
