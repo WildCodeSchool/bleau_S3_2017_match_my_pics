@@ -4,6 +4,7 @@ namespace MatchMyPicsBundle\Controller;
 
 use MatchMyPicsBundle\Entity\Solution;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -61,7 +62,7 @@ class SolutionController extends Controller
             $em->persist($solution);
             $em->flush();
 
-            return $this->redirectToRoute('solution_show', array('id' => $solution->getId()));
+            return $this->redirectToRoute('match_my_pics_redirection');
         }
 
         return $this->render('@MatchMyPics/user/solution.html.twig', array(
@@ -139,5 +140,10 @@ class SolutionController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function redirectAction()
+    {
+        return $this->render('@MatchMyPics/user/redirection.html.twig');
     }
 }

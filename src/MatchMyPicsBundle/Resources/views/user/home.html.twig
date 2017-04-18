@@ -57,14 +57,18 @@
         </tr>
         </thead>
         <tbody>
-		    {% for team in teams %}
+
+
+        {% for team in teams %}
         <tr>
-            <th scope="row">1</th>
+            <th scope="row">{% for i in teams %}{{ loop.index }}{% endfor %}</th>
+
             <td>{{ team.name }}</td>
-            <td>{{ team.score }}</td>
+            <td>{{ team.score }}</td>{% endfor %}
         </tr>
         <tr>
-            {% endfor %}
+
+
         
         </tbody>
     </table>

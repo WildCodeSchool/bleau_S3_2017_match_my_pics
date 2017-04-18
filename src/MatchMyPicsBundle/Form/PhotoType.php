@@ -2,9 +2,14 @@
 
 namespace MatchMyPicsBundle\Form;
 
+use Doctrine\Common\Annotations\Annotation\Required;
+use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Tests\Fixtures\AlternatingRowType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\HttpFoundation\File\File;
 
@@ -17,7 +22,9 @@ class PhotoType extends AbstractType
     {
         $builder
             ->add('file', FileType::class)
-            ->add('alt');
+            ->add('alt', TextareaType::class, array(
+                'required' => false
+            ));
     }
     
     /**

@@ -35,6 +35,10 @@ match_my_pics_indice:
     requirements:
         id: '\d+'
 
+match_my_pics_redirection:
+    path:     /redirect
+    defaults: { _controller: MatchMyPicsBundle:Solution:redirect }
+
 # Admin
 
 match_my_pics_sommaire_Admin:

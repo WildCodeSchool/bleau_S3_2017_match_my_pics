@@ -12,7 +12,10 @@
 		<div class="row">
             {{ form_start(form) }}
 			<div class="image-upload">
-                    {{ form_widget(form.photo)}}
+				<div class="althidden">{{ form_widget(form.photo.alt)}}</div>
+
+				{{ form_widget(form.photo)}}
+
 				{#<div class="row_render">
 					<div class="col-xs-12">
 						<img id="blah" src="#" alt="your image" />

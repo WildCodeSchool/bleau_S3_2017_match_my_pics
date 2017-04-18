@@ -25,5 +25,8 @@ img#blah
 {
 	margin-top: 40px;
 }
+.althidden {
+	display: none;
 
+}
 
