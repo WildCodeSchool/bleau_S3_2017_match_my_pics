@@ -15,4 +15,7 @@ MatchMyPicsBundle\Entity\Team:
             type: integer
     lifecycleCallbacks: {  }
 
-
+    oneToOne:
+        photo:
+            targetEntity: MatchMyPicsBundle\Entity\Photo
+            cascade: ["all"]

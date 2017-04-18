@@ -47,6 +47,7 @@ match_my_pics_redirection:
     path:     /redirect
     defaults: { _controller: MatchMyPicsBundle:Solution:redirect }
 
+
 # Admin
 
 match_my_pics_sommaire_Admin:
@@ -61,4 +62,6 @@ match_my_pics_redirectionAddPlayer:
     path:     /redirectAddPlayer
     defaults: { _controller: MatchMyPicsBundle:Players:redirect }
 
-
+match_my_pics_redirectionAddTeam:
+    path:     /redirectAddTeam
+    defaults: { _controller: MatchMyPicsBundle:Team:redirect }

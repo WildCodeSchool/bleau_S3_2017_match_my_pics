@@ -80,4 +80,43 @@ class Team extends BaseUser
     {
         return $this->score;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $players;
+
+
+    /**
+     * Add player
+     *
+     * @param \MatchMyPicsBundle\Entity\Players $player
+     *
+     * @return Team
+     */
+    public function addPlayer(\MatchMyPicsBundle\Entity\Players $player)
+    {
+        $this->players[] = $player;
+
+        return $this;
+    }
+
+    /**
+     * Remove player
+     *
+     * @param \MatchMyPicsBundle\Entity\Players $player
+     */
+    public function removePlayer(\MatchMyPicsBundle\Entity\Players $player)
+    {
+        $this->players->removeElement($player);
+    }
+
+    /**
+     * Get players
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlayers()
+    {
+        return $this->players;
+    }
 }

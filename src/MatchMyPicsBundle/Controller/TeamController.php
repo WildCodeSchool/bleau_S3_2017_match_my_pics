@@ -122,4 +122,8 @@ class TeamController extends Controller
             ->getForm()
         ;
     }
+    public function redirectAction()
+    {
+        return $this->render('@MatchMyPics/admin/redirectionAddTeam.html.twig');
+    }
 }

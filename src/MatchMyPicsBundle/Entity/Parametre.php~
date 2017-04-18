@@ -9,12 +9,14 @@ class Parametre
 {
     public function __toString()
     {
-        return $this->niveau;
+        return $this->param;
     }
 
 
     // Code généré :
 
+    
+    
     /**
      * @var integer
      */
@@ -87,5 +89,34 @@ class Parametre
     public function getPoints()
     {
         return $this->points;
+    }
+    /**
+     * @var string
+     */
+    private $param;
+
+
+    /**
+     * Set param
+     *
+     * @param string $param
+     *
+     * @return Parametre
+     */
+    public function setParam($param)
+    {
+        $this->param = $param;
+
+        return $this;
+    }
+
+    /**
+     * Get param
+     *
+     * @return string
+     */
+    public function getParam()
+    {
+        return $this->param;
     }
 }
