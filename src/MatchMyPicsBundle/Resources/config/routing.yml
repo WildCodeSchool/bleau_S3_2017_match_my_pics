@@ -1,4 +1,8 @@
 # User
+match_my_pics_players:
+        resource: "@MatchMyPicsBundle/Resources/config/routing/players.yml"
+        prefix:   /players
+
 match_my_pics_team:
         resource: "@MatchMyPicsBundle/Resources/config/routing/team.yml"
         prefix:   /team
@@ -52,4 +56,9 @@ match_my_pics_sommaire_Admin:
 match_my_pics_sommaire_team:
     path:     /team
     defaults: { _controller: MatchMyPicsBundle:Default:sommaireTeam }
+
+match_my_pics_redirectionAddPlayer:
+    path:     /redirectAddPlayer
+    defaults: { _controller: MatchMyPicsBundle:Players:redirect }
+
 
