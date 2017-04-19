@@ -1,9 +1,17 @@
 {% extends 'base.html.twig' %}
-
-
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/redirections.css') }}"/>
+{% endblock %}
 {% block body %}
-    <meta http-equiv="refresh" content="2; url={{ path('fos_user_registration_register') }}">
-    <h2>MODIFICATIONS VALIDÉES, REDIRECTION EN COURS!</h2>
-    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
-    <span class="sr-only">Loading...</span>
+    <meta http-equiv="refresh" content="3; url={{ path('team_new') }}">
+    <div class="container_page">
+        <div class="row title">
+            <div class="col-xs-12 box">
+                <h2>MODIFICATIONS VALIDÉES, REDIRECTION EN COURS!</h2>
+            </div>
+        </div>
+        <div class="row fa">
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+        </div>
 {% endblock %}

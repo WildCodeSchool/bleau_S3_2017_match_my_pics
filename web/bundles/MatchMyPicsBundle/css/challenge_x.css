@@ -104,3 +104,10 @@
     padding-right: 10px;
 }
 
+.btn button{
+    box-shadow: 8px 8px 8px black;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+

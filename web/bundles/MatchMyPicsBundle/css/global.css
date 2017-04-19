@@ -39,7 +39,7 @@ body {
 	padding:0;
 }
 
-input {
+input, button {
 
 	background: rgb(88, 196, 184);
 	padding: 10px;
@@ -48,8 +48,6 @@ input {
 	width: 100%;
     box-shadow: 8px 8px 8px black ;
     border: 3px solid black;
-  
-	
 }
 
 img {

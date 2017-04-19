@@ -36,7 +36,7 @@
 				{% if etat.challenge.id == challenge.id %}
 					<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
 				{% else %}
-					<a href="#" onclick="alert('blabla')" >
+					<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >
 				{% endif %}
 
 			{% endif %}
