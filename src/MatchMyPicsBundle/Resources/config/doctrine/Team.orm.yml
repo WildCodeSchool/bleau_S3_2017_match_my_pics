@@ -24,3 +24,6 @@ MatchMyPicsBundle\Entity\Team:
         players:
             targetEntity: MatchMyPicsBundle\Entity\Players
             mappedBy: team
+        etats:
+            targetEntity: MatchMyPicsBundle\Entity\Etat
+            mappedBy: team

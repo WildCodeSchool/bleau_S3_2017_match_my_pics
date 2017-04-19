@@ -2,6 +2,7 @@
 
 namespace MatchMyPicsBundle\Controller;
 
+use MatchMyPicsBundle\Entity\Etat;
 use MatchMyPicsBundle\Entity\Solution;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -13,20 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class SolutionController extends Controller
 {
-    /**
-     * Lists all solution entities.
-     *
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $solutions = $em->getRepository('MatchMyPicsBundle:Solution')->findAll();
-
-        return $this->render('solution/index.html.twig', array(
-            'solutions' => $solutions,
-        ));
-    }
 
     /**
      * Creates a new solution entity.
@@ -40,7 +27,6 @@ class SolutionController extends Controller
         $form->handleRequest($request);
         $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
         $user = $this->get('security.token_storage')->getToken()->getUser();
-
 
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -59,6 +45,14 @@ class SolutionController extends Controller
             $solution->getPhoto()->setSources($fileName);
             $solution->setChallenge($challenge);
             $solution->setTeam($user);
+
+            $etat = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
+                array(
+                    'team' => $user,
+                    'challenge' => $challenge
+                ));
+            $etat->setStatut(Etat::STANDBY);
+
             $em->persist($solution);
             $em->flush();
 
@@ -71,79 +65,9 @@ class SolutionController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a solution entity.
-     *
-     */
-    public function showAction(Solution $solution)
-    {
-        $deleteForm = $this->createDeleteForm($solution);
-
-        return $this->render('solution/show.html.twig', array(
-            'solution' => $solution,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Displays a form to edit an existing solution entity.
-     *
-     */
-    public function editAction(Request $request, Solution $solution)
-    {
-        $deleteForm = $this->createDeleteForm($solution);
-        $editForm = $this->createForm('MatchMyPicsBundle\Form\SolutionType', $solution);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('solution_edit', array('id' => $solution->getId()));
-        }
-
-        return $this->render('solution/edit.html.twig', array(
-            'solution' => $solution,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Deletes a solution entity.
-     *
-     */
-    public function deleteAction(Request $request, Solution $solution)
-    {
-        $form = $this->createDeleteForm($solution);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($solution);
-            $em->flush();
-        }
-
-        return $this->redirectToRoute('solution_index');
-    }
-
-    /**
-     * Creates a form to delete a solution entity.
-     *
-     * @param Solution $solution The solution entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Solution $solution)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('solution_delete', array('id' => $solution->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
-
     public function redirectAction()
     {
         return $this->render('@MatchMyPics/user/redirection.html.twig');
     }
+
 }

@@ -8,7 +8,6 @@ namespace MatchMyPicsBundle\Entity;
 class Etat
 {
     const ENGAGE = 'engagé';
-    const OPEN = 'non engagé';
     const STANDBY = 'en attente de validation';
     const VALIDATE = 'validé';
     const REFUSE = 'à refaire';

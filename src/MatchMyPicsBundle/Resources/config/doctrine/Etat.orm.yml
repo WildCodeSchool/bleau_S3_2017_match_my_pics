@@ -17,5 +17,6 @@ MatchMyPicsBundle\Entity\Etat:
     manyToOne:
         team:
             targetEntity: MatchMyPicsBundle\Entity\Team
+            inversedBy: etats
         challenge:
             targetEntity: MatchMyPicsBundle\Entity\Challenge

@@ -11,21 +11,35 @@
 
 		<div class="row divrow">
 			<div class="row rowclass">
-				<div class="col-xs-4 classth"><h3>Position</h3></div>
-				<div class="col-xs-4 classth"><h3>Team</h3></div>
-				<div class="col-xs-4 classth"><h3>Score</h3></div>
+
+				<div class="col-xs-6 classth"><h3>Team</h3></div>
+				<div class="col-xs-6 classth"><h3>Score</h3></div>
 			</div>
 			<div class="row rowclass">
-				<div class="col-xs-4 classtd"><p>twig à rajouter!</p></div>
-				<div class="col-xs-4 classtd"><p>{#{{ team.name }}#}</p></div>
-				<div class="col-xs-4 classtd"><p>{#{{ team.score }}#}</p></div>
+
+				<div class="col-xs-6 classtd"><p>{{ team.username }}</p></div>
+				<div class="col-xs-6 classtd"><p>{{ team.score }}</p></div>
 			</div>
 		</div>
 
+
+
+
 		{% for challenge in challenges %}
+			{#{% for etat in app.user.etats %}{{ dump(etat) }}{% endfor %}#}
+
 		<div class="row rowcustom">
 			<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->
+            {% if etat is empty %}
 			<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+			{% elseif etat.statut is constant('MatchMyPicsBundle\\Entity\\Etat::ENGAGE') %}
+				{% if etat.challenge.id == challenge.id %}
+					<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+				{% else %}
+					<a href="#" onclick="alert('blabla')" >
+				{% endif %}
+
+			{% endif %}
 
 				<div class="col-xs-offset-1 col-xs-10 container_chall">
 					<div class="row easy">

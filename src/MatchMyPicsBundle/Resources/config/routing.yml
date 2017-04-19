@@ -49,6 +49,11 @@ match_my_pics_redirection:
     path:     /redirect
     defaults: { _controller: MatchMyPicsBundle:Solution:redirect }
 
+match_my_pics_abort:
+    path:     /{id}/abort
+    defaults: { _controller: MatchMyPicsBundle:Default:abort }
+    requirements:
+        id: '\d+'
 
 # Admin
 

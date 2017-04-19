@@ -148,4 +148,43 @@ class Team extends BaseUser
     {
         return $this->photo;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $etats;
+
+
+    /**
+     * Add etat
+     *
+     * @param \MatchMyPicsBundle\Entity\Etat $etat
+     *
+     * @return Team
+     */
+    public function addEtat(\MatchMyPicsBundle\Entity\Etat $etat)
+    {
+        $this->etats[] = $etat;
+
+        return $this;
+    }
+
+    /**
+     * Remove etat
+     *
+     * @param \MatchMyPicsBundle\Entity\Etat $etat
+     */
+    public function removeEtat(\MatchMyPicsBundle\Entity\Etat $etat)
+    {
+        $this->etats->removeElement($etat);
+    }
+
+    /**
+     * Get etats
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEtats()
+    {
+        return $this->etats;
+    }
 }

@@ -48,7 +48,21 @@ class DefaultController extends Controller
         // TODO:getTeamId
         $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
-        return $this->render('@MatchMyPics/user/challenges.html.twig', array('challenges' => $challenges ,'team' => $team));
+        $etat = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
+            array(
+                'team' => $team,
+                'statut' => Etat::ENGAGE
+            ));
+
+        // soit etat is empty ==> aucun engagement
+        // soit etat is not empty ==> engagé
+
+        return $this->render('@MatchMyPics/user/challenges.html.twig',
+            array(
+                'challenges' => $challenges ,
+                'team' => $team,
+                'etat' => $etat
+            ));
 
     }
 
@@ -59,34 +73,66 @@ class DefaultController extends Controller
         $current_user = $this->get('security.token_storage')->getToken()->getUser();
         $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
 
-        $status = new Etat();
-        $status->setStatut(Etat::ENGAGE);
-        $status->setTeam($current_user);
-        $status->setChallenge($challenge);
+        $etat = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
+            array(
+                'team' => $current_user,
+                'challenge' => $challenge
+            ));
 
-        $em->persist($status);
-        $em->flush();
+        if (!$etat){
+            $status = new Etat();
+            $status->setStatut(Etat::ENGAGE);
+            $status->setTeam($current_user);
+            $status->setChallenge($challenge);
+
+            $em->persist($status);
+            $em->flush();
+        }
+
+
 
         return $this->render('@MatchMyPics/user/show_challenge.html.twig', array(
             'challenge' => $challenge
         ));
     }
 
+    public function abortAction($id){
+
+        $em = $this->getDoctrine()->getManager();
+        $current_user = $this->get('security.token_storage')->getToken()->getUser();
+        $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
+
+        $abort = $challenge->getParametre()->getPoints();
+        $current_user->setScore($current_user->getScore()-$abort);
+
+        $etat = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
+            array(
+                'team' => $current_user,
+                'challenge' => $challenge));
+
+        $em->remove($etat);
+        $em->flush();
+
+        return $this->redirectToRoute('match_my_pics_home',array(
+            'id' => $current_user->getId()
+        ));
+
+
+    }
+
     public function indiceAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+        $current_user = $this->get('security.token_storage')->getToken()->getUser();
         $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
+        $malus = $challenge->getIndice()->getParametre()->getPoints();
+        $current_user->setScore($current_user->getScore()-$malus);
 
         return $this->render('@MatchMyPics/user/indice.html.twig', array(
             'challenge' => $challenge
         ));
     }
 
-
-    public function solutionAction()
-    {
-        return $this->render('@MatchMyPics/user/solution.html.twig');
-    }
 
     public function sommaireAdminAction()
     {

@@ -42,7 +42,8 @@
         <h2 id="title_tab"> Classement par Equipes</h2>
         <thead>
         <tr>
-            <th>Positions</th>
+
+            <th class="positiona">Positions</th>
             <th>Teams</th>
             <th>Scores</th>
         </tr>
@@ -52,7 +53,8 @@
 
         {% for team in teams %}
         <tr>
-            <th scope="row">{{ loop.index }}</th>
+
+            <th class="positiona">{{ loop.index }}</th>
             <td>{{ team.username }}</td>
             <td>{{ team.score }}</td>
         </tr>
