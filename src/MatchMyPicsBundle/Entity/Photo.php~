@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\File\File;
  */
 class Photo
 {
+
+
     /**
      * @var File
      */

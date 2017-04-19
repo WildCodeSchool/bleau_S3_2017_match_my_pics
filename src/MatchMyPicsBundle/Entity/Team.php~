@@ -119,4 +119,33 @@ class Team extends BaseUser
     {
         return $this->players;
     }
+    /**
+     * @var \MatchMyPicsBundle\Entity\Photo
+     */
+    private $photo;
+
+
+    /**
+     * Set photo
+     *
+     * @param \MatchMyPicsBundle\Entity\Photo $photo
+     *
+     * @return Team
+     */
+    public function setPhoto(\MatchMyPicsBundle\Entity\Photo $photo = null)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return \MatchMyPicsBundle\Entity\Photo
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
 }
