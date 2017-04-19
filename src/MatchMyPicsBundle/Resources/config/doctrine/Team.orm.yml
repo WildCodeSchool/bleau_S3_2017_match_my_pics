@@ -19,3 +19,8 @@ MatchMyPicsBundle\Entity\Team:
         photo:
             targetEntity: MatchMyPicsBundle\Entity\Photo
             cascade: ["all"]
+
+    oneToMany:
+        players:
+            targetEntity: MatchMyPicsBundle\Entity\Players
+            mappedBy: team

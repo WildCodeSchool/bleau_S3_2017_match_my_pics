@@ -7,10 +7,14 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Challenge
 {
+
+
     public function __toString()
     {
       return $this->titre;
     }
+
+    /* GENERATE CODE */
 
     /**
      * @var integer

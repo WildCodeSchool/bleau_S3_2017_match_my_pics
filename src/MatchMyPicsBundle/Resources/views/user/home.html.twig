@@ -22,12 +22,12 @@
     <!--Tab members Team-->
     <div class="container-fluid">
         <div class="row tab_team">
-            {% for players in players %}
+            {% for player in team.players  %}
             <div class="col-xs-6 box">
-                <h3>{{players.player|upper}}</h3>
+                <h3>{{player.player|upper}}</h3>
             </div>
             {% endfor %}
-        </div>{{ dump(players) }}
+        </div>
     </div>
 
     <!--Btn Challenges-->
@@ -52,11 +52,11 @@
 
         {% for team in teams %}
         <tr>
-            <th scope="row">{% for i in teams %}{{ loop.index }}{% endfor %}</th>
-
-            <td>{{ team.name }}</td>
-            <td>{{ team.score }}</td>{% endfor %}
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{ team.username }}</td>
+            <td>{{ team.score }}</td>
         </tr>
+        {% endfor %}
         <tr>
 
 

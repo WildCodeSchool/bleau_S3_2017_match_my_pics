@@ -3,6 +3,7 @@
 namespace MatchMyPicsBundle\Controller;
 
 use MatchMyPicsBundle\Entity\Challenge;
+use MatchMyPicsBundle\Entity\Etat;
 use MatchMyPicsBundle\Entity\Team;
 use MatchMyPicsBundle\Entity\Parametre;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -26,14 +27,12 @@ class DefaultController extends Controller
     public function homeAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $players = $em->getRepository("MatchMyPicsBundle:Players")->findAll();
-        $teams = $em->getRepository("MatchMyPicsBundle:Team")->findAll();
+        $teams = $em->getRepository("MatchMyPicsBundle:Team")->findBy(array(), array('score' => 'DESC'));
         $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
         return $this->render('@MatchMyPics/user/home.html.twig', array(
             'teams' => $teams,
-            'team' => $team,
-            'players' => $players
+            'team' => $team
         ));
     }
 
@@ -57,7 +56,16 @@ class DefaultController extends Controller
     public function showChallengeAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+        $current_user = $this->get('security.token_storage')->getToken()->getUser();
         $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
+
+        $status = new Etat();
+        $status->setStatut(Etat::ENGAGE);
+        $status->setTeam($current_user);
+        $status->setChallenge($challenge);
+
+        $em->persist($status);
+        $em->flush();
 
         return $this->render('@MatchMyPics/user/show_challenge.html.twig', array(
             'challenge' => $challenge

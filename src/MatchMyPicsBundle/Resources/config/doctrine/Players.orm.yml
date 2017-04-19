@@ -17,3 +17,4 @@ MatchMyPicsBundle\Entity\Players:
     manyToOne:
         team:
             targetEntity: MatchMyPicsBundle\Entity\Team
+            inversedBy: players
