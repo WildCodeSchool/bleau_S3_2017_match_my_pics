@@ -1,0 +1,30 @@
+MatchMyPicsBundle\Entity\Indice:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\IndiceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        contenu:
+            type: text
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        parametre:
+            targetEntity: MatchMyPicsBundle\Entity\Parametre
+
+    oneToOne:
+        photo:
+            targetEntity: MatchMyPicsBundle\Entity\Photo
+            cascade: ["all"]
+
+
+
+
+
+
+

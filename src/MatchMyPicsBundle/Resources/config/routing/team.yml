@@ -1,0 +1,24 @@
+team_index:
+    path:     /
+    defaults: { _controller: "MatchMyPicsBundle:Default:sommaireTeam" }
+    methods:  GET
+
+team_show:
+    path:     /{id}/show
+    defaults: { _controller: "MatchMyPicsBundle:Team:show" }
+    methods:  GET
+
+team_new:
+    path:     /new
+    defaults: { _controller: "MatchMyPicsBundle:Team:new" }
+    methods:  [GET, POST]
+
+team_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MatchMyPicsBundle:Team:edit" }
+    methods:  [GET, POST]
+
+team_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MatchMyPicsBundle:Team:delete" }
+    methods:  DELETE

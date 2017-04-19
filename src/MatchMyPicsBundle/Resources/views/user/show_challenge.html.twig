@@ -1,0 +1,50 @@
+{% extends 'MatchMyPicsBundle:user:layout_user.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/challenge_x.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container challenge_x">
+	
+	<!--Container Title Challenge_x-->
+	<div class="row title_challenge_x">
+		<div class="col-xs-offset-3 col-xs-6">
+			<p>{{ challenge.titre }}</p>
+		</div>
+	</div>
+	
+	<!--Container Polaroid Pics-->
+	<div class="row pics">
+		<div class="col-xs-offset-2 col-xs-8 polaroid-images">
+			<a href="#" title=""><img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}" alt="{{ challenge.photo.alt }}"/>
+			</a>
+		</div>
+	</div>
+	
+	<!--Container teaser_indices-->
+	<div class="row teaser_indices">
+		<div class="col-xs-12 row_indice">
+			<p>{{ challenge.position }}</p>
+		</div>
+	</div>
+	
+	<!--Btn indices + add_soluce-->
+	<div class="row btn_soluce">
+		<div class="col-xs-offset-2 col-xs-8 ">
+			<a href="{{ path('solution_new', {'id': challenge.id}) }}"><input id="add_soluce" type="submit" name="add_soluce" value="Proposer votre solution"/>
+			</a>
+		</div>
+	</div>
+	<div class="row btn">
+		<div class="col-xs-offset-1 col-xs-4 ">
+			<a href="{{ path('match_my_pics_indice', { 'id': challenge.id }) }}"><input id="indices" type="submit" name="Indices" value="L'indice"/>
+			</a>
+		</div>
+		<div class="col-xs-offset-2 col-xs-4">
+			<a href="#"><input id="abandonment" type="submit" name="abandonment" value="Abandon"/>
+			</a>
+		</div>
+	</div>
+</div>
+{% endblock  %}

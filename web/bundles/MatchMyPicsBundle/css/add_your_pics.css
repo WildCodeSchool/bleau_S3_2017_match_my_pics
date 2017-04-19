@@ -1,0 +1,32 @@
+/******************** Btn Camera Input_file Pics *************/
+.image-upload > input
+{
+	display: none;
+}
+
+.image-upload img
+{
+	width: 80px;
+	cursor: pointer;
+}
+
+#camera
+{
+	margin-left: 10px;
+}
+/******************** Content Input_file Pics *************/
+img#blah
+{
+	width: 270px;
+	height: 250px;
+}
+
+.row_send
+{
+	margin-top: 40px;
+}
+.althidden {
+	display: none;
+
+}
+

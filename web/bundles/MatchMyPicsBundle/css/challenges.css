@@ -1,0 +1,128 @@
+/****CSS du TABLEAU RECAP SCORE************************************************************************
+*****************************************************************************/
+.divrow {
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:-10px;
+	padding: 0;
+	height:60px;
+	text-align: center;
+	border-radius: 10px;
+	background : rgb(88, 196, 184);
+	color:white;
+	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	box-shadow: 8px 8px 8px black ;
+}
+.rowclass{
+
+	margin:0px;
+	padding:0px;
+	height:25px;
+
+}
+
+.classth {
+
+	margin:0px;
+	padding:0px;
+	height:25px;
+	display:inline;
+	border-bottom:1px solid black;
+
+}
+
+.classtd {
+
+	margin:0px;
+	padding:0px;
+	height:25px;
+	display:inline;
+}
+
+.classth h3 {
+	margin:0px;
+	padding:0px;
+	height:25px;
+	font-size:130%;
+	font-weight: bold;
+
+}
+
+.classtd p {
+	margin:0px;
+	padding:0px;
+	height:25px;
+	font-size:120%;
+
+}
+
+/**********************************************************************
+**CSS liste CHALLENGES*********************************************************************
+ */
+.rowcustom {
+	margin:0;
+}
+
+.container_chall {
+	margin-top: 30px;
+	border-radius: 10px;
+	background : rgb(88, 196, 184);
+	box-shadow: 8px 8px 8px black ; 
+}
+.challengediv h2 {
+	text-align: center;
+	width: 100%;
+}
+
+.container_chall .easy {
+	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	border-radius: 10px;
+}
+.container_chall .medium {
+	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	border-radius: 10px;
+}
+.container_chall .hard {
+	border: 4px  rgb(31, 165, 151);
+	border-style: outset;
+	border-radius: 10px;
+}
+
+.pts_div h3, .diff_div h3 {
+	text-align: center;
+	margin: 5px;
+}
+
+ .pts_div, .diff_div {
+ 	border: 1px solid black;
+ 	border-top: none;
+ 	border-right : none;
+ }
+ .diff_div {
+ 	border-bottom: none;
+	 font-family: star;
+	 color: gold;
+ }
+.diff_div h3 {
+	color: gold;
+}
+ .liste_challenges a {
+	color: white;
+ }
+ @media screen and (max-width: 333px) {
+
+	.challengediv h2, .pts_div h3, .diff_div h3 {
+		font-size: 1.5em;
+	}
+ }
+ @media screen and (max-width: 525px) {
+
+	 .container_chall h2 {
+	 	font-size: 1.5em;
+		 margin-top:10px;
+		 margin-bottom: 5px;
+	 }
+ }

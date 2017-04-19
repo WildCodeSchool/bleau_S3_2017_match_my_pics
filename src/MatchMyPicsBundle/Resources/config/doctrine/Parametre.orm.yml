@@ -1,0 +1,20 @@
+MatchMyPicsBundle\Entity\Parametre:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\ParametreRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        niveau:
+            type: string
+            length: '15'
+        points:
+            type: integer
+        param:
+            type: string
+            length: '30'
+

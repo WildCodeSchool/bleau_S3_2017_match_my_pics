@@ -1,0 +1,27 @@
+.container_page
+{
+    margin:0;
+    padding:0;
+    height:100%;
+    width:auto;
+    list-style-type: none;
+    text-align: center;
+    font-size:2em;
+    background-image:url("../img/logo_small_blue.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+.title
+{
+    border:2px solid black;
+    margin:15px;
+    margin-top: 30px;
+}
+
+.fa{
+    margin-top: 300px;
+}
+

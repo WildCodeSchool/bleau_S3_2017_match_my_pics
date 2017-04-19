@@ -1,0 +1,8 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+match_my_pics:
+    resource: "@MatchMyPicsBundle/Resources/config/routing.yml"
+    prefix:   /
+
