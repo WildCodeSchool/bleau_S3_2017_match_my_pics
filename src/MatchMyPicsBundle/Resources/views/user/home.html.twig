@@ -7,10 +7,10 @@
 {% block nav %}
     <div class="row header_home">
         <div class="col-xs-3 logoteam">
-            <img src="{{ asset('bundles/MatchMyPicsBundle/img/cerfdrole.jpg') }}" alt="logo team"/>
+            <img src="{{ team.photo.sources }}" alt="logo team"/>
         </div>
         <div class="col-xs-9 titleteam">
-            <h2>TEAM DEER</h2>
+            <h2>TEAM {{ team.username }}</h2>
         </div>
     </div>
 {% endblock %}

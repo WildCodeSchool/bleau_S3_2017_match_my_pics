@@ -19,13 +19,15 @@ class DefaultController extends Controller
         return $this->render('@MatchMyPics/user/rules.html.twig');
     }
 
-    public function homeAction()
+    public function homeAction($id)
     {
         $em = $this->getDoctrine()->getManager();
         $teams = $em->getRepository("MatchMyPicsBundle:Team")->findAll();
+        $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
         return $this->render('@MatchMyPics/user/home.html.twig', array(
-            'teams' => $teams
+            'teams' => $teams,
+            'team' => $team
         ));
     }
 

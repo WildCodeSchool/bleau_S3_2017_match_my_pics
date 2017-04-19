@@ -1,15 +1,15 @@
 # User
 match_my_pics_players:
-        resource: "@MatchMyPicsBundle/Resources/config/routing/players.yml"
-        prefix:   /players
+    resource: "@MatchMyPicsBundle/Resources/config/routing/players.yml"
+    prefix:   /players
 
 match_my_pics_team:
-        resource: "@MatchMyPicsBundle/Resources/config/routing/team.yml"
-        prefix:   /team
+    resource: "@MatchMyPicsBundle/Resources/config/routing/team.yml"
+    prefix:   /team
 
 match_my_pics_solutions:
-        resource: "@MatchMyPicsBundle/Resources/config/routing/solution.yml"
-        prefix:   /solution
+    resource: "@MatchMyPicsBundle/Resources/config/routing/solution.yml"
+    prefix:   /solution
 
 match_my_pics_challenge:
     resource: "@MatchMyPicsBundle/Resources/config/routing/challenge.yml"
@@ -24,7 +24,7 @@ match_my_pics_rules:
     defaults: { _controller: MatchMyPicsBundle:Default:rules }
 
 match_my_pics_home:
-    path:     /home
+    path:     /{id}/home
     defaults: { _controller: MatchMyPicsBundle:Default:home }
 
 match_my_pics_challenges:
