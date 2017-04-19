@@ -1,0 +1,46 @@
+{% extends 'MatchMyPicsBundle:user:layout_user.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/index.css') }}">
+{% endblock %}
+{% block nav %}
+{% endblock %}
+
+{% block body %}
+<div class="container index">
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <div>
+                <img class="logo_index" src="{{  asset('bundles/MatchMyPicsBundle/img/logo_small_blue.png') }}" alt="logowcs">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <h2>Identifiant :</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <input type="text" placeholder="Team cacahuette" name="identifiant">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <h2>Mot de passe :</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <input type="password" name="mdp">
+        </div>
+    </div>
+    <div class="connexion">
+        <a href="{{ path('match_my_pics_rules') }}">
+            <i class="fa fa-users fa-5x btn-co" aria-hidden="true"></i>
+            <span class="sr-only">Loading...</span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
+

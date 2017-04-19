@@ -1,0 +1,24 @@
+players_index:
+    path:     /
+    defaults: { _controller: "MatchMyPicsBundle:Players:index" }
+    methods:  GET
+
+players_show:
+    path:     /{id}/show
+    defaults: { _controller: "MatchMyPicsBundle:Players:show" }
+    methods:  GET
+
+players_new:
+    path:     /new
+    defaults: { _controller: "MatchMyPicsBundle:Players:new" }
+    methods:  [GET, POST]
+
+players_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MatchMyPicsBundle:Players:edit" }
+    methods:  [GET, POST]
+
+players_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MatchMyPicsBundle:Players:delete" }
+    methods:  DELETE

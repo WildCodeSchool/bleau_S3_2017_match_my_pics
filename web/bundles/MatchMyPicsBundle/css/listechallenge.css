@@ -1,0 +1,49 @@
+
+h1 {
+    font-size: 5em;
+    text-align: center;
+}
+h2 {
+    font-size: 3em;
+    text-align: center;
+}
+.btnCreate {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+
+}
+.btnCreate a {
+    text-decoration: none;
+    color : white;
+}
+
+.btn-primary {
+    background: rgb(31, 165, 151);
+}
+
+.btn-primary:hover {
+    background: rgb(88, 196, 184);
+}
+
+.table {
+    font-size: 2em;
+}
+
+thead tr {
+    background: rgb(31, 165, 151);
+}
+
+.table tbody tr:hover {
+    background: rgb(88, 196, 184);
+}
+.etoile {
+    font-family: 'star';
+}
+.btnShow {
+    text-align: center;
+}
+.btnShow a {
+    text-decoration: none;
+    color : white;
+}

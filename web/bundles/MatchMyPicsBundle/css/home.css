@@ -1,0 +1,87 @@
+            /*Container Home.php*/
+.home{
+  width: 100%;
+  padding: 0;
+}
+            /*Header(logo Team + title Team)*/
+.header_home{
+    background-color: rgb(31, 165, 151);
+    padding:0;
+    margin:0;
+    width:100%;
+    border-bottom: 2px solid black;
+}
+.header_home h2{
+    text-shadow: 3px 3px white;
+    font-style: bold;
+}
+.logoteam{
+    padding-right:0;
+    padding-top:15px;
+    padding-left:10px;
+    height:100%;
+    margin:0;    
+}
+.titleteam{
+    padding-bottom: 5px;
+}
+.home h2{
+    font-size:2.2em;
+    color: black;
+    padding:0;
+}
+            /*Container Tab Team*/
+.box{
+    margin: auto;
+    height: 40px;
+    margin: 0;
+    padding:0;    
+}
+.home h3{
+    font-size: 1.1em;
+    text-align: center;
+    margin-top:10px;
+    height: auto;
+    width: 100%;   
+}
+            /*Container tab Scores Team.php*/
+#title_tab{
+    text-align: center;
+}
+tr:hover{
+    background:  rgb(88, 196, 184);
+}
+#btn_challenges{
+    width: 100%;
+    
+}
+#btn_rules{
+    width: 100%;
+}
+.box{
+    border: 1px solid black;
+    text-align: center;
+}
+            /*Container btn */
+.btn_team, .btn_challenges, .btn_footer {
+    width: 100%;
+    margin:0;
+}
+.logoteam {
+
+    margin-bottom: 10px;
+}
+
+.btn_footer {
+    margin-top: 20px;
+}
+.btn_footer a {
+    color: black;
+}
+.btn_footer .logout a {
+    color: rgb(224, 20, 20);
+}
+
+.btn_challenges {
+    margin-top: 10px;
+}

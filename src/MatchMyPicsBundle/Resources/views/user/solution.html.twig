@@ -1,0 +1,46 @@
+{% extends 'MatchMyPicsBundle:user:layout_user.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/add_your_pics.css') }}">
+{% endblock %}
+
+{% block body %}
+	
+<div class="container">
+	<div class="col-xs-12">
+		<!--ligne pour ajouter notre photo-->
+		<div class="row">
+            {{ form_start(form) }}
+			<div class="image-upload">
+				<div class="althidden">{{ form_widget(form.photo.alt)}}</div>
+
+				{{ form_widget(form.photo)}}
+
+				{#<div class="row_render">
+					<div class="col-xs-12">
+						<img id="blah" src="#" alt="your image" />
+					</div>
+				</div>
+				<input id="file-input" type="file"/>#}
+			</div> 
+		</div>
+		<div class="row_send">
+			<div class="col-xs-12">
+				<input type="submit" value="Create" />
+                {{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock  %}
+
+{% block javascripts %}
+	<script type='text/javascript'>
+        previousPicture();
+        getfile();
+	</script>
+{% endblock %}
+
+
+

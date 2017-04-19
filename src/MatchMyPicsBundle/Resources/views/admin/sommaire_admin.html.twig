@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/sommaire_Admin.css') }}"/>
+{% endblock %}
+
+{% block body %}
+    <h1 id="titre_admin">MatchMyPics - ADMIN</h1>
+    <div class='row'>
+        <div class='col-xs-12 col-lg-12 divlist'>
+            <ul>
+                <li id='firstli'><a href='{{ path('match_my_pics_sommaire_team') }}'>GESTION des TEAMS</a></li>
+                <li id='firstli'><a href='{{ path('players_index') }}'>GESTION des PLAYERS</a></li>
+                <li><a href='{{ path('challenge_index') }}'>GESTION des CHALLENGES</a></li>
+                <li><a href='#'>VALIDATION CHALLENGE</a></li>
+                <li><a href='#'>ARCHIVES</a></li>
+                <li><a href='#'>AJOUT ADMIN</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

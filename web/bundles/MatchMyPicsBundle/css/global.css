@@ -1,0 +1,139 @@
+/* Guide de la font utilisé pour les étoiles des niveaux : http://www.dafont.com/fr/starz-2.font */
+
+@font-face {
+    font-family: "alwyn";
+    src: url("../fonts/alwyn.ttf") format("truetype");
+}
+@font-face {
+    font-family: "alwyn_bold";
+    src: url("../fonts/alwyn_bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "SourceSansPro-Regular";
+    src: url("../fonts/SourceSansPro-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Meatloaf";
+    src: url("../fonts/Meatloaf.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Pokemon";
+    src: url("../fonts/PokemonSolid.ttf") format("truetype");
+}
+@font-face {
+    font-family: "JellyCrazies";
+    src: url("../fonts/JellyCrazies.ttf") format("truetype");
+}
+@font-face {
+	font-family: "star";
+	src: url("../fonts/Star.ttf") format("truetype");
+}
+* {
+	
+	font-family: "alwyn";
+}
+
+body {
+
+	margin:0;
+	padding:0;
+}
+
+input {
+
+	background: rgb(88, 196, 184);
+	padding: 10px;
+	border-radius: 10px;
+	color: black;
+	width: 100%;
+    box-shadow: 8px 8px 8px black ;
+    border: 3px solid black;
+  
+	
+}
+
+img {
+
+	width: 100%;
+}
+
+.header_return {
+
+	border-bottom: 3px solid black;
+	color: black;
+	background: rgb(31, 165, 151);
+	padding-bottom: 10px;
+	padding-top: 10px;
+
+}
+.header_pad h2 {
+
+	font-size: 1.9em;
+	font-family: "Pokemon";
+	text-align: center;
+	text-shadow: 3px 3px white;
+}
+.header_pad {
+
+	padding : 0;
+}
+.logowcs_header {
+
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
+/*CSS NavBar */
+
+.navbar {
+	background: rgb(31, 165, 151);
+	color: white;
+}
+
+.burger {
+
+	background: white;
+}
+.burger span{
+
+	color: rgb(31, 165, 151);
+}
+.title_nav {
+	color: rgb(31, 165, 151);
+}
+
+.navbar-header {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.navbartop h1 {
+	color: white;
+	text-align: center;
+	font-size: 1.9em;
+	margin-bottom: 0;
+
+}
+.navbartop {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.navbartoggle {
+	margin-top: 18px;
+}
+
+#menu_link a{
+	color: white;
+	font-size: 1.3em;
+}
+#titre_admin {
+	text-align: center;
+	margin-bottom: 50px;
+	color: rgb(31, 165, 151);
+	font-family: 'Pokemon';
+	font-size: 5em;
+	margin-top: 50px;
+}
+.inputco{
+	display : none;
+}

@@ -1,4 +1,4 @@
-# MatchMyPic
+# MatchMyPics
 
 ## Application de Geo Caching déstinée aux journées d'intégration de la WCS
 
@@ -14,6 +14,6 @@ L'application à pour base le jeu d'aventure de Geo Caching, le but du jeu est s
 
 
 
-Développé par Guillaume HERY, Jérémy LEMARINIER, Charly AUZANET
+Développé par Guillaume HERY, Jérémy LEMARINIER et Charly AUZANET durant la promotion de Février 2017.
 
 Sur une idée original de Lucie COULON

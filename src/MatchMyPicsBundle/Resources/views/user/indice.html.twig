@@ -1,0 +1,42 @@
+{% extends 'MatchMyPicsBundle:user:layout_user.html.twig' %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/indice.css') }}">
+{% endblock %}
+{% block body %}
+	
+	<div class="container">
+		<div class="row indice">
+			<div class="col-xs-offset-4 col-xs-4 indice_title">
+				<h2 class="title_indice">Indice :</h2>
+			</div>
+			<div class="col-xs-offset-1 col-xs-10 box_indice">
+				<p>{{ challenge.indice.contenu }}</p>
+			</div>
+		</div>
+		
+		<div class="row pics">
+			<div class="col-xs-offset-1 col-xs-10 polaroid-indice">
+				<a href="#" title=""><img src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}" alt="{{ challenge.indice.photo.alt }}">
+				</a>
+			</div>
+		</div>
+		
+		<div class="row malus_box ">
+			<div class="col-xs-offset-1 col-xs-1 warning_btn">
+				<i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true" ></i>
+			</div>
+			<div class="col-xs-offset-1 col-xs-8 malus_box_points">
+				<p class="pts">-{{ challenge.indice.parametre.points }}pts</p>
+			</div>
+		</div>
+		
+		
+		<div class="row btn_return">
+			<div class="col-xs-offset-4 col-xs-4 icon">
+				<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+					<i class="icon-chevron-sign-left" aria-hidden="true" ></i>
+				</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
