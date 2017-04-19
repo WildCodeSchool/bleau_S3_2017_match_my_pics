@@ -4,7 +4,6 @@
 {% endblock %}
 
 {% block body %}
-
 <div class="container contrules">
 
     <div class="row rowtitlerules">
@@ -44,7 +43,7 @@
         </div>
 
         <div class="col-xs-12 btn_jaicompris">
-            <a href="{{ path('match_my_pics_home') }}"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris !"/></a>
+            <a href="{{ path('match_my_pics_home', { 'id': app.user.id}) }}"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris !"/></a>
         </div>
 
     </div>

@@ -22,21 +22,12 @@
     <!--Tab members Team-->
     <div class="container-fluid">
         <div class="row tab_team">
+            {% for players in players %}
             <div class="col-xs-6 box">
-                <h3>Guillaume</h3>
+                <h3>{{players.player|upper}}</h3>
             </div>
-            <div class="col-xs-6 box">
-                <h3>Jeremy</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 box">
-                <h3>Charly</h3>
-            </div>
-            <div class="col-xs-6 box">
-                <h3>Null</h3>
-            </div>
-        </div>
+            {% endfor %}
+        </div>{{ dump(players) }}
     </div>
 
     <!--Btn Challenges-->

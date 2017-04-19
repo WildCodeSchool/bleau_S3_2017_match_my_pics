@@ -26,6 +26,8 @@ match_my_pics_rules:
 match_my_pics_home:
     path:     /{id}/home
     defaults: { _controller: MatchMyPicsBundle:Default:home }
+    requirements:
+        id: '\d+'
 
 match_my_pics_challenges:
     path:     /{id}/challenges
