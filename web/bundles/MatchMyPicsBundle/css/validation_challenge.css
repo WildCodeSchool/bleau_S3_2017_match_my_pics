@@ -1,0 +1,49 @@
+.div_solution {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background : rgb(88, 196, 184);
+    box-shadow: 8px 8px 8px black ;
+    border: 4px rgb(31, 165, 151);
+    border-style: outset;
+    padding: 10px;
+}
+
+.div_solution_entete {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background : rgb(88, 196, 184);
+    box-shadow: 8px 8px 8px black ;
+    border: 4px rgb(31, 165, 151);
+    border-style: outset;
+    padding: 5px;
+
+}
+
+.challengediv h2 {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.bouton_validation {
+    margin-bottom: 50px;
+}
+.validate {
+    background-color: limegreen;
+}
+.a_refaire {
+    background-color: red;
+}
+
+.bouton_validation p {
+    font-size: 2em;
+}
+
+.team h2 {
+    font-size: 3em;
+}

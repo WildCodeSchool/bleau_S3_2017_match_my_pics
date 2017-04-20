@@ -70,4 +70,14 @@ class SolutionController extends Controller
         return $this->render('@MatchMyPics/user/redirection.html.twig');
     }
 
+    public function showAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $solutions = $em->getRepository('MatchMyPicsBundle:Solution')->findAll();
+
+        return $this->render('@MatchMyPics/admin/validation_challenge.html.twig',
+            array(
+                'solutions' => $solutions ));
+    }
+
 }

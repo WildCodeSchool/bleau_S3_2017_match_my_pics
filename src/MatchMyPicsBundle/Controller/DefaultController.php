@@ -48,10 +48,16 @@ class DefaultController extends Controller
         // TODO:getTeamId
         $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
-        $etat = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
+
+        $etatE = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
             array(
                 'team' => $team,
                 'statut' => Etat::ENGAGE
+            ));
+        $etatSB = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
+            array(
+                'team' => $team,
+                'statut' => Etat::STANDBY
             ));
 
         // soit etat is empty ==> aucun engagement
@@ -61,7 +67,8 @@ class DefaultController extends Controller
             array(
                 'challenges' => $challenges ,
                 'team' => $team,
-                'etat' => $etat
+                'etatE' => $etatE,
+                'etatSB' => $etatSB
             ));
 
     }
@@ -127,6 +134,9 @@ class DefaultController extends Controller
         $challenge = $em->getRepository('MatchMyPicsBundle:Challenge')->findOneById($id);
         $malus = $challenge->getIndice()->getParametre()->getPoints();
         $current_user->setScore($current_user->getScore()-$malus);
+
+        $em->persist($current_user);
+        $em->flush();
 
         return $this->render('@MatchMyPics/user/indice.html.twig', array(
             'challenge' => $challenge

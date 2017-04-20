@@ -30,16 +30,31 @@
 
 		<div class="row rowcustom">
 			<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->
-            {% if etat is empty %}
-			<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
-			{% elseif etat.statut is constant('MatchMyPicsBundle\\Entity\\Etat::ENGAGE') %}
-				{% if etat.challenge.id == challenge.id %}
-					<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
-				{% else %}
-					<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >
-				{% endif %}
 
+            {% if (etatE and etatSB) is empty %}
+				<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
 			{% endif %}
+			{% if etatSB is not empty %}
+				{% if etatSB.statut is constant('MatchMyPicsBundle\\Entity\\Etat::STANDBY') %}
+                    {% if etatSB.challenge.id == challenge.id %}
+						<a href="#" onclick="alert('CHALLENGE EN ATTENTE DE VALIDATION')" >
+					{% else %}
+						<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+					{% endif %}
+				{% endif %}
+			{% endif %}
+			{% if etatE is not empty %}
+				{% if etatE.statut is constant('MatchMyPicsBundle\\Entity\\Etat::ENGAGE') %}
+                    {% if etatE.challenge.id == challenge.id %}
+						<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+					{% else %}
+						<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >
+					{% endif %}
+				{% endif %}
+			{% endif %}
+
+
+
 
 				<div class="col-xs-offset-1 col-xs-10 container_chall">
 					<div class="row easy">
