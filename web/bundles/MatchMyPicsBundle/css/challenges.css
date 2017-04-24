@@ -48,6 +48,16 @@
 	font-weight: bold;
 
 }
+.classh2 {
+	margin: 0px;
+	margin-top: 20px;
+	padding: 0px;
+	height: 25px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: -20px;
+}
 
 .classtd p {
 	margin:0px;
