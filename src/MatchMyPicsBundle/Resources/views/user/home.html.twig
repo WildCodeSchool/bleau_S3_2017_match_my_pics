@@ -53,7 +53,7 @@
 
         {% for team in teams %}
         <tr>
-            {% if team.username != 'admin' %}
+            {% if team.role != 'ROLE_SUPER_ADMIN' %}
                 <th class="positiona">{{ loop.index }}</th>
                 <td>{{ team.username }}</td>
                 <td>{{ team.score }}</td>
