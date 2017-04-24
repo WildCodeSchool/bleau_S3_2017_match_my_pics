@@ -1,6 +1,8 @@
 {% extends 'MatchMyPicsBundle:admin:layout_admin.html.twig' %}
 {% block stylesheets %}
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/validation_challenge.css') }}"/>
+    <link rel = "stylesheet" href="{{ asset('bundles/MatchMyPicsBundle/css/picturebox.css') }}"/>
 {% endblock %}
 {% block body %}
     <div class="container">
@@ -32,12 +34,13 @@
                         <div class="col-xs-4 team">
                             <h2>{{ solution.challenge }}</h2>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-2 lightbox">
                             <img src="{{ asset('image_upload/' ~ solution.challenge.photo.sources) }}">
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-2 lightbox">
                             <img src="{{ asset('image_upload/' ~ solution.photo.sources) }}">
                         </div>
+                        
                     </div>
                 </div>
                 <div class="col-xs-offset-2 col-xs-8 bouton_validation">

@@ -46,6 +46,7 @@ class SolutionController extends Controller
             // Update the 'brochure' property to store the PDF file name
             // instead of its contents
             $solution->getPhoto()->setSources($fileName);
+            $solution->getPhoto()->setAlt($fileName);
             $solution->setChallenge($challenge);
             $solution->setTeam($user);
 
