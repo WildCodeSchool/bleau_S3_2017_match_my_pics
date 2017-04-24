@@ -50,7 +50,18 @@ class DefaultController extends Controller
         // $challenges = $bdd->query('SELECT * FROM challenge');
         $challenges = $em->getRepository('MatchMyPicsBundle:Challenge')->findAll();
 
-        $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
+        $team = $this->get('security.token_storage')->getToken()->getUser();
+        $teams = $em->getRepository('MatchMyPicsBundle:Team')->findBy(array(), array(
+            'score' => 'DESC'
+        ));
+
+        for ($i=0; $i < count($teams); $i++)
+        {
+            if ($teams[$i]->getId() == $team->getId()){
+                $pos = $i + 1;
+                break;
+            }
+        }
 
         $etatEngage = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
             array(
@@ -86,6 +97,7 @@ class DefaultController extends Controller
             array(
                 'challengesDispo' => $challenges ,
                 'team' => $team,
+                'pos' => $pos,
                 'allEtats' => $allEtats,
                 'etatsValide' => $etatsValide,
                 'etatEngage' => $etatEngage,

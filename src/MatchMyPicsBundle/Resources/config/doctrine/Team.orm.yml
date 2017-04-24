@@ -11,6 +11,7 @@ MatchMyPicsBundle\Entity\Team:
         name:
             type: string
             length: 255
+            nullable: true
         score:
             type: integer
     lifecycleCallbacks: {  }
