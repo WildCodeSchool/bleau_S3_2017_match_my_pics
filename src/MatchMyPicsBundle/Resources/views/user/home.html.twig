@@ -53,11 +53,9 @@
 
         {% for team in teams %}
         <tr>
-            {% if team.role != 'ROLE_SUPER_ADMIN' %}
-                <th class="positiona">{{ loop.index }}</th>
-                <td>{{ team.username }}</td>
-                <td>{{ team.score }}</td>
-            {% endif %}
+            <th class="positiona">{{ loop.index }}</th>
+            <td>{{ team.username }}</td>
+            <td>{{ team.score }}</td>
         </tr>
         {% endfor %}
         <tr>
