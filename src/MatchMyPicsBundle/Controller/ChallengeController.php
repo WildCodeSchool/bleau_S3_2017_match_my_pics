@@ -59,7 +59,9 @@ class ChallengeController extends Controller
             // Update the 'brochure' property to store the PDF file name
             // instead of its contents
             $challenge->getPhoto()->setSources($fileName);
+            $challenge->getPhoto()->setAlt($fileName);
             $challenge->getIndice()->getPhoto()->setSources($fileNameIndice);
+            $challenge->getIndice()->getPhoto()->setAlt($fileNameIndice);
 
 
             // On persist l'objet Challenge
@@ -135,6 +137,7 @@ class ChallengeController extends Controller
                 // Update the 'brochure' property to store the PDF file name
                 // instead of its contents
                 $challenge->getPhoto()->setSources($fileName);
+                $challenge->getPhoto()->setAlt($fileName);
             }
             if ($challenge->getIndice()->getPhoto()->file != null){
                 unlink($this->getParameter('image_directory') . $challenge->getIndice()->getPhoto()->getSources());
@@ -150,6 +153,7 @@ class ChallengeController extends Controller
                 // Update the 'brochure' property to store the PDF file name
                 // instead of its contents
                 $challenge->getIndice()->getPhoto()->setSources($fileNameIndice);
+                $challenge->getIndice()->getPhoto()->setAlt($fileNameIndice);
             }
 
             $this->getDoctrine()->getManager()->flush();
