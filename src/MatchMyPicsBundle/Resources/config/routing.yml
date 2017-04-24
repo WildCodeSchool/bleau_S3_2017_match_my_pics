@@ -72,3 +72,11 @@ match_my_pics_redirectionAddPlayer:
 match_my_pics_redirectionAddTeam:
     path:     /redirectAddTeam
     defaults: { _controller: MatchMyPicsBundle:Team:redirect }
+
+match_my_pics_validate:
+    path: /{id}/validate
+    defaults: { _controller: MatchMyPicsBundle:Solution:valideSolution }
+
+match_my_pics_refuse:
+    path: /{id}/refuse
+    defaults: { _controller: MatchMyPicsBundle:Solution:refuseSolution }

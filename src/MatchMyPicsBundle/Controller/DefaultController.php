@@ -12,7 +12,14 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@MatchMyPics/user/index.html.twig');
+        $current_user = $this->get('security.token_storage')->getToken()->getUser();
+
+        if ($current_user){
+            return $this->redirectToRoute('match_my_pics_rules');
+        }
+        else{
+            return $this->redirectToRoute('fos_user_security_login');
+        }
     }
 
     public function rulesAction()
@@ -48,17 +55,21 @@ class DefaultController extends Controller
         // TODO:getTeamId
         $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
+        $etats = $em->getRepository('MatchMyPicsBundle:Etat')->findBy(
+            array(
+                'team' => $team,
+            ));
 
         $etatE = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
             array(
                 'team' => $team,
                 'statut' => Etat::ENGAGE
             ));
-        $etatSB = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
-            array(
-                'team' => $team,
-                'statut' => Etat::STANDBY
-            ));
+//        $etatsSB = $em->getRepository('MatchMyPicsBundle:Etat')->findBy(
+//            array(
+//                'team' => $team,
+//                'statut' => Etat::STANDBY
+//            ));
 
         // soit etat is empty ==> aucun engagement
         // soit etat is not empty ==> engagé
@@ -67,8 +78,9 @@ class DefaultController extends Controller
             array(
                 'challenges' => $challenges ,
                 'team' => $team,
-                'etatE' => $etatE,
-                'etatSB' => $etatSB
+                'etats' => $etats,
+                'etatE' => $etatE
+//                'etatsSB' => $etatsSB
             ));
 
     }

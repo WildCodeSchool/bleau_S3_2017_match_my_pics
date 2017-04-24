@@ -22,39 +22,37 @@
 			</div>
 		</div>
 
-
-
-
 		{% for challenge in challenges %}
-			{#{% for etat in app.user.etats %}{{ dump(etat) }}{% endfor %}#}
 
-		<div class="row rowcustom">
+			<div class="row rowcustom">
 			<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->
 
-            {% if (etatE and etatSB) is empty %}
-				<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
-			{% endif %}
-			{% if etatSB is not empty %}
-				{% if etatSB.statut is constant('MatchMyPicsBundle\\Entity\\Etat::STANDBY') %}
-                    {% if etatSB.challenge.id == challenge.id %}
-						<a href="#" onclick="alert('CHALLENGE EN ATTENTE DE VALIDATION')" >
+                {% if etats is empty %}
+					<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+				{% else %}
+					{% if etatE is not empty %}
+						{% for etat in etats %}
+
+                        	{% if etat.challenge.id == challenge.id and etat == etatE %}
+								<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+							{% else %}
+								{% if etat.challenge.id == challenge.id and etat.statut is constant('MatchMyPicsBundle\\Entity\\Etat::STANDBY') %}
+									<a href="#" onclick="alert('CHALLENGE EN ATTENTE DE VALIDATION')" >
+								{% else %}
+									<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >
+								{% endif %}
+							{% endif %}
+						{% endfor %}
 					{% else %}
-						<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+						{% for etat in etats %}
+							{% if etat.challenge.id == challenge.id and etat.statut is constant('MatchMyPicsBundle\\Entity\\Etat::STANDBY') %}
+								<a href="#" onclick="alert('CHALLENGE EN ATTENTE DE VALIDATION')" >
+							{% else %}
+								<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
+							{% endif %}
+						{% endfor %}
 					{% endif %}
 				{% endif %}
-			{% endif %}
-			{% if etatE is not empty %}
-				{% if etatE.statut is constant('MatchMyPicsBundle\\Entity\\Etat::ENGAGE') %}
-                    {% if etatE.challenge.id == challenge.id %}
-						<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">
-					{% else %}
-						<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >
-					{% endif %}
-				{% endif %}
-			{% endif %}
-
-
-
 
 				<div class="col-xs-offset-1 col-xs-10 container_chall">
 					<div class="row easy">
@@ -79,3 +77,57 @@
 	</div>
 </div>
 {%  endblock %}
+
+{#{% for challenge in challenges %}#}
+    {#{% for etat in app.user.etats %}{{ dump(etat) }}{% endfor %}#}
+
+	{#<div class="row rowcustom">#}
+		{#<!-- <a href="match_my_pics_show_challenge?id=$_GET['id']"></a> -->#}
+
+        {#{% if (etatE and etatsSB) is empty %}#}
+		{#<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">#}
+            {#{% else %}#}
+            {#{% if etatsSB is not empty %}#}
+            {#{% for etatSB in etatsSB %}#}
+            {#{% if etatSB.challenge.id == challenge.id %}#}
+
+			{#<a href="#" onclick="alert('CHALLENGE EN ATTENTE DE VALIDATION')" >#}
+                {#{% else %}#}
+				{#<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">#}
+                    {#{% endif %}#}
+                    {#{% endfor %}#}
+                    {#{% endif %}#}
+                    {#{% if etatE is not empty %}#}
+                    {#{% if etatE.statut is constant('MatchMyPicsBundle\\Entity\\Etat::ENGAGE') %}#}
+                    {#{% if etatE.challenge.id == challenge.id %}#}
+					{#<a href="{{ path('match_my_pics_show_challenge', { 'id': challenge.id }) }}">#}
+                        {#{% else %}#}
+						{#<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >#}
+                            {#{% endif %}#}
+                            {#{% endif %}#}
+                            {#{% endif %}#}
+                            {#{% endif %}#}
+
+
+
+
+							{#<div class="col-xs-offset-1 col-xs-10 container_chall">#}
+								{#<div class="row easy">#}
+									{#<div class="col-xs-8 challengediv">#}
+										{#<h2>{{ challenge.titre }}</h2>#}
+									{#</div>#}
+									{#<div class="col-xs-4">#}
+										{#<div class="row">#}
+											{#<div class="col-xs-12 pts_div">#}
+												{#<h3>{{ challenge.parametre.points }}</h3>#}
+											{#</div>#}
+											{#<div class="col-xs-12 diff_div">#}
+												{#<h3 class="etoile">{{ challenge.parametre.niveau}}</h3>#}
+											{#</div>#}
+										{#</div>#}
+									{#</div>#}
+								{#</div>#}
+							{#</div>#}
+						{#</a>#}
+	{#</div>#}
+{#{% endfor %}#}

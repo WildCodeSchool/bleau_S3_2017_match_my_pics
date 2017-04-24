@@ -15,6 +15,10 @@ use Symfony\Component\HttpFoundation\Request;
 class SolutionController extends Controller
 {
 
+    private function em(){
+        return $this->getDoctrine()->getManager();
+    }
+
     /**
      * Creates a new solution entity.
      *
@@ -78,6 +82,45 @@ class SolutionController extends Controller
         return $this->render('@MatchMyPics/admin/validation_challenge.html.twig',
             array(
                 'solutions' => $solutions ));
+    }
+
+    public function valideSolutionAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $solution = $em->getRepository('MatchMyPicsBundle:Solution')->findOneBy(array('id' => $id));
+        $challenge = $solution->getChallenge();
+        $team = $solution->getTeam();
+
+        $etat = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(array(
+            'team' => $team,
+            'challenge' => $challenge
+        ));
+
+        $team->setScore($team->getScore() + $challenge->getParametre()->getPoints());
+        $etat->setStatut(Etat::VALIDATE);
+        $em->remove($solution);
+
+        $em->flush();
+        return $this->redirectToRoute('solution_show');
+
+    }
+
+    public function refuseSolutionAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $solution = $em->getRepository('MatchMyPicsBundle:Solution')->findOneBy(array('id' => $id));
+        $challenge = $solution->getChallenge();
+        $team = $solution->getTeam();
+
+        $etat = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(array(
+            'team' => $team,
+            'challenge' => $challenge
+        ));
+
+        $em->remove($etat);
+        $em->remove($solution);
+
+        $em->flush();
+
+        return $this->redirectToRoute('solution_show');
     }
 
 }
