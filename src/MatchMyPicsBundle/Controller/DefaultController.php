@@ -2,10 +2,7 @@
 
 namespace MatchMyPicsBundle\Controller;
 
-use MatchMyPicsBundle\Entity\Challenge;
 use MatchMyPicsBundle\Entity\Etat;
-use MatchMyPicsBundle\Entity\Team;
-use MatchMyPicsBundle\Entity\Parametre;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -52,35 +49,47 @@ class DefaultController extends Controller
         // Requete BDD
         // $challenges = $bdd->query('SELECT * FROM challenge');
         $challenges = $em->getRepository('MatchMyPicsBundle:Challenge')->findAll();
-        // TODO:getTeamId
+
         $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
-        $etats = $em->getRepository('MatchMyPicsBundle:Etat')->findBy(
-            array(
-                'team' => $team,
-            ));
-
-        $etatE = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
+        $etatEngage = $em->getRepository('MatchMyPicsBundle:Etat')->findOneBy(
             array(
                 'team' => $team,
                 'statut' => Etat::ENGAGE
             ));
-//        $etatsSB = $em->getRepository('MatchMyPicsBundle:Etat')->findBy(
-//            array(
-//                'team' => $team,
-//                'statut' => Etat::STANDBY
-//            ));
+        $etatsStandBy = $em->getRepository('MatchMyPicsBundle:Etat')->findBy(
+            array(
+                'team' => $team,
+                'statut' => Etat::STANDBY
+            ));
+        $etatsValide = $em->getRepository('MatchMyPicsBundle:Etat')->findBy(
+            array(
+                'team' => $team,
+                'statut' => Etat::VALIDATE
+            ));
 
-        // soit etat is empty ==> aucun engagement
-        // soit etat is not empty ==> engagé
+        $allEtats = $em->getRepository('MatchMyPicsBundle:Etat')->findBy(
+            array(
+                'team' => $team,
+            ));
+
+        // On enlève dans le tableau challenge les challenges qui n'ont pas d'état associer à la team en cours
+        foreach ($challenges as $key => $challenge) {
+            foreach ($allEtats as $etat){
+                if ($challenge->getId() == $etat->getChallenge()->getId()){
+                    unset($challenges[$key]);
+                }
+            }
+        }
 
         return $this->render('@MatchMyPics/user/challenges.html.twig',
             array(
-                'challenges' => $challenges ,
+                'challengesDispo' => $challenges ,
                 'team' => $team,
-                'etats' => $etats,
-                'etatE' => $etatE
-//                'etatsSB' => $etatsSB
+                'allEtats' => $allEtats,
+                'etatsValide' => $etatsValide,
+                'etatEngage' => $etatEngage,
+                'etatsStandBy' => $etatsStandBy
             ));
 
     }
@@ -107,8 +116,6 @@ class DefaultController extends Controller
             $em->persist($status);
             $em->flush();
         }
-
-
 
         return $this->render('@MatchMyPics/user/show_challenge.html.twig', array(
             'challenge' => $challenge
@@ -162,7 +169,6 @@ class DefaultController extends Controller
     }
     public function sommaireTeamAction()
     {
-
         $em = $this->getDoctrine()->getManager();
 
         $teams = $em->getRepository('MatchMyPicsBundle:Team')->findAll();
@@ -170,7 +176,6 @@ class DefaultController extends Controller
         return $this->render('@MatchMyPics/admin/sommaire_team.html.twig', array(
             'teams' => $teams,
         ));
-
     }
 
 }

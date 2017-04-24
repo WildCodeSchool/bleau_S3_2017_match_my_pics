@@ -22,4 +22,4 @@ MatchMyPicsBundle\Entity\Solution:
             targetEntity: MatchMyPicsBundle\Entity\Challenge
         team:
             targetEntity: MatchMyPicsBundle\Entity\Team
-            cascade: ["all"]
+            cascade: ["persist"]

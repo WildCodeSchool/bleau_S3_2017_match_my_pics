@@ -1,9 +1,0 @@
-solution_new:
-    path:     /{id}/new
-    defaults: { _controller: "MatchMyPicsBundle:Solution:new" }
-    methods:  [GET, POST]
-
-solution_show:
-    path: /liste_solution
-    defaults: { _controller: "MatchMyPicsBundle:Solution:Show" }
-    methods:  GET

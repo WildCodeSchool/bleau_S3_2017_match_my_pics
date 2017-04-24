@@ -24,6 +24,9 @@ MatchMyPicsBundle\Entity\Team:
         players:
             targetEntity: MatchMyPicsBundle\Entity\Players
             mappedBy: team
+            cascade: ["all"]
+
         etats:
             targetEntity: MatchMyPicsBundle\Entity\Etat
             mappedBy: team
+            cascade: ["all"]

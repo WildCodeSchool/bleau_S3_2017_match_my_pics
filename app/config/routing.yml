@@ -1,8 +1,14 @@
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
+# Call routing admin
+match_my_pics_admin:
+    resource: "@MatchMyPicsBundle/Resources/config/routing_admin.yml"
+    prefix:   /admin
 
-match_my_pics:
-    resource: "@MatchMyPicsBundle/Resources/config/routing.yml"
+# Call routing user
+match_my_pics_user:
+    resource: "@MatchMyPicsBundle/Resources/config/routing_user.yml"
     prefix:   /
+
 

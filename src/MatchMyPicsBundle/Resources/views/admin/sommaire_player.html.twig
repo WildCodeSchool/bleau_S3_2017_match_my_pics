@@ -31,9 +31,7 @@
                     <td>{{ player.player }}</td>
                     <td>{{ player.team }}</td>
                     <td class="btnShow">
-                        <button type="button" class="btn btn-primary">
-                            <a href="{{ path('players_edit', { 'id': player.id }) }}">Voir</a>
-                        </button>
+                        <a href="{{ path('players_edit', { 'id': player.id }) }}" class="btn btn-primary">Voir</a>
                     </td>
 
                 </tr>

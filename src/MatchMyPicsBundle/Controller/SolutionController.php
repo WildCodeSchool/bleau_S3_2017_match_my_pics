@@ -5,7 +5,6 @@ namespace MatchMyPicsBundle\Controller;
 use MatchMyPicsBundle\Entity\Etat;
 use MatchMyPicsBundle\Entity\Solution;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

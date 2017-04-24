@@ -13,6 +13,7 @@ class RegistrationType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('photo', FileType::class)
         ;
     }
 

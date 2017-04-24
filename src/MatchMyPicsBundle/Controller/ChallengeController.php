@@ -3,15 +3,9 @@
 namespace MatchMyPicsBundle\Controller;
 
 use MatchMyPicsBundle\Entity\Challenge;
-use MatchMyPicsBundle\Entity\Photo;
-use MatchMyPicsBundle\Form\PhotoType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Form;
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Challenge controller.
