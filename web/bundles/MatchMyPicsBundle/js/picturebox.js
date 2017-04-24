@@ -9,10 +9,10 @@
 
 $(document).ready(function(){
 	$('body').append("<div class = 'lightboxview'></div>");
-	$('body').append("<div id = 'left'><div class = 'leftarrow'><img src = 'http://www.icône.com/images/icones/1/7/aiga-left-arrow1.png' width = '32px'></div></div>");
-	$('body').append("<div id = 'right'><div class = 'rightarrow'><img src = 'http://www.icône.com/images/icones/1/7/aiga-right-arrow1.png' width = '32px'></div></div>");
+	$('body').append("<div id = 'left'><div class = 'leftarrow'><img src = '' width = '32px'></div></div>");
+	$('body').append("<div id = 'right'><div class = 'rightarrow'><img src = '' width = '32px'></div></div>");
 	$('.lightboxview').append("<img id = 'limage'>");
-	$('body').append("<div class = 'close'><img src = 'https://pbs.twimg.com/profile_images/582947451474153472/8uKo7mrs.jpg' width = '28px'></div>");
+	$('body').append("<div class = 'close'><img src = '' width = '28px'></div>");
 	
 	var images = [];
 	
