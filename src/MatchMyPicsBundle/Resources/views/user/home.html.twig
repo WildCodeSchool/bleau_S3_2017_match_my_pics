@@ -53,10 +53,11 @@
 
         {% for team in teams %}
         <tr>
-
-            <th class="positiona">{{ loop.index }}</th>
-            <td>{{ team.username }}</td>
-            <td>{{ team.score }}</td>
+            {% if team.username != 'admin' %}
+                <th class="positiona">{{ loop.index }}</th>
+                <td>{{ team.username }}</td>
+                <td>{{ team.score }}</td>
+            {% endif %}
         </tr>
         {% endfor %}
         <tr>
