@@ -1,0 +1,18 @@
+MatchMyPicsBundle\Entity\Photo:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\PhotoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        sources:
+            type: text
+        alt:
+            type: string
+            lenght: 255
+
+    lifecycleCallbacks: {  }

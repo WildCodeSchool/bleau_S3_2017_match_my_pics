@@ -1,0 +1,25 @@
+MatchMyPicsBundle\Entity\Solution:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\SolutionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        etat:
+            type: boolean
+
+    oneToOne:
+        photo:
+            targetEntity: MatchMyPicsBundle\Entity\Photo
+            cascade: ["all"]
+
+    manyToOne:
+        challenge:
+            targetEntity: MatchMyPicsBundle\Entity\Challenge
+        team:
+            targetEntity: MatchMyPicsBundle\Entity\Team
+            cascade: ["persist"]

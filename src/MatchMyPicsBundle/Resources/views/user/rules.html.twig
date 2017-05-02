@@ -1,0 +1,52 @@
+{% extends 'MatchMyPicsBundle:user:layout_user.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/rules_of_game.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container contrules">
+
+    <div class="row rowtitlerules">
+
+        <div class="col-xs-12 ">
+            <h2>Règles du jeu :</h2>
+        </div>
+
+    </div>
+
+    <div class="row rowrules">
+
+        <div class="col-xs-12 rulesgame">
+            <ol class="ruleslist">
+
+                <li>La 1ère règle du jeu c’est de lire les règles du jeux!</li>
+
+                <li>La 2ème règle du jeu c’est de comprendre les règles du jeux!</li>
+
+                <li>Le but du jeu est de réaliser des challenges, qui sont de retrouver l’endroit où la photo a été prise, de prendre une photo du lieu et de la faire valider par le maître du jeu. Vous remportez des points selon la difficulté  du challenge. (Easy=1250pts, Medium=3333pts, Hard=7950pts).</li>
+
+                <li>Au début de la partie, une carte, un “gimmick” et un macaron, unique par Team, vous seront remis. Un gimmick est l'objet symbol de votre Team.</li>
+
+                <li>Vous pouvez choisir n’importe quel challenge, cependant, on ne peut se lancer que dans un challenge à la fois et il doit être réalisé en équipe!</li>
+
+                <li>Pour chaque challenge un indice vous est proposé, si vous réalisez le challenge sans voir l’indice vous gagnez la totalité des points du challenge, sinon vous en perdez un peu! (easy= -250pts medium= -666pts hard= -1590pts) </li>
+
+                <li>Pour les photos “plan large”, votre gimmick doit obligatoirement être présent sur la photo.</li>
+
+                <li>Pour les photos “plan serré”, le macaron de la team doit être présent sur la photo.</li>
+
+                <li>L'équipe qui a le plus de points a la fin de la journée est déclarée vainqueur! Pour les perdants… Kahooooooooot!</li>
+
+            </ol>
+            <h3 id="playnow">A vous de jouer !</h3>
+
+        </div>
+
+        <div class="col-xs-12 btn_jaicompris">
+            <a href="{{ path('match_my_pics_home', { 'id': app.user.id}) }}"><input id="jai_compris" type="submit" name="understandrules" value="J'ai compris !"/></a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

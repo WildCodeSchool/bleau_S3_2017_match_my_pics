@@ -1,0 +1,30 @@
+# Admin
+match_my_pics_sommaire_Admin:
+    path:     /
+    defaults: { _controller: "MatchMyPicsBundle:Default:sommaireAdmin" }
+
+match_my_pics_players:
+    resource: "@MatchMyPicsBundle/Resources/config/routing/players.yml"
+    prefix:   /players
+
+match_my_pics_team:
+    resource: "@MatchMyPicsBundle/Resources/config/routing/team.yml"
+    prefix:   /team
+
+match_my_pics_challenge:
+    resource: "@MatchMyPicsBundle/Resources/config/routing/challenge.yml"
+    prefix:   /challenge
+
+# Admin - Gestion solution
+solution_show:
+    path: /liste_solution
+    defaults: { _controller: "MatchMyPicsBundle:Solution:Show" }
+    methods:  GET
+
+match_my_pics_validate:
+    path: /{id}/validate
+    defaults: { _controller: "MatchMyPicsBundle:Solution:valideSolution" }
+
+match_my_pics_refuse:
+    path: /{id}/refuse
+    defaults: { _controller: "MatchMyPicsBundle:Solution:refuseSolution" }

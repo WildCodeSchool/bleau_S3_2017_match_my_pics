@@ -1,0 +1,148 @@
+{% extends '@MatchMyPics/user/layout_user.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/challenges.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container liste_challenges">
+	<div class="row">
+
+		<div class="row divrow">
+			<div class="row rowclass">
+				<div class="col-xs-4 classth"><h3>Position</h3></div>
+				<div class="col-xs-4 classth"><h3>Team</h3></div>
+				<div class="col-xs-4 classth"><h3>Score</h3></div>
+			</div>
+			<div class="row rowclass">
+				<div class="col-xs-4 classtd"><p>{{ pos }}</p></div>
+				<div class="col-xs-4 classtd"><p>{{ team.username }}</p></div>
+				<div class="col-xs-4 classtd"><p>{{ team.score }}</p></div>
+			</div>
+		</div>
+
+		{% if etatEngage is not empty %}
+			<h2 class="classh2">Challenge engagé</h2>
+			<div class="row rowcustom">
+				<a href="{{ path('match_my_pics_show_challenge', { 'id': etatEngage.challenge.id }) }}">
+					<div class="col-xs-offset-1 col-xs-10 container_chall">
+						<div class="row easy">
+							<div class="col-xs-8 challengediv">
+								<h2>{{ etatEngage.challenge.titre }}</h2>
+							</div>
+							<div class="col-xs-4">
+								<div class="row">
+									<div class="col-xs-12 pts_div">
+										<h3>{{ etatEngage.challenge.parametre.points }}</h3>
+									</div>
+									<div class="col-xs-12 diff_div">
+										<h3 class="etoile">{{ etatEngage.challenge.parametre.niveau}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<h2 class="classh2">Challenge(s) disponible(s)</h2>
+            {% for challengeDispo in challengesDispo %}
+				<div class="row rowcustom">
+					<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >
+						<div class="col-xs-offset-1 col-xs-10 container_chall">
+							<div class="row easy">
+								<div class="col-xs-8 challengediv">
+									<h2>{{ challengeDispo.titre }}</h2>
+								</div>
+								<div class="col-xs-4">
+									<div class="row">
+										<div class="col-xs-12 pts_div">
+											<h3>{{ challengeDispo.parametre.points }}</h3>
+										</div>
+										<div class="col-xs-12 diff_div">
+											<h3 class="etoile">{{ challengeDispo.parametre.niveau}}</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+            {% endfor %}
+		{% else %}
+			<h2 class="classh2">Challenge(s) disponible(s)</h2>
+            {% for challengeDispo in challengesDispo %}
+				<div class="row rowcustom">
+					<a href="{{ path('match_my_pics_show_challenge', { 'id': challengeDispo.id }) }}">
+						<div class="col-xs-offset-1 col-xs-10 container_chall">
+							<div class="row easy">
+								<div class="col-xs-8 challengediv">
+									<h2>{{ challengeDispo.titre }}</h2>
+								</div>
+								<div class="col-xs-4">
+									<div class="row">
+										<div class="col-xs-12 pts_div">
+											<h3>{{ challengeDispo.parametre.points }}</h3>
+										</div>
+										<div class="col-xs-12 diff_div">
+											<h3 class="etoile">{{ challengeDispo.parametre.niveau}}</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+            {% endfor %}
+		{% endif %}
+		<h2 class="classh2">Challenge(s) en attente de validation</h2>
+        {% for etatStandBy in etatsStandBy %}
+			<div class="row rowcustom">
+				<a href="#" onclick="alert('CHALLENGE EN ATTENTE DE VALIDATION')" >
+					<div class="col-xs-offset-1 col-xs-10 container_chall">
+						<div class="row easy">
+							<div class="col-xs-8 challengediv">
+								<h2>{{ etatStandBy.challenge.titre }}</h2>
+							</div>
+							<div class="col-xs-4">
+								<div class="row">
+									<div class="col-xs-12 pts_div">
+										<h3>{{ etatStandBy.challenge.parametre.points }}</h3>
+									</div>
+									<div class="col-xs-12 diff_div">
+										<h3 class="etoile">{{ etatStandBy.challenge.parametre.niveau}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+        {% endfor %}
+		<h2 class="classh2">Challenges validés</h2>
+        {% for etatValide in etatsValide %}
+			<div class="row rowcustom">
+				<a href="#" onclick="alert('Le challenge est deja validé. BRAVO !!!')" >
+					<div class="col-xs-offset-1 col-xs-10 container_chall">
+						<div class="row easy">
+							<div class="col-xs-8 challengediv">
+								<h2>{{ etatValide.challenge.titre }}</h2>
+							</div>
+							<div class="col-xs-4">
+								<div class="row">
+									<div class="col-xs-12 pts_div">
+										<h3>{{ etatValide.challenge.parametre.points }}</h3>
+									</div>
+									<div class="col-xs-12 diff_div">
+										<h3 class="etoile">{{ etatValide.challenge.parametre.niveau}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+        {% endfor %}
+	</div>
+</div>
+{%  endblock %}

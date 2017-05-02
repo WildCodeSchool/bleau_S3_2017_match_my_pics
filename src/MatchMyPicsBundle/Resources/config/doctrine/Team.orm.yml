@@ -1,0 +1,33 @@
+MatchMyPicsBundle\Entity\Team:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\TeamRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: true
+        score:
+            type: integer
+    lifecycleCallbacks: {  }
+
+    oneToOne:
+        photo:
+            targetEntity: MatchMyPicsBundle\Entity\Photo
+            cascade: ["all"]
+
+    oneToMany:
+        players:
+            targetEntity: MatchMyPicsBundle\Entity\Players
+            mappedBy: team
+            cascade: ["all"]
+
+        etats:
+            targetEntity: MatchMyPicsBundle\Entity\Etat
+            mappedBy: team
+            cascade: ["all"]

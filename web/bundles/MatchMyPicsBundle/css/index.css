@@ -1,0 +1,36 @@
+.logo_index {
+
+	max-width: 100%;
+	height : auto;
+}
+
+.index {
+
+	text-align: center;
+}
+
+.connexion {
+	color: black;
+	margin-top: 25px;
+
+}
+.btn-co {
+	color: black;
+	opacity: 0.8;
+}
+a:hover {
+	text-decoration: none;
+}
+
+/****************** Bouton de Connexion **********************/
+
+.connexion > input
+{
+	display: none;
+}
+
+.connexion i
+{
+	width: 80px;
+	cursor: pointer;
+}

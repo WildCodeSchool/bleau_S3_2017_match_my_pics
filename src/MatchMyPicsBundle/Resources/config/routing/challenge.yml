@@ -1,0 +1,24 @@
+challenge_index:
+    path:     /
+    defaults: { _controller: "MatchMyPicsBundle:Challenge:index" }
+    methods:  GET
+
+challenge_show:
+    path:     /{id}/showChallengeCreate
+    defaults: { _controller: "MatchMyPicsBundle:Challenge:show" }
+    methods:  GET
+
+challenge_new:
+    path:     /addChallenge
+    defaults: { _controller: "MatchMyPicsBundle:Challenge:new" }
+    methods:  [GET, POST]
+
+challenge_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MatchMyPicsBundle:Challenge:edit" }
+    methods:  [GET, POST]
+
+challenge_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MatchMyPicsBundle:Challenge:delete" }
+    methods:  DELETE

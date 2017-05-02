@@ -1,0 +1,22 @@
+#Gestion des teams
+match_my_pics_sommaire_team:
+    path:     /
+    defaults: { _controller: "MatchMyPicsBundle:Default:sommaireTeam" }
+
+match_my_pics_team_show:
+    path:     /{id}/show
+    defaults: { _controller: "MatchMyPicsBundle:Team:show" }
+    methods:  GET
+
+match_my_pics_team_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MatchMyPicsBundle:Team:delete" }
+    methods:  DELETE
+    
+match_my_pics_redirectionAddPlayer:
+    path:     /redirectAddPlayer
+    defaults: { _controller: "MatchMyPicsBundle:Players:redirect" }
+
+match_my_pics_redirectionAddTeam:
+    path:     /redirectAddTeam
+    defaults: { _controller: "MatchMyPicsBundle:Team:redirect" }

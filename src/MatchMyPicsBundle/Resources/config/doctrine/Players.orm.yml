@@ -1,0 +1,20 @@
+MatchMyPicsBundle\Entity\Players:
+    type: entity
+    table: null
+    repositoryClass: MatchMyPicsBundle\Repository\PlayersRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        player:
+            type: string
+            length: '25'
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        team:
+            targetEntity: MatchMyPicsBundle\Entity\Team
+            inversedBy: players
