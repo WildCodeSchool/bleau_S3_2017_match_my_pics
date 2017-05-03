@@ -21,26 +21,20 @@ class DefaultController extends Controller
 
     public function rulesAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $teams = $em->getRepository("MatchMyPicsBundle:Team")->findAll();
-        return $this->render('@MatchMyPics/user/rules.html.twig', array(
-            'team' => $teams));
-
+        return $this->render('@MatchMyPics/user/rules.html.twig');
     }
 
     public function homeAction($id)
     {
         $em = $this->getDoctrine()->getManager();
         $teams = $em->getRepository("MatchMyPicsBundle:Team")->findBy(array(), array('score' => 'DESC'));
-        $team= $em->getRepository('MatchMyPicsBundle:Team')->findOneById($id);
 
         return $this->render('@MatchMyPics/user/home.html.twig', array(
             'teams' => $teams,
-            'team' => $team
         ));
     }
 
-    public function challengesAction($id)
+    public function challengesAction()
     {
         // Connexion base de données
         // $bdd = new PDO('host:localhost; dbname: wcs-3_matchmypics; user:root; mdp:root');
@@ -174,11 +168,11 @@ class DefaultController extends Controller
         ));
     }
 
-
     public function sommaireAdminAction()
     {
         return $this->render('@MatchMyPics/admin/sommaire_admin.html.twig');
     }
+
     public function sommaireTeamAction()
     {
         $em = $this->getDoctrine()->getManager();

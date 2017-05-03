@@ -17,4 +17,6 @@ MatchMyPicsBundle\Entity\Parametre:
         param:
             type: string
             length: '30'
+        type:
+            type: integer
 

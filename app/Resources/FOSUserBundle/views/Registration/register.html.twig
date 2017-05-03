@@ -1,8 +1,18 @@
-{% extends "@FOSUser/layout.html.twig" %}
-{% block cssglobal %}{% endblock %}
-{% block fos_user_content %}
-{% include "@FOSUser/Registration/register_content.html.twig" %}
+{% extends "@MatchMyPics/admin/layout_admin.html.twig" %}
+{% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/MatchMyPicsBundle/css/listechallenge.css') }}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12">
+                {% include "@FOSUser/Registration/register_content.html.twig" %}
+            </div>
+        </div>
+        <div class="row">
+            <a href="{{ path('match_my_pics_sommaire_team') }}"><button type="button" class="btn btn-primary">Retour sommaire team</button></a>
+        </div>
+    </div>
 
-        <a href="{{ path('match_my_pics_sommaire_team') }}"<button type="button" class="btn btn-primary">Retour sommaire team</button></a>
 
-{% endblock fos_user_content %}
+{% endblock %}

@@ -14,7 +14,7 @@ match_my_pics_home:
         id: '\d+'
 
 match_my_pics_challenges:
-    path:     /{id}/challenges
+    path:     /challenges
     defaults: { _controller: MatchMyPicsBundle:Default:challenges }
 
 match_my_pics_show_challenge:

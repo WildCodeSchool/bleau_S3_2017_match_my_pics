@@ -7,16 +7,16 @@ namespace MatchMyPicsBundle\Entity;
  */
 class Parametre
 {
+    const CHALENGE_TYPE = 1;
+    const INDICE_TYPE = 2;
+
     public function __toString()
     {
         return $this->param;
     }
 
-
     // Code généré :
 
-    
-    
     /**
      * @var integer
      */
@@ -119,4 +119,5 @@ class Parametre
     {
         return $this->param;
     }
+
 }

@@ -44,9 +44,11 @@
     height: auto;
     width: 100%;   
 }
-            /*Container tab Scores Team.php*/
-#title_tab{
+/*Container tab Scores Team.php*/
+.title_tab{
     text-align: center;
+    margin: 30px;
+    font-size: 35px;
 }
 tr:hover{
     background:  rgb(88, 196, 184);
