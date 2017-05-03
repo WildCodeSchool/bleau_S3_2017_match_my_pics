@@ -38,6 +38,7 @@ class TeamController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($team);
+            unlink($this->getParameter('image_directory') . $team->getPhoto()->getSources());
             $em->flush();
         }
 
