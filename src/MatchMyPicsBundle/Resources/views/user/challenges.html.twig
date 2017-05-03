@@ -45,7 +45,9 @@
 					</div>
 				</a>
 			</div>
-			<h2 class="classh2">Challenge(s) disponible(s)</h2>
+			{% if challengesDispo is not empty %}
+				<h2 class="classh2">Challenge(s) disponible(s)</h2>
+			{% endif %}
             {% for challengeDispo in challengesDispo %}
 				<div class="row rowcustom">
 					<a href="#" onclick="alert('Vous êtes déjà engagé sur un challenge')" >
@@ -70,7 +72,9 @@
 				</div>
             {% endfor %}
 		{% else %}
-			<h2 class="classh2">Challenge(s) disponible(s)</h2>
+            {% if challengesDispo is not empty %}
+				<h2 class="classh2">Challenge(s) disponible(s)</h2>
+            {% endif %}
             {% for challengeDispo in challengesDispo %}
 				<div class="row rowcustom">
 					<a href="{{ path('match_my_pics_show_challenge', { 'id': challengeDispo.id }) }}">
@@ -95,7 +99,9 @@
 				</div>
             {% endfor %}
 		{% endif %}
-		<h2 class="classh2">Challenge(s) en attente de validation</h2>
+		{% if etatsStandBy is not empty %}
+			<h2 class="classh2">Challenge(s) en attente de validation</h2>
+		{% endif %}
         {% for etatStandBy in etatsStandBy %}
 			<div class="row rowcustom">
 				<a href="#" onclick="alert('CHALLENGE EN ATTENTE DE VALIDATION')" >
@@ -119,7 +125,9 @@
 				</a>
 			</div>
         {% endfor %}
-		<h2 class="classh2">Challenges validés</h2>
+        {% if etatsValide is not empty %}
+			<h2 class="classh2">Challenges validés</h2>
+		{% endif %}
         {% for etatValide in etatsValide %}
 			<div class="row rowcustom">
 				<a href="#" onclick="alert('Le challenge est deja validé. BRAVO !!!')" >

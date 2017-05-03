@@ -2,7 +2,11 @@
 
 namespace MatchMyPicsBundle\Form;
 
+use Doctrine\ORM\EntityRepository;
+use MatchMyPicsBundle\Entity\Parametre;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,11 +21,21 @@ class IndiceType extends AbstractType
     {
         $builder
             ->add('contenu', TextareaType::class, array('attr' => array(
-                'rows' => 10, 'cols' => 60)))
+                'rows' => 3, 'cols' => 30)))
             ->add('photo', PhotoType::class, array(
                 "label" => "Photo de l'indice"
             ))
-            ->add('parametre');
+            ->add('parametre', EntityType::class, array(
+                'class' => 'MatchMyPicsBundle\Entity\Parametre',
+                'query_builder' => function (EntityRepository $er){
+                    return $er->createQueryBuilder('p')
+                        ->where('p.type = :type')
+                        ->setParameter('type', Parametre::INDICE_TYPE);
+                },
+                'choice_label' => 'param',
+                'expanded' => false,
+                'multiple' => false
+            ));
     }
     
     /**

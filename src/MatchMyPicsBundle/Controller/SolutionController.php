@@ -13,11 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class SolutionController extends Controller
 {
-
-    private function em(){
-        return $this->getDoctrine()->getManager();
-    }
-
     /**
      * Creates a new solution entity.
      *
@@ -36,14 +31,9 @@ class SolutionController extends Controller
             $em = $this->getDoctrine()->getManager();
             // $file stores the uploaded Photo
             $file = $solution->getPhoto()->file;
-            // Generate a unique name for the file before saving it
-            $fileName = uniqid() . '.' . $file->guessExtension();
-            // Move the file to the directory where brochures are stored
-            $file->move(
-                $this->getParameter('image_directory'),
-                $fileName
-            );
-            // Update the 'brochure' property to store the PDF file name
+
+            $fileName = $this->get('file_uploader')->upload($file);
+
             // instead of its contents
             $solution->getPhoto()->setSources($fileName);
             $solution->getPhoto()->setAlt($fileName);
@@ -101,7 +91,6 @@ class SolutionController extends Controller
 
         $em->flush();
         return $this->redirectToRoute('solution_show');
-
     }
 
     public function refuseSolutionAction($id){

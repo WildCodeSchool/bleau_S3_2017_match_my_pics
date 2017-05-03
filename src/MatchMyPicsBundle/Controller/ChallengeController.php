@@ -45,17 +45,9 @@ class ChallengeController extends Controller
             $file = $challenge->getPhoto()->file;
             $file_indice = $challenge->getIndice()->getPhoto()->file;
             // Generate a unique name for the file before saving it
-            $fileName = uniqid() . '.' . $file->guessExtension();
-            $fileNameIndice = uniqid() . '.' . $file_indice->guessExtension();
-            // Move the file to the directory where brochures are stored
-            $file->move(
-                $this->getParameter('image_directory'),
-                $fileName
-            );
-            $file_indice->move(
-                $this->getParameter('image_directory'),
-                $fileNameIndice
-            );
+            $fileName = $this->get('file_uploader')->upload($file);
+            $fileNameIndice = $this->get('file_uploader')->upload($file_indice);
+
             // Update the 'brochure' property to store the PDF file name
             // instead of its contents
             $challenge->getPhoto()->setSources($fileName);
@@ -127,15 +119,9 @@ class ChallengeController extends Controller
                 unlink($this->getParameter('image_directory') . $challenge->getPhoto()->getSources());
                 // $file stores the uploaded Photo
                 $file = $challenge->getPhoto()->file;
-                // Generate a unique name for the file before saving it
-                $fileName = uniqid() . '.' . $file->guessExtension();
-                // Move the file to the directory where brochures are stored
-                $file->move(
-                    $this->getParameter('image_directory'),
-                    $fileName
-                );
-                // Update the 'brochure' property to store the PDF file name
-                // instead of its contents
+                // Cal upload service
+                $fileName = $this->get('file_uploader')->upload($file);
+
                 $challenge->getPhoto()->setSources($fileName);
                 $challenge->getPhoto()->setAlt($fileName);
             }
@@ -143,15 +129,9 @@ class ChallengeController extends Controller
                 unlink($this->getParameter('image_directory') . $challenge->getIndice()->getPhoto()->getSources());
                 // $file stores the uploaded Photo
                 $file_indice = $challenge->getIndice()->getPhoto()->file;
-                // Generate a unique name for the file before saving it
-                $fileNameIndice = uniqid() . '.' . $file_indice->guessExtension();
-                // Move the file to the directory where brochures are stored
-                $file_indice->move(
-                    $this->getParameter('image_directory'),
-                    $fileNameIndice
-                );
-                // Update the 'brochure' property to store the PDF file name
-                // instead of its contents
+                // Cal upload service
+                $fileNameIndice = $this->get('file_uploader')->upload($file_indice);
+
                 $challenge->getIndice()->getPhoto()->setSources($fileNameIndice);
                 $challenge->getIndice()->getPhoto()->setAlt($fileNameIndice);
             }
@@ -196,7 +176,6 @@ class ChallengeController extends Controller
      */
     private function createDeleteForm(Challenge $challenge)
     {
-
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('challenge_delete', array('id' => $challenge->getId())))
             ->setMethod('DELETE')

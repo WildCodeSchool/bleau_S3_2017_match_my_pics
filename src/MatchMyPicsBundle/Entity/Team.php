@@ -17,7 +17,7 @@ class Team extends BaseUser
     {
         parent::__construct();
         // your own logic
-        $this->score =0;
+        $this->score = 0;
     }
 
     // GENERATED CODE

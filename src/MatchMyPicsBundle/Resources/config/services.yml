@@ -1,4 +1,20 @@
 services:
-#    match_my_pics.example:
-#        class: MatchMyPicsBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    file_uploader:
+        class: MatchMyPicsBundle\Services\FileUploader
+        arguments: ['%image_directory%']
+
+    user_roles_helper:
+       class: MatchMyPicsBundle\Services\RolesHelper
+       arguments: ['%security.role_hierarchy.roles%']
+
+    user.form.registration:
+        class: MatchMyPicsBundle\Form\RegistrationType
+        arguments: ["%fos_user.model.user.class%", "@user_roles_helper", "@security.token_storage"]
+        tags:
+            - { name: form.type, alias: user_registration }
+
+    user.registration:
+        class: MatchMyPicsBundle\EventListener\RegistrationSuccessListener
+        arguments: ["@file_uploader", "@router"]
+        tags:
+            - { name: kernel.event_subscriber }
