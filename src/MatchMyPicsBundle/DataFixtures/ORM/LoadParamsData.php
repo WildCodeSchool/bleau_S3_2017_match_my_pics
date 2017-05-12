@@ -23,31 +23,31 @@ class LoadParamsData extends AbstractFixture implements OrderedFixtureInterface
             array(
                 'param' => 'Moyen',
                 'points' => 3333,
-                'niveau' => "F",
+                'niveau' => "FF",
                 'type' => Parametre::CHALENGE_TYPE
             ),
             array(
                 'param' => 'Difficile',
                 'points' => 7950,
-                'niveau' => "F",
+                'niveau' => "FFF",
                 'type' => Parametre::CHALENGE_TYPE
             ),
             array(
                 'param' => 'Malus Facile',
                 'points' => 250,
-                'niveau' => "F",
+                'niveau' => "Malus Facile",
                 'type' => Parametre::INDICE_TYPE
             ),
             array(
                 'param' => 'Malus Moyen',
                 'points' => 666,
-                'niveau' => "F",
+                'niveau' => "Malus Moyen",
                 'type' => Parametre::INDICE_TYPE
             ),
             array(
                 'param' => 'Malus Difficile',
                 'points' => 1590,
-                'niveau' => "F",
+                'niveau' => "Malus Difficile",
                 'type' => Parametre::INDICE_TYPE
             ),
         );
