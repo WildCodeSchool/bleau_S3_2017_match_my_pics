@@ -24,7 +24,7 @@ class DefaultController extends Controller
         return $this->render('@MatchMyPics/user/rules.html.twig');
     }
 
-    public function homeAction($id)
+    public function homeAction()
     {
         $em = $this->getDoctrine()->getManager();
         $teams = $em->getRepository("MatchMyPicsBundle:Team")->findBy(array(), array('score' => 'DESC'));
@@ -45,9 +45,7 @@ class DefaultController extends Controller
         $challenges = $em->getRepository('MatchMyPicsBundle:Challenge')->findAll();
 
         $team = $this->get('security.token_storage')->getToken()->getUser();
-        $teams = $em->getRepository('MatchMyPicsBundle:Team')->findBy(array(), array(
-            'score' => 'DESC'
-        ));
+        $teams = $em->getRepository('MatchMyPicsBundle:Team')->findAll();
 
         for ($i=0; $i < count($teams); $i++)
         {

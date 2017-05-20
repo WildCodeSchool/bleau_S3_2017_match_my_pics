@@ -48,3 +48,9 @@ h1 {
 .team h2 {
     font-size: 3em;
 }
+
+@media screen and (max-width: 800px) {
+    h1{
+        font-size: 30px;
+    }
+}
