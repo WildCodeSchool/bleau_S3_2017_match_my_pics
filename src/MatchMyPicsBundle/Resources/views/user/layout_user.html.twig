@@ -6,7 +6,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="row">
                 <div class="col-xs-3 navbartop">
-                    <a href="{{ path('match_my_pics_home', { 'id': app.user.id}) }}"><img src="{{ asset('bundles/MatchMyPicsBundle/img/logo_blanc_pastille.png') }}"></a>
+                    <a href="{{ path('match_my_pics_home') }}"><img src="{{ asset('bundles/MatchMyPicsBundle/img/logo_blanc_pastille.png') }}"></a>
                 </div>
                 <div class="col-xs-6 navbartop">
                     <a href="{{ path('match_my_pics_home', { 'id': app.user.id}) }}"><h1>MatchMyPics</h1></a>
@@ -23,7 +23,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse links" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="menu_link">
-                    <li><a href="{{ path('match_my_pics_home', { 'id': app.user.id}) }}">Accueil</a></li>
+                    <li><a href="{{ path('match_my_pics_home') }}">Accueil</a></li>
                     <li><a href="{{ path('match_my_pics_challenges', { 'id': app.user.id}) }}">Les Challenges</a></li>
                     <li><a href="{{ path('match_my_pics_rules') }}">Règles du jeu</a></li>
                 </ul>

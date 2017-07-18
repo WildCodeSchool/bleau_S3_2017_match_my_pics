@@ -8,10 +8,8 @@ match_my_pics_rules:
     defaults: { _controller: MatchMyPicsBundle:Default:rules }
 
 match_my_pics_home:
-    path:     /{id}/home
+    path:     /home
     defaults: { _controller: MatchMyPicsBundle:Default:home }
-    requirements:
-        id: '\d+'
 
 match_my_pics_challenges:
     path:     /challenges

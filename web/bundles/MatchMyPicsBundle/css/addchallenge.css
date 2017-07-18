@@ -98,3 +98,10 @@ h2 {
 .valider_edit {
     margin-bottom: 50px;
 }
+
+@media screen and (max-width: 800px) {
+    h1{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+}

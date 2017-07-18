@@ -1,8 +1,50 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register register_form'}}) }}
+<div class="container">
+    <div class="row">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+        {{ form_errors(form.name) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+        {{ form_errors(form.email) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.username) }}
+        {{ form_widget(form.username) }}
+        {{ form_errors(form.username) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.plainPassword.first) }}
+        {{ form_widget(form.plainPassword.first) }}
+        {{ form_errors(form.plainPassword.first) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.plainPassword.second) }}
+        {{ form_widget(form.plainPassword.second) }}
+        {{ form_errors(form.plainPassword.second) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.photo.file) }}
+        {{ form_widget(form.photo.file) }}
+        {{ form_errors(form.photo.file) }}
+    </div>
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        {% for role in form.roles %}
+            <div class="row checkbox_register">
+                {{ form_widget(role) }}
+                {{ form_label(role) }}
+                {{ form_errors(role) }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="row submit_register">
         <input type="submit" value="{{ 'registration.submit'|trans }}" />
     </div>
+</div>
+
 {{ form_end(form) }}

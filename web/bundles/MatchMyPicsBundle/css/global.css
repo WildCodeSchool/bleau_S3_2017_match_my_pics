@@ -135,3 +135,31 @@ img {
 .inputco{
 	display : none;
 }
+
+.register_form label{
+	margin-top: 20px;
+}
+
+.checkbox_register input{
+	background: inherit;
+	padding: inherit;
+	border-radius: inherit;
+	color: inherit;
+	width: inherit;
+	box-shadow: none;
+	border: inherit;
+}
+.submit_register{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+@media screen and (max-width: 800px) {
+	#titre_admin {
+		font-size: 2em;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.navbartop h1{
+		font-size: 20px;
+	}
+}

@@ -6,54 +6,40 @@
 {% endblock %}
 {% block body %}
     <div class="container">
-        <h1>Validation des challenges</h1>
         <div class="row">
-            <div class="col-xs-offset-1 col-xs-10 div_solution_entete">
-                <div class="col-xs-3 team">
-                    <h2>Team</h2>
-                </div>
-                <div class="col-xs-4 team">
-                    <h2>Challenge</h2>
-                </div>
-                <div class="col-xs-2">
-                    <h2>Photo à matcher</h2>
-                </div>
-                <div class="col-xs-2">
-                    <h2>Proposition</h2>
-                </div>
+            <h1>Validation des challenges</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Photo à matcher</th>
+                        <th>Proposition</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for solution in solutions %}
+                    <tr>
+                        <td>{{ solution.team }}</td>
+                        <td class="lightbox">
+                            <img src="{{ asset('image_upload/' ~ solution.challenge.photo.sources) }}">
+                        </td>
+                        <td class="lightbox">
+                            <img src="{{ asset('image_upload/' ~ solution.photo.sources) }}">
+                        </td>
+                        <td>
+                            <a href="{{ path('match_my_pics_validate', {'id': solution.id }) }}"><button class="validate">Valider</button></a>
+                            <a href="{{ path('match_my_pics_refuse', {'id': solution.id }) }}"><button class="a_refaire">Refuser</button></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
             </div>
         </div>
-        {% for solution in solutions %}
-
-            <div class="row">
-                <div class="col-xs-offset-1 col-xs-10 div_solution">
-                    <div class="row">
-                        <div class="col-xs-3 team">
-                            <h2>{{ solution.team }}</h2>
-                        </div>
-                        <div class="col-xs-4 team">
-                            <h2>{{ solution.challenge }}</h2>
-                        </div>
-                        <div class="col-xs-2 lightbox">
-                            <img src="{{ asset('image_upload/' ~ solution.challenge.photo.sources) }}">
-                        </div>
-                        <div class="col-xs-2 lightbox">
-                            <img src="{{ asset('image_upload/' ~ solution.photo.sources) }}">
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="col-xs-offset-2 col-xs-8 bouton_validation">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <a href="{{ path('match_my_pics_validate', {'id': solution.id }) }}"><button class="validate">Valider</button></a>
-                        </div>
-                        <div class="col-xs-6">
-                            <a href="{{ path('match_my_pics_refuse', {'id': solution.id }) }}"><button class="a_refaire">Refuser</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
     </div>
 {% endblock %}

@@ -6,56 +6,84 @@
 
 {% block body %}
     <div class="container">
-    <h1>Edition du challenge "{{ challenge.titre }}"</h1>
-    <div class="row">
-        <div class="col-xs-offset-1 col-xs-10 listAddChall">
-            <div class="row">
-                <div class="col-xs-6">
-                    <h1 class="titrebox">Challenge :</h1>
-                    <div class="row">
-                        {{ form_start(edit_form) }}
-                        <div class="col-xs-offset-3 col-xs-6 photoshow">
-                            <img src="{{ asset('image_upload/' ~ challenge.photo.sources) }}" alt="{{ challenge.photo.alt }}">
-                        </div>
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <h2>{{ form_label(edit_form.titre) }}</h2> {{ form_widget(edit_form.titre) }}
-                        </div>
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <h2>{{ form_label(edit_form.position) }}</h2>{{ form_widget(edit_form.position) }}
-                        </div>
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <h2>{{ form_label(edit_form.photo.file) }}</h2>{{ form_widget(edit_form.photo.file) }}
-                        </div>
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <h2>{{ form_label(edit_form.parametre) }}</h2>{{ form_widget(edit_form.parametre) }}
-                        </div>
+        <h1>Edition du challenge "{{ challenge.titre }}"</h1>
+        {{ form_start(edit_form) }}
+
+        <div class="row listAddChall">
+            <div class="col-xs-12 col-md-6 chalbox chalBoxPadd">
+                <div class="row">
+                    <h2>Challenge :</h2>
+                    <div class="col-xs-12 photoshow">
+                        <img id="result_challenge_image" src="{{ asset('image_upload/' ~ challenge.photo.sources) }}" alt="{{ challenge.photo.alt }}">
                     </div>
                 </div>
-                <div class="col-xs-6">
-                    <h1 class="titrebox">Indice :</h1>
-                    <div class="row indiceshowbox">
-                        <div class="col-xs-offset-3 col-xs-6 photoshow">
-                            <img src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}" alt="{{ challenge.indice.photo.alt }}">
-                        </div>
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <h2>{{ form_label(edit_form.indice.photo.file) }}</h2>{{ form_widget(edit_form.indice.photo.file) }}
-                        </div>
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <h2>{{ form_label(edit_form.indice.contenu) }}</h2>{{ form_widget(edit_form.indice.contenu) }}
-                        </div>
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <h2>{{ form_label(edit_form.indice.parametre) }}</h2>{{ form_widget(edit_form.indice.parametre) }}
-                        </div>
-                        </div>
-                    </div>
-
+                <div class="row">
+                    {{ form_label(edit_form.titre) }}
+                    {{ form_widget(edit_form.titre) }}
+                </div>
+                <div class="row">
+                    {{ form_label(edit_form.position) }}
+                    {{ form_widget(edit_form.position) }}
+                </div>
+                <div class="row">
+                    {{ form_label(edit_form.photo.file) }}
+                    {{ form_widget(edit_form.photo.file, { 'id': 'img_challenge' }) }}
+                </div>
+                <div class="row">
+                    {{ form_label(edit_form.parametre) }}
+                    {{ form_widget(edit_form.parametre) }}
                 </div>
             </div>
-        <div class="col-xs-offset-3 col-xs-6 valider_edit">
-            {{ form_widget(edit_form) }}
-            <input type="submit" value="Valider" />
-            {{ form_end(edit_form) }}
+            <div class="col-xs-12 col-md-6 chalBoxPadd">
+                <div class="row">
+                    <h2>Indice :</h2>
+                    <div class="col-xs-12 photoshow">
+                        <img id="result_indice_image" src="{{ asset('image_upload/' ~ challenge.indice.photo.sources) }}" alt="{{ challenge.indice.photo.alt }}">
+                    </div>
+                </div>
+                <div class="row">
+                    {{ form_label(edit_form.indice.contenu) }}
+                    {{ form_widget(edit_form.indice.contenu) }}
+                </div>
+                <div class="row">
+                    {{ form_label(edit_form.indice.photo.file) }}
+                    {{ form_widget(edit_form.indice.photo.file, { 'id': 'img_indice' }) }}
+                </div>
+                <div class="row">
+                    {{ form_label(edit_form.indice.parametre) }}
+                    {{ form_widget(edit_form.indice.parametre) }}
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-xs-12 creerbtn">
+                <input class="delete" type="submit" value="Valider" />
+            </div>
         </div>
+        {{ form_end(edit_form) }}
+
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        function readURL(input, img) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(img).attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#img_challenge").change(function(){
+            readURL(this, '#result_challenge_image');
+        });
+        $("#img_indice").change(function(){
+            readURL(this, '#result_indice_image');
+        });
+    </script>
 {% endblock %}

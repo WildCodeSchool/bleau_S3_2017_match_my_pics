@@ -12,15 +12,13 @@
 		<div class="row">
             {{ form_start(form) }}
 			<div class="image-upload">
-				
-				{{ form_widget(form.photo)}}
-
-				{#<div class="row_render">
-					<div class="col-xs-12">
-						<img id="blah" src="#" alt="your image" />
-					</div>
+				<div class="row">
+                    {{ form_widget(form.photo.file, { 'id': 'img_input' })}}
 				</div>
-				<input id="file-input" type="file"/>#}
+
+				<div class="row text-center">
+					<img id="show_image" src="#"/>
+				</div>
 			</div> 
 		</div>
 		<div class="row_send">
@@ -35,9 +33,22 @@
 {% endblock  %}
 
 {% block javascripts %}
-	<script type='text/javascript'>
-        previousPicture();
-        getfile();
+    {{ parent() }}
+	<script>
+        function readURL(input, img) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(img).attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#img_input").change(function(){
+            readURL(this, '#show_image');
+        });
 	</script>
 {% endblock %}
 

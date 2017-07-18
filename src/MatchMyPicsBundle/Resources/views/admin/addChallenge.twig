@@ -6,46 +6,56 @@
 
 {% block body %}
 
-    <div class="container listAddChall">
+    <div class="container">
         <h1>Création d'un challenge</h1>
-        <div class="row">
+        {{ form_start(form) }}
+
+        <div class="row listAddChall">
             <div class="col-xs-12 col-md-6 chalbox chalBoxPadd">
                 <div class="row">
-                    <h2>Création du challenge :</h2>
-                </div>
-                {{ form_start(form) }}
-                <div class="row">
-                    <h2>{{ form_label(form.titre) }}</h2> {{ form_widget(form.titre) }}
+                    <h2>Challenge :</h2>
                 </div>
                 <div class="row">
-                    <h2>{{ form_label(form.position) }}</h2>{{ form_widget(form.position) }}
+                    {{ form_label(form.titre) }}
+                    {{ form_widget(form.titre) }}
                 </div>
                 <div class="row">
-                    <h2>{{ form_label(form.photo.file) }}</h2>{{ form_widget(form.photo.file) }}
+                    {{ form_label(form.position) }}
+                    {{ form_widget(form.position) }}
                 </div>
                 <div class="row">
-                    <h2>{{ form_label(form.parametre) }}</h2>{{ form_widget(form.parametre) }}
+                    {{ form_label(form.photo.file) }}
+                    {{ form_widget(form.photo.file) }}
+                </div>
+                <div class="row">
+                    {{ form_label(form.parametre) }}
+                    {{ form_widget(form.parametre) }}
                 </div>
             </div>
             <div class="col-xs-12 col-md-6 chalBoxPadd">
                 <div class="row">
-                    <h2>Indice du challenge :</h2>
+                    <h2>Indice :</h2>
                 </div>
                 <div class="row">
-                    <h2>{{ form_label(form.indice.contenu) }}</h2> {{ form_widget(form.indice.contenu) }}
+                    {{ form_label(form.indice.contenu) }}
+                    {{ form_widget(form.indice.contenu) }}
                 </div>
                 <div class="row">
-                    <h2>{{ form_label(form.indice.photo.file) }}</h2> {{ form_widget(form.indice.photo.file) }}
+                    {{ form_label(form.indice.photo.file) }}
+                    {{ form_widget(form.indice.photo.file) }}
                 </div>
                 <div class="row">
-                    <h2>{{ form_label(form.indice.parametre) }}</h2> {{ form_widget(form.indice.parametre) }}
+                    {{ form_label(form.indice.parametre) }}
+                    {{ form_widget(form.indice.parametre) }}
                 </div>
-            </div>
-            <div class="col-xs-offset-4 col-xs-4 creerbtn">
-                {{ form_widget(form) }}
-                <input class="delete" type="submit" value="Créer" />
-                {{ form_end(form) }}
             </div>
         </div>
+        <div class="row">
+            <div class="col-xs-12 creerbtn">
+                <input class="delete" type="submit" value="Créer" />
+            </div>
+        </div>
+        {{ form_end(form) }}
+
     </div>
 {% endblock %}
