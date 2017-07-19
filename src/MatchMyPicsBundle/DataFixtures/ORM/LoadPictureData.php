@@ -26,9 +26,11 @@ class LoadPictureData extends AbstractFixture implements OrderedFixtureInterface
 
     public function load(ObjectManager $manager){
         $superAdminPicture = new Photo();
-        $file = new File(__DIR__ . '/../../../../web/bundles/matchmypics/pictures/superadmin.png');
-        $fileName = $this->container->get('file_uploader')->upload($file);
-        $superAdminPicture->setSources($fileName);
+
+        copy(__DIR__ . '/../../Resources/public/pictures/superadmin.png', __DIR__ . '/../../../../web/image_upload/superadmin.png');
+	    $file = new File(__DIR__ . '/../../../../web/bundles/matchmypics/pictures/superadmin.png');
+
+        $superAdminPicture->setSources('superadmin.png');
         $superAdminPicture->setAlt('super admin');
 
         $manager->persist($superAdminPicture);

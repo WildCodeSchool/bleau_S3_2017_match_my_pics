@@ -27,7 +27,8 @@ L'application à pour base le jeu d'aventure de Geo Caching, le but du jeu est s
 7. `chmod -R 777 web/image_upload`
 8. `php bin/console assets:install`
 9. `php bin/console fixtures:load`
-10. Have fun
+10. Setting up or Fixing File Permissions ==> https://symfony.com/doc/current/setup/file_permissions.html
+11. Have fun
 
 Développé par Guillaume HERY, Jérémy LEMARINIER et Charly AUZANET durant la promotion de Février 2017.
 
